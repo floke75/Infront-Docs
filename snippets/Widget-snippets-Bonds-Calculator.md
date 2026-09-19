@@ -1,0 +1,205 @@
+---
+title: "Bonds Calculator"
+kind: widget-snippet
+page_type: example
+product: "Infront Web Toolkit"
+version: "4.3.1"
+nav_path: "Widget snippets > Bonds Calculator"
+description: "Test snippet for Bondscalculator"
+tags: ["widget", "test", "widget:BondsCalculator", "widget:bondsCalculatorWidget"]
+demonstrates: ["BondsCalculator", "bondsCalculatorWidget"]
+example_config: {"title":"Bonds Calculator","description":"Test snippet for Bondscalculator","modify_date":"2025-12-16","owner":"Infront","tags":["widget","test","widget:BondsCalculator","widget:bondsCalculatorWidget"],"flags":{"show_description":true,"show_creator":true,"show_date":true,"show_metadata":true}}
+source_url: "https://docs.infrontfinance.com/tests/Bondscalculator"
+source_files: ["script.ts", "template.html", "style.css", "config.json"]
+---
+
+# Bonds Calculator
+
+Test snippet for Bondscalculator
+
+Demonstrates: `BondsCalculator`, `bondsCalculatorWidget`
+
+## Script (script.ts)
+
+```typescript
+let url = new URL(window.location.href);
+let options = new Infront.BondsCalculatorOptions();
+options.id = 'embeddedSwapCalculatorTest';
+options.widgetTitle = 'Bonds Calculator';
+options.notional = 1000000;
+options.showSearchWidget = true;
+let calculator = infront.bondsCalculatorWidget('#bonds-calculator', options);
+
+function generic_error_handler(error_code, error_message) {
+    console.log(error_code + ': ' + error_message);
+}
+
+function generic_success_handler(result) {
+    console.log(result);
+}
+```
+
+## Markup (template.html)
+
+```html
+<div style="max-width: 600px">
+    <div id="bonds-calculator"></div>
+</div>
+```
+
+## Styles (style.css)
+
+```css
+/* TEST FILE ONLY CSS */
+.cell-body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+}
+
+/* END TEST FILE ONLY CSS */
+
+/* Generic classes/changes for WTK */
+/* CHECK WITH DMITRI IF OK */
+.cell-flex-row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-right: unset;
+    margin-left: unset;
+}
+
+/* End Generic classes/changes for WTK */
+
+/* Wire specific CSS - MOVE TO WTK */
+.cell-w-bonds-calculator {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: #002839;
+    padding: 0;
+}
+
+.cell-w-bonds-calculator__header {
+    background-color: #00374f;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.cell-w-bonds-calculator__title {
+    margin: 6px 10px;
+    padding: 0;
+}
+
+.cell-w-bonds-calculator__content {
+    padding: 0 10px;
+}
+
+.cell-w-bonds-calculator__section {
+    margin: 0 0 10px;
+}
+
+.cell-w-bonds-calculator__section_title {
+    margin: 5px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.cell-w-bonds-calculator__section_title-result {
+    margin: 0;
+    background-color: #00374f;
+}
+
+.cell-w-bonds-calculator__tab-bar .cell-tabs__horizontal__tab,
+.cell-w-bonds-calculator__tab-bar .cell-tabs__horizontal__tab--selected,
+.cell-w-bonds-calculator__tab-bar .cell-tabs__horizontal {
+    border-width: 0;
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
+.cell-w-bonds-calculator__tab-bar .cell-tabs__horizontal__tab {
+    background-color: #00374f;
+}
+
+.cell-w-bonds-calculator__tab-bar .cell-tabs__horizontal__tab--selected {
+    background-color: #0f9bc3;
+}
+
+.cell-w-bonds-calculator__row {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    align-items: baseline;
+}
+
+.cell-w-bonds-calculator__row__col {
+    display: flex;
+    margin: 2px 10px;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.cell-w-bonds-calculator__search {
+    padding: 0 0 10px 0;
+}
+
+.cell-w-bonds-calculator__search input {
+    width: 270px;
+}
+
+.cell-w-bonds-calculator__result {
+    padding: 5px 0;
+}
+
+.leg-button {
+    width: 100px;
+    font-size: inherit;
+    margin: 0 5px 0 0;
+}
+
+.cell-w-bonds-calculator__date .cell-input--date-selector {
+    width: 100px;
+    margin: 0;
+}
+
+.cell-w-date-selector__arrow-left {
+    background-image: url('icon_date-picker_arrow_left-white.png');
+    background-position: left 0 top 3px;
+}
+
+.cell-w-date-selector__arrow-right {
+    background-image: url('icon_date-picker_arrow_right-white.png');
+    background-position: right 0 top 3px;
+}
+
+.cell-tab-hidden {
+    display: none;
+}
+
+.cell-w-bonds-calculator__status {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
+
+.cell-w-bonds-calculator__error-msg {
+    font-size: 14px;
+    color: #5bd8ff;
+    padding: 10px;
+}
+
+.cell-w-bonds-calculator__result-hidden {
+    visibility: hidden;
+}
+
+.cell-flex-row.cell-search-result__item {
+    flex-direction: row;
+}
+```
+

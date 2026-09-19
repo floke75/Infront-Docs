@@ -1,0 +1,27 @@
+node_modules/
+package-lock.json
+
+# extraction caches — re-fetched by tools/run.sh, not worth versioning
+raw/
+raw-examples/
+raw-tests/
+raw-legacy/
+*.html
+app.js
+
+# browser session state from the legacy-site login — never commit
+state.json
+
+# intermediate build artefacts
+nav.json
+nav-flat.json
+search.json
+search.js
+navigation.js
+hierarchy.js
+pages.json
+examples-*.json
+tests-index.json
+legacy-*.json
+guides-made.json
+out/

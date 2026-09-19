@@ -1,0 +1,28 @@
+---
+title: "CdapiGetEquityIndustriesOptionsRatingSource"
+qualified_name: "SDK.InfrontSDK.CoreDataAPI.CdapiGetEquityIndustriesOptionsRatingSource"
+kind: type-alias
+page_type: api-reference
+product: "Infront Web Toolkit"
+version: "4.3.1"
+module: "SDK"
+namespace: "SDK.InfrontSDK.CoreDataAPI"
+group: "CoreDataAPI"
+nav_path: "SDK > InfrontSDK > Other > CoreDataAPI > CdapiGetEquityIndustriesOptionsRatingSource"
+source_url: "https://docs.infrontfinance.com/docs/types/SDK.InfrontSDK.CoreDataAPI.CdapiGetEquityIndustriesOptionsRatingSource.html"
+defines: ["CdapiGetEquityIndustriesOptionsRatingSource"]
+reference_count: 1
+references: ["SDK.InfrontSDK.CoreDataAPI.CdapiGetEquityIndustriesOptions"]
+---
+
+# CdapiGetEquityIndustriesOptionsRatingSource
+
+```ts
+CdapiGetEquityIndustriesOptionsRatingSource:
+    | "RATING_SOURCE_UNSPECIFIED"
+    | "MOODYS"
+    | "FITCH"
+    | "STANDARD_AND_POORS"
+```
+
+The allowed enum values for [CdapiGetEquityIndustriesOptions.rating_source](./SDK.InfrontSDK.CoreDataAPI.CdapiGetEquityIndustriesOptions.md#rating_source).

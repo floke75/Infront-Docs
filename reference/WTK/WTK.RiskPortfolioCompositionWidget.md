@@ -1,0 +1,654 @@
+---
+title: "RiskPortfolioCompositionWidgetBeta"
+qualified_name: "WTK.RiskPortfolioCompositionWidget"
+kind: class
+page_type: api-reference
+product: "Infront Web Toolkit"
+version: "4.3.1"
+module: "WTK"
+group: "Risk Widgets"
+nav_path: "WTK > Risk Widgets > RiskPortfolioCompositionWidget"
+source_url: "https://docs.infrontfinance.com/docs/classes/WTK.RiskPortfolioCompositionWidget.html"
+defines: ["RiskPortfolioCompositionWidget"]
+member_count: 41
+members: ["constructor", "componentRef", "element", "infront", "infrontUI", "isInitialised", "linkChannels", "options", "optionsProxy", "storage", "suppressComponentUpdate", "widgetState", "widgetTitle", "accepts", "addEventListener", "addInfrontEventObserver", "canReceiveMessage", "clearStoredValue", "createOptions", "destroy", "getStoredValue", "handleWidgetTitle", "hasOptionChanged", "isResizeable", "link", "modify", "mountComponent", "onDestroy", "onOptionsChanged", "partialOptions", "pause", "receiveMessage", "removeAllStorage", "resizeWidget", "resume", "setInstrument", "setWidgetState", "store", "unlink", "unregisterAllEvents", "validateOptions"]
+member_groups:
+  "Constructors": ["constructor"]
+  "Properties": ["componentRef", "element", "infront", "infrontUI", "isInitialised", "linkChannels", "options", "optionsProxy", "storage", "suppressComponentUpdate", "widgetState", "widgetTitle"]
+  "Methods": ["accepts", "addEventListener", "addInfrontEventObserver", "canReceiveMessage", "clearStoredValue", "createOptions", "destroy", "getStoredValue", "handleWidgetTitle", "hasOptionChanged", "isResizeable", "link", "modify", "mountComponent", "onDestroy", "onOptionsChanged", "partialOptions", "pause", "receiveMessage", "removeAllStorage", "resizeWidget", "resume", "setInstrument", "setWidgetState", "store", "unlink", "unregisterAllEvents", "validateOptions"]
+related_types: ["WTK.RiskPortfolioCompositionWidgetOptions"]
+reference_count: 6
+references: ["WTK.UI", "WTK.RiskPortfolioCompositionWidgetOptions", "WTK.WidgetState", "SDK.InfrontSDK.SymbolId", "WTK.WidgetBase", "WTK.InfrontWidget"]
+---
+
+# RiskPortfolioCompositionWidgetBeta
+
+RiskPortfolioCompositionWidget class extending SvelteSingleInstrumentWidgetBase class.
+
+`InfrontWidget = infront.riskPortfolioCompositionWidget(target, [options]);`
+
+Portfolio composition in a pie or bars chartbased on predefined criteria (e.g. positions, currency, asset class, sector).
+Therefore, the position values for each criteria a summed up.
+
+Options can be configured with RiskPortfolioCompositionWidgetOptions.
+
+#### Example
+
+```ts
+<script type="text/javascript">
+    const opts = new Infront.RiskReturnContributionWidgetOptions({
+        portfolioSource: 'wtk',
+        portfolioId: '123456',
+    });
+
+    widget = infront.riskPortfolioCompositionWidget("RiskPortfolioCompositionWidget", opts);
+</script>
+...
+<div id="RiskPortfolioCompositionWidget"></div>
+```
+
+#### See
+
+RiskPortfolioCompositionWidgetOptions | WidgetBase | SvelteSingleInstrumentWidgetBase | [InfrontWidget](./WTK.InfrontWidget.md)
+
+#### Hierarchy
+
+- SvelteSingleInstrumentWidgetBase<RiskPortfolioCompositionWidgetOptions>
+
+  - RiskPortfolioCompositionWidget
+
+### Constructors
+
+#### constructor
+
+```ts
+new RiskPortfolioCompositionWidget(
+    parentElement: HTMLElement,
+    infrontUI: UI,
+    options: Partial<RiskPortfolioCompositionWidgetOptions>,
+): RiskPortfolioCompositionWidget
+```
+
+Beta
+
+##### Parameters
+
+- parentElement: HTMLElement
+- infrontUI: UI
+- options: Partial<RiskPortfolioCompositionWidgetOptions>
+
+##### Returns RiskPortfolioCompositionWidget
+
+Overrides SvelteSingleInstrumentWidgetBase<RiskPortfolioCompositionWidgetOptions>.constructor
+
+### Properties
+
+#### `Protected` ` Beta`componentRef
+
+```ts
+componentRef: UWidgetInstance
+```
+
+Inherited from SvelteSingleInstrumentWidgetBase.componentRef
+
+#### `Readonly` ` Beta`element
+
+```ts
+element: HTMLElement
+```
+
+Inherited from SvelteSingleInstrumentWidgetBase.element
+
+#### `Protected` ` Beta`infront
+
+```ts
+infront: Model
+```
+
+Inherited from SvelteSingleInstrumentWidgetBase.infront
+
+#### `Protected` ` Beta`infrontUI
+
+```ts
+infrontUI: UI
+```
+
+Inherited from SvelteSingleInstrumentWidgetBase.infrontUI
+
+#### `Protected` ` Beta`isInitialised
+
+```ts
+isInitialised: boolean = false
+```
+
+Inherited from SvelteSingleInstrumentWidgetBase.isInitialised
+
+#### `Protected` ` Beta`linkChannels
+
+```ts
+linkChannels: number[]
+```
+
+Inherited from SvelteSingleInstrumentWidgetBase.linkChannels
+
+#### `Beta` options
+
+```ts
+options: Readonly<TWidgetOptions>
+```
+
+Inherited from SvelteSingleInstrumentWidgetBase.options
+
+#### `Protected` ` Beta`optionsProxy
+
+```ts
+optionsProxy: OptionsStore<RiskPortfolioCompositionWidgetOptions>
+```
+
+Inherited from SvelteSingleInstrumentWidgetBase.optionsProxy
+
+#### `Protected` ` Beta`storage
+
+```ts
+storage: WidgetStorage
+```
+
+Inherited from SvelteSingleInstrumentWidgetBase.storage
+
+#### `Protected` ` Beta`suppressComponentUpdate
+
+```ts
+suppressComponentUpdate: boolean = false
+```
+
+Inherited from SvelteSingleInstrumentWidgetBase.suppressComponentUpdate
+
+#### `Protected` ` Beta`widgetState
+
+```ts
+widgetState: WidgetState
+```
+
+Inherited from SvelteSingleInstrumentWidgetBase.widgetState
+
+#### `Protected` ` Beta`widgetTitle
+
+```ts
+widgetTitle: string
+```
+
+Inherited from SvelteSingleInstrumentWidgetBase.widgetTitle
+
+### Methods
+
+#### accepts
+
+```ts
+accepts(): string[]
+```
+
+Beta
+
+##### Returns string[]
+
+Overrides SvelteSingleInstrumentWidgetBase.accepts
+
+#### `Protected` addEventListener
+
+```ts
+addEventListener(
+    element: HTMLElement,
+    event: string,
+    callback: (event: Event) => void,
+): void
+```
+
+Beta
+
+Adds an event and registers it so it will be removed when calling destroy
+
+##### Parameters
+
+- element: HTMLElement
+- event: string
+- callback: (event: Event) => void
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.addEventListener
+
+#### `Protected` addInfrontEventObserver
+
+```ts
+addInfrontEventObserver(
+    eventName: string,
+    callback: (event: InfrontEvent) => void,
+): void
+```
+
+Beta
+
+Adds an infront event and registers it so it will be removed when calling destroy
+
+##### Parameters
+
+- eventName: string
+- callback: (event: InfrontEvent) => void
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.addInfrontEventObserver
+
+#### `Protected` canReceiveMessage
+
+```ts
+canReceiveMessage(): boolean
+```
+
+Beta
+
+Hook to indicate whether the widget handles incoming InterLibraryLink messages.
+
+##### Returns boolean
+
+Inherited from SvelteSingleInstrumentWidgetBase.canReceiveMessage
+
+#### `Protected` clearStoredValue
+
+```ts
+clearStoredValue(key: string): void
+```
+
+Beta
+
+##### Parameters
+
+- key: string
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.clearStoredValue
+
+#### `Protected` createOptions
+
+```ts
+createOptions(
+    options: Partial<RiskPortfolioCompositionWidgetOptions>,
+): RiskPortfolioCompositionWidgetOptions
+```
+
+Beta
+
+##### Parameters
+
+- options: Partial<RiskPortfolioCompositionWidgetOptions>
+
+##### Returns RiskPortfolioCompositionWidgetOptions
+
+Overrides SvelteSingleInstrumentWidgetBase.createOptions
+
+#### destroy
+
+```ts
+destroy(): void
+```
+
+Beta
+
+Destroys this widget. You must call this before removing the widget from the Page to avoid memory leaks and make
+sure the corresponding data is unsubscribed from.
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.destroy
+
+#### `Protected` getStoredValue
+
+```ts
+getStoredValue(key: string): unknown
+```
+
+Beta
+
+Retrieves a value from the widget's storage, with a return value of `undefined` corresponding to "not set in storage".
+
+Since keys not starting with `#` are considered as having a 1-on-1 correspondence with the widget's options keys,
+you should not use this method to access those values, but use the `options` object instead.
+
+##### Parameters
+
+- key: string
+
+##### Returns unknown
+
+Inherited from SvelteSingleInstrumentWidgetBase.getStoredValue
+
+#### `Protected` handleWidgetTitle
+
+```ts
+handleWidgetTitle(): boolean
+```
+
+Beta
+
+Handle the widgetTitle option
+
+##### Returns boolean
+
+Inherited from SvelteSingleInstrumentWidgetBase.handleWidgetTitle
+
+#### `Protected` hasOptionChanged
+
+```ts
+hasOptionChanged(prop: string, oldValue: unknown, newValue: unknown): boolean
+```
+
+Beta
+
+Hook to determine if an option value has changed
+
+##### Parameters
+
+- prop: string
+- oldValue: unknown
+- newValue: unknown
+
+##### Returns boolean
+
+Inherited from SvelteSingleInstrumentWidgetBase.hasOptionChanged
+
+#### isResizeable
+
+```ts
+isResizeable(): boolean
+```
+
+Beta
+
+##### Returns boolean
+
+Inherited from SvelteSingleInstrumentWidgetBase.isResizeable
+
+#### link
+
+```ts
+link(target: Target): void
+```
+
+Beta
+
+##### Parameters
+
+- target: Target
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.link
+
+#### modify
+
+```ts
+modify(options: Partial<TWidgetOptions>): boolean
+```
+
+Beta
+
+Updates a widget's options
+
+##### Parameters
+
+- options: Partial<TWidgetOptions>
+
+##### Returns boolean
+
+Inherited from SvelteSingleInstrumentWidgetBase.modify
+
+#### `Protected` mountComponent
+
+```ts
+mountComponent(
+    element: HTMLElement,
+    infrontUI: UI,
+    options: RiskPortfolioCompositionWidgetOptions,
+    widgetFn: SvelteWidgetFn<
+        RiskPortfolioCompositionWidgetOptions,
+        Record<string, any>,
+    >,
+): void
+```
+
+Beta
+
+Hook to handle mounting of the template component; called before the widget is marked as initialized.
+When you override `mountComponent`, you must call ` super.mountComponent()` to ensure the widget is marked
+as initialized and the `widgetStateCallback` is called with ` WidgetState.Initialized`, otherwise the widget
+will not be properly initialized and may not function correctly.
+
+##### Parameters
+
+- element: HTMLElement
+- infrontUI: UI
+- options: RiskPortfolioCompositionWidgetOptions
+- widgetFn: SvelteWidgetFn<RiskPortfolioCompositionWidgetOptions, Record<string, any>>
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.mountComponent
+
+#### `Protected` onDestroy
+
+```ts
+onDestroy(): void
+```
+
+Beta
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.onDestroy
+
+#### `Protected` onOptionsChanged
+
+```ts
+onOptionsChanged(changes: SimpleChanges): void
+```
+
+Beta
+
+Hook called when options have changed when calling modify()
+
+##### Parameters
+
+- changes: SimpleChanges
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.onOptionsChanged
+
+#### `Protected` partialOptions
+
+```ts
+partialOptions(options: Partial<TWidgetOptions>): Partial<TWidgetOptions>
+```
+
+Beta
+
+Hook to strip unwanted, or migrate old options
+
+##### Parameters
+
+- options: Partial<TWidgetOptions>
+
+##### Returns Partial<TWidgetOptions>
+
+Inherited from SvelteSingleInstrumentWidgetBase.partialOptions
+
+#### pause
+
+```ts
+pause(): void
+```
+
+Beta
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.pause
+
+#### receiveMessage
+
+```ts
+receiveMessage(msg: Message): void
+```
+
+Beta
+
+##### Parameters
+
+- msg: Message
+
+##### Returns void
+
+Overrides SvelteSingleInstrumentWidgetBase.receiveMessage
+
+#### removeAllStorage
+
+```ts
+removeAllStorage(): void
+```
+
+Beta
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.removeAllStorage
+
+#### resizeWidget
+
+```ts
+resizeWidget(): void
+```
+
+Beta
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.resizeWidget
+
+#### resume
+
+```ts
+resume(): void
+```
+
+Beta
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.resume
+
+#### setInstrument
+
+```ts
+setInstrument(instrument: SymbolId): boolean
+```
+
+Beta
+
+##### Parameters
+
+- instrument: [SymbolId](../SDK/SDK.InfrontSDK.SymbolId.md)
+
+##### Returns boolean
+
+Inherited from SvelteSingleInstrumentWidgetBase.setInstrument
+
+#### `Protected` setWidgetState
+
+```ts
+setWidgetState(state: WidgetState): void
+```
+
+Beta
+
+Updates the widget's state, and call any registered callback
+
+##### Parameters
+
+- state: [WidgetState](./WTK.WidgetState.md)
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.setWidgetState
+
+#### `Protected` store
+
+```ts
+store(key: string, val: unknown): void
+```
+
+Beta
+
+Stores a value in the widget's storage.
+
+Note that `undefined` is treated as "not set" (which removes the key from storage, like with ` clearStoredValue`),
+while `null` is treated as a valid value.
+
+Since keys not starting with `#` are considered as having a 1-on-1 correspondence with the widget's options keys,
+you should not use this method to mutate those values, but use the `modify` method to change the options instead,
+which will also ensure the new values are properly validated, and trigger the necessary updates in the widget.
+
+##### Parameters
+
+- key: string
+- val: unknown
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.store
+
+#### unlink
+
+```ts
+unlink(target: Target): void
+```
+
+Beta
+
+##### Parameters
+
+- target: Target
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.unlink
+
+#### `Protected` unregisterAllEvents
+
+```ts
+unregisterAllEvents(): void
+```
+
+Beta
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.unregisterAllEvents
+
+#### `Protected` validateOptions
+
+```ts
+validateOptions(options: RiskPortfolioCompositionWidgetOptions): void
+```
+
+Beta
+
+Hook to validate the options object
+
+##### Parameters
+
+- options: RiskPortfolioCompositionWidgetOptions
+
+##### Returns void
+
+Inherited from SvelteSingleInstrumentWidgetBase.validateOptions
