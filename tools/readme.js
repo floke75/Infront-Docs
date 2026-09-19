@@ -39,6 +39,13 @@ see [Where to start by task](#where-to-start-by-task) below.
 
 ## How to find things
 
+**Not sure what Infront calls the thing you want** — start at
+[\`index/concepts.md\`](index/concepts.md). It maps plain English and finance vocabulary
+("candles", "order book", "market cap", "time and sales") onto the symbols that serve
+them, and records the conventions that save a lookup. Plain grep finds the right page
+but ranks it badly, because the reference is generated from TypeScript and carries
+almost no prose synonyms; that file is the ranking.
+
 **Looking up a symbol you already know the name of** — this is the fast path.
 
 \`\`\`
@@ -68,6 +75,7 @@ to read whole (the largest is under 64 KB).
 README.md              this file
 manifest.json          every file, with front matter fields, for routing
 index/
+  concepts.md          plain English → symbol, when you don't know the name yet
   symbols.tsv          name → kind → qualified name → file → anchor  (primary lookup)
   symbols.json         the same, keyed by name
   topics.md            the docs' own navigation tree
@@ -116,6 +124,7 @@ parent keeps \`is_index: true\`.
 
 | Task | Start at |
 |---|---|
+| You don't know Infront's word for it | \`index/concepts.md\` |
 | Set up the toolkit in an NPM project | \`guides/wtk-getting-started.md\`, \`guides/wtk-setup.md\` |
 | Authenticate | \`guides/wtk-authentication.md\` |
 | Use the SDK without widgets | \`guides/sdk-getting-started.md\`, \`guides/sdk-setup.md\` |

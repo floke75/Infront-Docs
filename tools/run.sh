@@ -9,6 +9,7 @@ node convert-legacy.js
 node split.js
 node fixlinks.js
 node index.js
+node concepts.js
 node readme.js
 node index.js
 node check.js

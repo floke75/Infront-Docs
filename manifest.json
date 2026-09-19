@@ -12,19 +12,20 @@
   "https://docs.infrontfinance.com/examples/ (runnable examples)",
   "https://docs.infrontfinance.com/tests/ (per-widget snippets)"
  ],
- "file_count": 3558,
- "total_bytes": 17242208,
+ "file_count": 3559,
+ "total_bytes": 17259742,
  "by_page_type": {
   "corpus-readme": 1,
   "example": 273,
   "guide": 8,
+  "concept-index": 1,
   "symbol-index": 19,
   "topic-index": 1,
   "legacy-reference": 190,
   "api-reference": 3066
  },
  "by_kind": {
-  "index": 32,
+  "index": 33,
   "example": 166,
   "guide": 8,
   "legacy-page": 3,
@@ -117,7 +118,7 @@
    "title": "Infront Web Toolkit documentation corpus",
    "kind": "index",
    "page_type": "corpus-readme",
-   "bytes": 7030
+   "bytes": 7634
   },
   {
    "file": "examples/SDK-SDK-API-Feeds-Get-Accessible-Feeds.md",
@@ -1691,6 +1692,13 @@
    "source_url": "https://docs.infrontfinance.com/docs/index.html",
    "library": "WTK",
    "part_of": "getting-started"
+  },
+  {
+   "file": "index/concepts.md",
+   "title": "Concept index — plain English to Infront symbols",
+   "kind": "index",
+   "page_type": "concept-index",
+   "bytes": 16930
   },
   {
    "file": "index/symbols-SDK-01.md",

@@ -5,7 +5,7 @@ page_type: corpus-readme
 product: "Infront Web Toolkit"
 version: "4.3.1"
 extracted: "2026-09-19"
-file_count: 3557
+file_count: 3558
 ---
 
 # Infront Web Toolkit — documentation corpus
@@ -28,6 +28,13 @@ For charting and broadcast graphics, the two entry points that matter most are
 see [Where to start by task](#where-to-start-by-task) below.
 
 ## How to find things
+
+**Not sure what Infront calls the thing you want** — start at
+[`index/concepts.md`](index/concepts.md). It maps plain English and finance vocabulary
+("candles", "order book", "market cap", "time and sales") onto the symbols that serve
+them, and records the conventions that save a lookup. Plain grep finds the right page
+but ranks it badly, because the reference is generated from TypeScript and carries
+almost no prose synonyms; that file is the ranking.
 
 **Looking up a symbol you already know the name of** — this is the fast path.
 
@@ -58,6 +65,7 @@ to read whole (the largest is under 64 KB).
 README.md              this file
 manifest.json          every file, with front matter fields, for routing
 index/
+  concepts.md          plain English → symbol, when you don't know the name yet
   symbols.tsv          name → kind → qualified name → file → anchor  (primary lookup)
   symbols.json         the same, keyed by name
   topics.md            the docs' own navigation tree
@@ -84,7 +92,7 @@ Every file carries the fields you need to decide whether to read it:
 ```yaml
 title            the symbol or guide name
 qualified_name   e.g. SDK.InfrontSDK.alertList
-kind             example, guide, index, legacy-page, legacy-widget, enum, interface, variable, …
+kind             index, example, guide, legacy-page, legacy-widget, enum, interface, variable, …
 page_type        api-reference | guide | example | legacy-reference | symbol-index | topic-index
 module           SDK | WTK | Utils
 namespace        e.g. SDK.InfrontSDK
@@ -106,6 +114,7 @@ parent keeps `is_index: true`.
 
 | Task | Start at |
 |---|---|
+| You don't know Infront's word for it | `index/concepts.md` |
 | Set up the toolkit in an NPM project | `guides/wtk-getting-started.md`, `guides/wtk-setup.md` |
 | Authenticate | `guides/wtk-authentication.md` |
 | Use the SDK without widgets | `guides/sdk-getting-started.md`, `guides/sdk-setup.md` |
@@ -136,12 +145,4 @@ parent keeps `is_index: true`.
   APIs are written down. Every file in it is marked `page_type: legacy-reference`
   with a `status` field saying so, and `library_version` gives the version. When it
   disagrees with `reference/`, `reference/` wins.
-- 3,557 Markdown files, 16.4 MB, plus 7.2 MB of indexes. Every relative link resolved and checked.
-
-## Regenerating this corpus
-
-Every file here is generated. `tools/` holds the scripts that produced it and a note on
-the traps involved; `bash tools/run.sh` rebuilds the whole tree from mirrored HTML and
-ends by verifying that every relative link resolves. The current docsite needs no
-login, so a refresh when Infront ships a new version is a re-run, not a new
-investigation.
+- 3,558 Markdown files, 16.4 MB, plus 7.2 MB of indexes. Every relative link resolved and checked.
