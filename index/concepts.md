@@ -112,12 +112,15 @@ ranking, written down.
 | connect to broker, trading gateway, trading login | [connection](../reference/SDK/SDK.InfrontSDK.Trading.connection.md) | [TradingField](../reference/SDK/SDK.InfrontSDK.TradingField.md) |  |
 | request for quote, RFQ | [quoteVolume](../reference/SDK/SDK.InfrontSDK.Trading.quoteVolume.md) | [acceptQuoteOrder](../reference/SDK/SDK.InfrontSDK.Trading.acceptQuoteOrder.md) |  |
 
-### Session and setup
+### Session, login and entitlements
 
 | You might call it | Go to | Also relevant | Note |
 |---|---|---|---|
-| log in, authenticate, token, credentials, SSO | — | — | This is a guide, not an API call: see the setup files listed under Guides below. |
-| session info, entitlements, what am I allowed to see | [loginData](../reference/SDK/SDK.InfrontSDK.loginData.md) | [FeedAccess](../reference/SDK/SDK.InfrontSDK.FeedAccess.md) |  |
+| log in, authenticate, token, access token, credentials, SSO, connect | [SDKOptions](../reference/SDK/SDK.InfrontSDK.SDKOptions.md) | — | Two legs: fetch a token server-side from `api.infrontservices.com/id/connect/token`, then pass it to the client. The SDK option is `signedToken`; the WTK `Infront.UI` option is `signed_token` (snake_case). `userId` + `password` also work for development. See the authentication guide below. |
+| entitlement, permissions, licensed, what are we paying for, do we have realtime, is this delayed, market access, subscription | [FeedAccess](../reference/SDK/SDK.InfrontSDK.FeedAccess.md) | [loginData](../reference/SDK/SDK.InfrontSDK.loginData.md) | Entitlement is **per feed**, not one global grant. `FeedAccess` is exactly `Realtime`, `Delayed` or `NoAccess`. An unentitled feed does not error — it returns delayed data through the same code path, so check rather than assume. |
+| is this instrument realtime, delay in minutes, show the delay badge | [BasicField](../reference/SDK/SDK.InfrontSDK.BasicField.md) | — | Read it off the live data: members `FeedAccess`, `FeedAccessStr` (text, includes the delay in minutes), `FeedAccessDesc` (both combined), `FeedDelayStr` (the delay alone). |
+| session info, what am I allowed to see, connection status, features | [loginData](../reference/SDK/SDK.InfrontSDK.loginData.md) | [LoginDataOptions](../reference/SDK/SDK.InfrontSDK.LoginDataOptions.md) | Takes `flags: { ConnectionStatus, Features, LoginDetails }` to pick what comes back. |
+| which markets, what exchanges, list feeds, feed metadata | [feedList](../reference/SDK/SDK.InfrontSDK.feedList.md) | [feedInfo](../reference/SDK/SDK.InfrontSDK.feedInfo.md) | `feedList` by `serviceTypes`; `feedInfo` for each feed's metadata. |
 
 ## Things that have no dedicated API
 
@@ -129,6 +132,10 @@ Worth knowing so you don't hunt for them:
 - **Index constituents.** No dedicated request. Go via the index's feed
   (`feedContents`, `symbolListings`).
 - **A `Close` field.** See the price-field row above.
+- **Anything mapping a commercial contract to feed entitlements.** The docs never
+  explain which exchanges a given account is realtime on, and there is no documented
+  way to inspect your own contract. The API reports the answer per feed once you are
+  connected (`FeedAccess`); everything before that is an account-manager question.
 
 ## Which field enum holds what
 

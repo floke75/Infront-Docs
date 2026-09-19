@@ -139,13 +139,22 @@ const ALIASES = [
       ["SDK.InfrontSDK.Trading.quoteVolume"], ["SDK.InfrontSDK.Trading.acceptQuoteOrder"],
       ""],
   ]],
-  ["Session and setup", [
-    [["log in", "authenticate", "token", "credentials", "SSO"],
-      [], [],
-      "This is a guide, not an API call: " + "see the setup files listed under Guides below."],
-    [["session info", "entitlements", "what am I allowed to see"],
-      ["SDK.InfrontSDK.loginData"], ["SDK.InfrontSDK.FeedAccess"],
-      ""],
+  ["Session, login and entitlements", [
+    [["log in", "authenticate", "token", "access token", "credentials", "SSO", "connect"],
+      ["SDK.InfrontSDK.SDKOptions"], [],
+      "Two legs: fetch a token server-side from `api.infrontservices.com/id/connect/token`, then pass it to the client. The SDK option is `signedToken`; the WTK `Infront.UI` option is `signed_token` (snake_case). `userId` + `password` also work for development. See the authentication guide below."],
+    [["entitlement", "permissions", "licensed", "what are we paying for", "do we have realtime", "is this delayed", "market access", "subscription"],
+      ["SDK.InfrontSDK.FeedAccess"], ["SDK.InfrontSDK.loginData"],
+      "Entitlement is **per feed**, not one global grant. `FeedAccess` is exactly `Realtime`, `Delayed` or `NoAccess`. An unentitled feed does not error — it returns delayed data through the same code path, so check rather than assume."],
+    [["is this instrument realtime", "delay in minutes", "show the delay badge"],
+      ["SDK.InfrontSDK.BasicField"], [],
+      "Read it off the live data: members `FeedAccess`, `FeedAccessStr` (text, includes the delay in minutes), `FeedAccessDesc` (both combined), `FeedDelayStr` (the delay alone)."],
+    [["session info", "what am I allowed to see", "connection status", "features"],
+      ["SDK.InfrontSDK.loginData"], ["SDK.InfrontSDK.LoginDataOptions"],
+      "Takes `flags: { ConnectionStatus, Features, LoginDetails }` to pick what comes back."],
+    [["which markets", "what exchanges", "list feeds", "feed metadata"],
+      ["SDK.InfrontSDK.feedList"], ["SDK.InfrontSDK.feedInfo"],
+      "`feedList` by `serviceTypes`; `feedInfo` for each feed's metadata."],
   ]],
 ];
 
@@ -228,6 +237,10 @@ Worth knowing so you don't hunt for them:
 - **Index constituents.** No dedicated request. Go via the index's feed
   (\`feedContents\`, \`symbolListings\`).
 - **A \`Close\` field.** See the price-field row above.
+- **Anything mapping a commercial contract to feed entitlements.** The docs never
+  explain which exchanges a given account is realtime on, and there is no documented
+  way to inspect your own contract. The API reports the answer per feed once you are
+  connected (\`FeedAccess\`); everything before that is an account-manager question.
 
 ## Which field enum holds what
 
