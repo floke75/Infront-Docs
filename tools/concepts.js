@@ -9,9 +9,11 @@
 
 const fs = require("fs"), path = require("path");
 const ROOT = process.env.ROOT || ".";
+// a Windows checkout (core.autocrlf) has CRLF files; every pattern below expects LF
+const read = rel => fs.readFileSync(path.join(ROOT, rel), "utf8").replace(/\r\n/g, "\n");
 
 // ---------------------------------------------------------------- corpus facts
-const tsv = fs.readFileSync(path.join(ROOT, "index/symbols.tsv"), "utf8").trim().split("\n").slice(1);
+const tsv = read("index/symbols.tsv").trim().split("\n").slice(1);
 const byQualified = new Map();
 for (const line of tsv) {
   const [name, kind, qualified, file, anchor] = line.split("\t");
@@ -162,7 +164,7 @@ const ALIASES = [
 const fieldEnums = [...byQualified.values()]
   .filter(s => s.kind === "enum" && /Field$/.test(s.qualified) && !/CoreDataAPI|PortfolioRisk/.test(s.qualified))
   .map(s => {
-    const body = fs.readFileSync(path.join(ROOT, s.file), "utf8");
+    const body = read(s.file);
     const count = Number((body.match(/^member_count: (\d+)$/m) || [])[1] || 0);
     const d = (body.split(/^# .*$/m)[1] || "").split("\n").find(l => l.trim() && !/^[#`>\-|]/.test(l)) || "";
     return { ...s, count, desc: d.trim().replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") };
