@@ -84,6 +84,11 @@ node tools/manifest.js . && OUT=. node tools/readme.js && node tools/manifest.js
   (`SDK.InfrontSDK.SymbolData.interface.md`) or, when the kinds match, a number (`…-2.md`).
   Both pages then link to each other. Any new generator that picks file names must run
   them through it; `check.js` fails if two paths still differ only by case.
+- **Long paths on Windows.** Without `core.longpaths`, Windows refuses a file path over
+  259 characters and a directory over 247, counting the folder the repository is cloned
+  into. The longest corpus path (a `CoreDataAPI` `.parts/` file, 151 characters) leaves
+  107 characters for that folder; `readme.js` states the figure and `check.js` fails if a
+  regeneration leaves fewer than 95.
 
 ## Credentials
 

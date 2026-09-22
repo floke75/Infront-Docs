@@ -4,7 +4,8 @@
 //     a link whose case is wrong);
 //   - no two paths are equal ignoring case (they would be one file on Windows and macOS);
 //   - every file named by index/symbols.tsv, index/symbols.json and manifest.json exists,
-//     and manifest.json lists every Markdown file (tools/ aside).
+//     and manifest.json lists every Markdown file (tools/ aside);
+//   - no path is so long that a Windows clone needs a very short folder.
 // Usage: node check.js [root]   root defaults to $OUT, then out/. `node tools/check.js .`
 // from the repository root checks the committed corpus.
 const fs=require("fs"),path=require("path");
@@ -62,5 +63,16 @@ if(files.has("manifest.json")){
 report("files named by the indexes:",[...named].filter(p=>!files.has(p)).sort(),named.size);
 if(files.has("manifest.json"))
   report("Markdown files manifest.json leaves out:",[...files].filter(f=>f.endsWith(".md")&&!f.startsWith("tools/")&&!listed.has(f)).sort());
+
+// Windows refuses a file path over 259 characters and a directory over 247 unless long paths are
+// enabled, so long names shrink the folder a Windows user can clone into. Keep room for
+// C:\Users\<name>\Documents\GitHub\Infront-Docs with a .claude\worktrees\<name> nested in it.
+const MIN_CLONE_ROOT=95;
+const rootBudget=Math.min(...[...files].map(f=>258-f.length),...[...dirs].map(d=>246-d.length));
+console.log(`longest path leaves ${rootBudget} characters for a Windows clone folder (minimum ${MIN_CLONE_ROOT})`);
+if(rootBudget<MIN_CLONE_ROOT){
+  [...files].filter(f=>258-f.length<MIN_CLONE_ROOT).concat([...dirs].filter(d=>246-d.length<MIN_CLONE_ROOT)).slice(0,12).forEach(p=>console.log("  "+p));
+  failed=true;
+}
 
 if(failed){ console.error("check failed"); process.exit(1); }

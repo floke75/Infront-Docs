@@ -8,6 +8,8 @@ const mb=(n)=>(n/1048576).toFixed(1)+" MB";
 const fileCount=M.file_count+(M.files.some(f=>f.file==="README.md")?0:1);
 // sizes of the LF text, so a Windows checkout (CRLF) reports what Linux does
 const lfBytes=rel=>Buffer.byteLength(fs.readFileSync(path.join(OUT,rel),"utf8").replace(/\r\n/g,"\n"));
+// Windows refuses a file path over 259 characters and a directory over 247 without long paths
+const cloneRoot=Math.min(...M.files.map(f=>258-f.file.length),...M.files.map(f=>246-path.posix.dirname(f.file).length));
 const modTables=M.symbol_index.tables;
 const inDir=(p)=>M.files.filter(f=>f.file.startsWith(p)&&!f.file.includes(".parts/")).length;
 const nEx=inDir("examples/"), nSn=inDir("snippets/"), nGu=g.length,
@@ -174,6 +176,10 @@ parent keeps \`is_index: true\`.
   with a \`status\` field saying so, and \`library_version\` gives the version. When it
   disagrees with \`reference/\`, \`reference/\` wins.
 - ${fileCount.toLocaleString("en-US")} Markdown files, ${mb(M.total_bytes)}, plus ${mb(lfBytes("index/symbols.tsv")+lfBytes("index/symbols.json"))} of indexes. Every relative link resolved and checked.
+- **Cloning on Windows:** some paths are long, and Windows refuses a full path over 259
+  characters unless long paths are enabled. Clone into a folder whose own path is at most
+  ${cloneRoot} characters (\`C:\\Users\\<name>\\Documents\\GitHub\\Infront-Docs\` is fine), or run
+  \`git config --global core.longpaths true\` first.
 `;
 fs.writeFileSync(path.join(OUT,"README.md"),md);
 console.log("README written",Buffer.byteLength(md),"bytes");

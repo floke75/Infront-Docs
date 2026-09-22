@@ -13,7 +13,7 @@
   "https://docs.infrontfinance.com/tests/ (per-widget snippets)"
  ],
  "file_count": 3569,
- "total_bytes": 17303662,
+ "total_bytes": 17303974,
  "by_page_type": {
   "corpus-readme": 1,
   "example": 273,
@@ -121,7 +121,7 @@
    "title": "Infront Web Toolkit documentation corpus",
    "kind": "index",
    "page_type": "corpus-readme",
-   "bytes": 8956
+   "bytes": 9268
   },
   {
    "file": "examples/SDK-SDK-API-Feeds-Get-Accessible-Feeds.md",
