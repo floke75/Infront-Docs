@@ -13,8 +13,8 @@ Neither the documentation nor the live sandbox answers these. Collected so the n
 Infront settles them in one pass; move each answer into the note it belongs to, with its date.
 
 **Contract and entitlements**
-1. Licensing for **public broadcast display** of Nasdaq Stockholm, index-provider, FX and commodity data,
-   and what `BasicField.NotForDisplay` signals when it is non-zero.
+1. What `BasicField.NotForDisplay` signals when it is non-zero. (EFN's licence for broadcast display is
+   settled, 2026-09-22, and requires the on-air credit `Data från InFront`.)
 2. Which feeds the production contract includes — in particular **S&P 500, Dow Jones (S&P DJI) and DAX
    (Xetra)**, which the test user cannot reach — and which are real-time.
 3. Why `6150:N225` returns no `Last` while `ChangePercent` and `YesterdayClose` are present.
