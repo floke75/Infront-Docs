@@ -4,6 +4,10 @@ const M=JSON.parse(fs.readFileSync(path.join(OUT,"manifest.json"),"utf8"));
 const g=M.guides;
 const k=M.by_kind, pt=M.by_page_type;
 const mb=(n)=>(n/1048576).toFixed(1)+" MB";
+// during a regeneration the manifest is written before this file exists; count it anyway
+const fileCount=M.file_count+(M.files.some(f=>f.file==="README.md")?0:1);
+// sizes of the LF text, so a Windows checkout (CRLF) reports what Linux does
+const lfBytes=rel=>Buffer.byteLength(fs.readFileSync(path.join(OUT,rel),"utf8").replace(/\r\n/g,"\n"));
 const modTables=M.symbol_index.tables;
 const inDir=(p)=>M.files.filter(f=>f.file.startsWith(p)&&!f.file.includes(".parts/")).length;
 const nEx=inDir("examples/"), nSn=inDir("snippets/"), nGu=g.length,
@@ -15,7 +19,7 @@ page_type: corpus-readme
 product: "Infront Web Toolkit"
 version: "${M.docs_version}"
 extracted: "${M.extracted}"
-file_count: ${M.file_count}
+file_count: ${fileCount}
 ---
 
 # Infront Web Toolkit — documentation corpus
@@ -169,7 +173,7 @@ parent keeps \`is_index: true\`.
   APIs are written down. Every file in it is marked \`page_type: legacy-reference\`
   with a \`status\` field saying so, and \`library_version\` gives the version. When it
   disagrees with \`reference/\`, \`reference/\` wins.
-- ${M.file_count.toLocaleString("en-US")} Markdown files, ${mb(M.total_bytes)}, plus ${mb(fs.statSync(path.join(OUT,"index/symbols.tsv")).size+fs.statSync(path.join(OUT,"index/symbols.json")).size)} of indexes. Every relative link resolved and checked.
+- ${fileCount.toLocaleString("en-US")} Markdown files, ${mb(M.total_bytes)}, plus ${mb(lfBytes("index/symbols.tsv")+lfBytes("index/symbols.json"))} of indexes. Every relative link resolved and checked.
 `;
 fs.writeFileSync(path.join(OUT,"README.md"),md);
 console.log("README written",Buffer.byteLength(md),"bytes");

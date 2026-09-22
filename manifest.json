@@ -12,11 +12,13 @@
   "https://docs.infrontfinance.com/examples/ (runnable examples)",
   "https://docs.infrontfinance.com/tests/ (per-widget snippets)"
  ],
- "file_count": 3559,
- "total_bytes": 17269199,
+ "file_count": 3569,
+ "total_bytes": 17303662,
  "by_page_type": {
   "corpus-readme": 1,
   "example": 273,
+  "field-notes-index": 1,
+  "field-note": 9,
   "guide": 8,
   "concept-index": 1,
   "symbol-index": 19,
@@ -25,8 +27,9 @@
   "api-reference": 3066
  },
  "by_kind": {
-  "index": 33,
+  "index": 34,
   "example": 166,
+  "field-note": 9,
   "guide": 8,
   "legacy-page": 3,
   "legacy-widget": 176,
@@ -118,7 +121,7 @@
    "title": "Infront Web Toolkit documentation corpus",
    "kind": "index",
    "page_type": "corpus-readme",
-   "bytes": 8954
+   "bytes": 8956
   },
   {
    "file": "examples/SDK-SDK-API-Feeds-Get-Accessible-Feeds.md",
@@ -1613,6 +1616,85 @@
    "bytes": 894,
    "nav_path": "Widgets > Trading Widgets > Trading power",
    "source_url": "https://docs.infrontfinance.com/examples/Widgets/Widgets/TradingWidgets/Tradingpower"
+  },
+  {
+   "file": "field-notes/README.md",
+   "title": "Field notes — verified against the live service",
+   "kind": "index",
+   "page_type": "field-notes-index",
+   "bytes": 2768
+  },
+  {
+   "file": "field-notes/authentication.md",
+   "title": "Authentication — who holds which secret",
+   "kind": "field-note",
+   "page_type": "field-note",
+   "bytes": 2789,
+   "module": "SDK"
+  },
+  {
+   "file": "field-notes/chains.md",
+   "title": "Chains — index constituents and market lists",
+   "kind": "field-note",
+   "page_type": "field-note",
+   "bytes": 3648,
+   "module": "SDK"
+  },
+  {
+   "file": "field-notes/errors-and-access.md",
+   "title": "Errors and entitlements — NoAccess, silent unknown tickers, access per feed and symbol",
+   "kind": "field-note",
+   "page_type": "field-note",
+   "bytes": 3610,
+   "module": "SDK"
+  },
+  {
+   "file": "field-notes/feeds-test-user.md",
+   "title": "Feeds visible to EFN's test user",
+   "kind": "field-note",
+   "page_type": "field-note",
+   "bytes": 6759,
+   "module": "SDK"
+  },
+  {
+   "file": "field-notes/instrument-ids.md",
+   "title": "Instrument ids that work, and how to find the rest",
+   "kind": "field-note",
+   "page_type": "field-note",
+   "bytes": 3526,
+   "module": "SDK"
+  },
+  {
+   "file": "field-notes/open-questions.md",
+   "title": "Open questions for Infront",
+   "kind": "field-note",
+   "page_type": "field-note",
+   "bytes": 2050,
+   "module": "SDK"
+  },
+  {
+   "file": "field-notes/sandbox-probing.md",
+   "title": "Probing the live service through the sandbox",
+   "kind": "field-note",
+   "page_type": "field-note",
+   "bytes": 3445,
+   "module": "SDK"
+  },
+  {
+   "file": "field-notes/streaming.md",
+   "title": "Streaming live fields — shapes, rates, batching",
+   "kind": "field-note",
+   "page_type": "field-note",
+   "bytes": 3049,
+   "module": "SDK"
+  },
+  {
+   "file": "field-notes/time-series.md",
+   "title": "Intraday time series — two sessions per day back, and the live ordering trap",
+   "kind": "field-note",
+   "page_type": "field-note",
+   "bytes": 2817,
+   "module": "SDK"
   },
   {
    "file": "guides/getting-started.md",

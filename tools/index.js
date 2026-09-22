@@ -105,26 +105,7 @@ fs.writeFileSync(path.join(OUT,"index/topics.md"),
   `---\ntitle: "Topic tree"\nkind: index\npage_type: topic-index\nproduct: "Infront Web Toolkit"\nversion: "${VERSION}"\n---\n\n# Topic tree\n\nThe documentation's own navigation, with every reference page in place.\n\n`+tl.join("\n")+"\n");
 
 // ---------- manifest ----------
-function fmOf(rel){
-  const t=fs.readFileSync(path.join(OUT,rel),"utf8");
-  const m=t.match(/^---\n([\s\S]*?)\n---/); if(!m) return {bytes:Buffer.byteLength(t)};
-  const o={};
-  for(const line of m[1].split("\n")){
-    const mm=line.match(/^([a-z_]+): (.*)$/); if(!mm) continue;
-    let v=mm[2].replace(/\s+#.*$/,"");
-    if(/^\[/.test(v)||/^".*"$/.test(v)){try{v=JSON.parse(v)}catch(e){}}
-    o[mm[1]]=v;
-  }
-  return {...o,bytes:Buffer.byteLength(t)};
-}
-const files2=walk(OUT).map(f=>path.relative(OUT,f)).sort();
-const entries=files2.map(rel=>{const f=fmOf(rel);const e={file:rel,title:f.title,kind:f.kind,page_type:f.page_type,bytes:f.bytes};
-  for(const k of ["module","namespace","group","nav_path","source_url","library","part_of","member_count","value_count","part_count"]) if(f[k]!==undefined) e[k]=f[k];
-  if(f.is_index==="true") e.is_index=true;
-  if(f.defines) e.defines=f.defines;
-  return e;});
-const stats={},kinds={};
-for(const e of entries){stats[e.page_type||"other"]=(stats[e.page_type||"other"]||0)+1;kinds[e.kind||"other"]=(kinds[e.kind||"other"]||0)+1;}
+const {entries,stats,kinds}=require("./manifest").scan(OUT);
 fs.writeFileSync(path.join(OUT,"manifest.json"),JSON.stringify({
   product:"Infront Web Toolkit",
   libraries:{WTK:"Infront Web Toolkit widgets, v4.3.1",SDK:"Infront SDK — market data, news and trading, v2.3.1",Utils:"InfrontUtil helpers, bundled with the SDK"},

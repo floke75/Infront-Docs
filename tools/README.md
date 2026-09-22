@@ -27,10 +27,17 @@ stream containing the full page tree. `index.js` likewise reads a decoded
 
 ## Hand-written content the pipeline does not produce
 
-`field-notes/` holds notes verified against the live service (see its README). No script generates it, and
-`run.sh` rebuilds `out/` from scratch, so **copy `field-notes/` into `out/` before `index.js` runs** — that
-puts it in `manifest.json` and under `check.js`. `readme.js` and `concepts.js` link to it; a regeneration
-that forgot the copy fails the link check instead of silently dropping the notes.
+`field-notes/` holds notes verified against the live service (see its README). No script generates it.
+`run.sh` copies it into `out/` after `fixlinks.js` (so a dead link in a note fails `check.js` rather than being
+de-linked) and before `index.js`, which puts it in `manifest.json`. `check.js` fails if the manifest leaves
+out any Markdown file.
+
+After editing field notes (or the README) by hand, bring the manifest and README counts up to date from
+the repository root. This needs no raw mirrors and gives the same result on Windows as on Linux:
+
+```bash
+node tools/manifest.js . && OUT=. node tools/readme.js && node tools/manifest.js . && node tools/check.js .
+```
 
 ## What each script does
 
@@ -47,9 +54,10 @@ that forgot the copy fails the link check instead of silently dropping the notes
 | `split.js` | Splits pages too large to retrieve as one chunk into `.parts/`. |
 | `fixlinks.js` | Normalises relative links and de-links anything dead upstream. |
 | `index.js` | Builds `index/symbols.tsv`, `index/symbols.json`, `index/topics.md`, `manifest.json`. |
+| `manifest.js` | The manifest's file list, used by `index.js`; run directly, refreshes a checkout's `manifest.json`. |
 | `readme.js` | Generates the corpus README from the manifest, so its counts stay true. |
 | `casefold.js` | The naming rule `convert*.js` apply so no two output paths differ only by case. |
-| `check.js` | Verifies every relative link resolves (case-exact), no two paths are equal ignoring case, and the indexes name only existing files. |
+| `check.js` | Verifies every relative link resolves (case-exact), no two paths are equal ignoring case, the indexes name only existing files, and the manifest lists every Markdown file. |
 | `migrate-case-collisions.js` | One-off: applied `casefold.js` to the corpus committed before the rule existed. Not part of `run.sh`. |
 
 ## Things that will bite you

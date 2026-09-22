@@ -5,7 +5,7 @@ page_type: corpus-readme
 product: "Infront Web Toolkit"
 version: "4.3.1"
 extracted: "2026-09-19"
-file_count: 3558
+file_count: 3569
 ---
 
 # Infront Web Toolkit — documentation corpus
@@ -103,7 +103,7 @@ Every file carries the fields you need to decide whether to read it:
 ```yaml
 title            the symbol or guide name
 qualified_name   e.g. SDK.InfrontSDK.alertList
-kind             index, example, guide, legacy-page, legacy-widget, enum, interface, variable, …
+kind             index, example, field-note, guide, legacy-page, legacy-widget, enum, interface, …
 page_type        api-reference | guide | example | legacy-reference | symbol-index | topic-index
 module           SDK | WTK | Utils
 namespace        e.g. SDK.InfrontSDK
@@ -159,4 +159,4 @@ parent keeps `is_index: true`.
   APIs are written down. Every file in it is marked `page_type: legacy-reference`
   with a `status` field saying so, and `library_version` gives the version. When it
   disagrees with `reference/`, `reference/` wins.
-- 3,558 Markdown files, 16.4 MB, plus 7.2 MB of indexes. Every relative link resolved and checked.
+- 3,569 Markdown files, 16.5 MB, plus 7.2 MB of indexes. Every relative link resolved and checked.

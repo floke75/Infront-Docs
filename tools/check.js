@@ -3,7 +3,8 @@
 //     (compared against directory listings, so a case-insensitive filesystem cannot hide
 //     a link whose case is wrong);
 //   - no two paths are equal ignoring case (they would be one file on Windows and macOS);
-//   - every file named by index/symbols.tsv, index/symbols.json and manifest.json exists.
+//   - every file named by index/symbols.tsv, index/symbols.json and manifest.json exists,
+//     and manifest.json lists every Markdown file (tools/ aside).
 // Usage: node check.js [root]   root defaults to $OUT, then out/. `node tools/check.js .`
 // from the repository root checks the committed corpus.
 const fs=require("fs"),path=require("path");
@@ -47,7 +48,7 @@ for(const p of [...files,...dirs]){ const k=p.toLowerCase(); folded.set(k,[...(f
 report("paths equal ignoring case:",[...folded.values()].filter(g=>g.length>1).map(g=>g.join("  ==  ")));
 
 // files the indexes point at
-const named=new Set();
+const named=new Set(),listed=new Set();
 const read=rel=>fs.readFileSync(path.join(ROOT,rel),"utf8");
 if(files.has("index/symbols.tsv"))
   for(const l of read("index/symbols.tsv").split(/\r?\n/).slice(1)){ const c=l.split("\t"); if(c[3]) named.add(c[3]); }
@@ -55,9 +56,11 @@ if(files.has("index/symbols.json"))
   for(const list of Object.values(JSON.parse(read("index/symbols.json")).symbols)) for(const s of list) named.add(s.f);
 if(files.has("manifest.json")){
   const M=JSON.parse(read("manifest.json"));
-  for(const e of M.files) named.add(e.file);
+  for(const e of M.files){ named.add(e.file); listed.add(e.file); }
   for(const p of [...Object.values(M.entry_points),...M.symbol_index.tables,...M.guides.map(g=>g.file)]) named.add(p);
 }
 report("files named by the indexes:",[...named].filter(p=>!files.has(p)).sort(),named.size);
+if(files.has("manifest.json"))
+  report("Markdown files manifest.json leaves out:",[...files].filter(f=>f.endsWith(".md")&&!f.startsWith("tools/")&&!listed.has(f)).sort());
 
 if(failed){ console.error("check failed"); process.exit(1); }
