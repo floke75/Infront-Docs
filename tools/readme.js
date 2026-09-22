@@ -166,6 +166,12 @@ parent keeps \`is_index: true\`.
   with a \`status\` field saying so, and \`library_version\` gives the version. When it
   disagrees with \`reference/\`, \`reference/\` wins.
 - ${M.file_count.toLocaleString("en-US")} Markdown files, ${mb(M.total_bytes)}, plus ${mb(fs.statSync(path.join(OUT,"index/symbols.tsv")).size+fs.statSync(path.join(OUT,"index/symbols.json")).size)} of indexes. Every relative link resolved and checked.
+- **On a case-insensitive filesystem (Windows, default macOS), 18 pages are shadowed.** Eighteen pairs of
+  files differ only by case — the capitalised one is the INTERFACE, the lowercase one the request FUNCTION
+  (\`SDK.InfrontSDK.SymbolData.md\` vs \`SDK.InfrontSDK.symbolData.md\`, likewise \`TimeSeries\`, \`LoginData\`,
+  \`FeedInfo\`, \`History\`, \`Orderbook\`, …). Such a checkout holds one file's content under both names, and
+  \`git status\` shows them modified. Read the shadowed page from git: \`git show HEAD:<path>\`; list every pair
+  with \`git ls-files | sort -f | uniq -Di\`.
 `;
 fs.writeFileSync(path.join(OUT,"README.md"),md);
 console.log("README written",Buffer.byteLength(md),"bytes");
