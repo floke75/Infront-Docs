@@ -24,6 +24,13 @@ if any relative link does not resolve.
 stream containing the full page tree. `index.js` likewise reads a decoded
 `search.json` from `assets/search.js`.
 
+## Hand-written content the pipeline does not produce
+
+`field-notes/` holds notes verified against the live service (see its README). No script generates it, and
+`run.sh` rebuilds `out/` from scratch, so **copy `field-notes/` into `out/` before `index.js` runs** — that
+puts it in `manifest.json` and under `check.js`. `readme.js` and `concepts.js` link to it; a regeneration
+that forgot the copy fails the link check instead of silently dropping the notes.
+
 ## What each script does
 
 | Script | Role |

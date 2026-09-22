@@ -36,6 +36,12 @@ them, and records the conventions that save a lookup. Plain grep finds the right
 but ranks it badly, because the reference is generated from TypeScript and carries
 almost no prose synonyms; that file is the ranking.
 
+**Want what the live service actually does** — [`field-notes/`](field-notes/README.md). Hand-written notes
+verified against the live service through Infront's sandbox: instrument ids that work (several of the
+docs' example ids do not), the OMXS30 constituents chain, which feeds a login sees and with what delay,
+live update rates, and the ordering trap in live time series. Where a note and the reference disagree,
+the note records what the service did.
+
 **Looking up a symbol you already know the name of** — this is the fast path.
 
 ```
@@ -79,6 +85,7 @@ snippets/              101 per-widget minimal usage snippets
 legacy/                the superseded 2.x / 3.x docsite — see the warning below
   wtk-3.x/  wtk-2.x/   103 and 78 files, one per widget, options typed and described
   site/                release notes and the old site's standalone pages
+field-notes/           hand-written, verified against the live service; not generated (see its README)
 ```
 
 A reference file is named after its qualified name, so
@@ -116,10 +123,13 @@ parent keeps `is_index: true`.
 |---|---|
 | You don't know Infront's word for it | `index/concepts.md` |
 | Set up the toolkit in an NPM project | `guides/wtk-getting-started.md`, `guides/wtk-setup.md` |
-| Authenticate | `guides/wtk-authentication.md` |
+| Authenticate | `guides/wtk-authentication.md`, then `field-notes/authentication.md` |
 | Use the SDK without widgets | `guides/sdk-getting-started.md`, `guides/sdk-setup.md` |
-| Historical bars / time series | `reference/SDK/SDK.InfrontSDK.timeSeries.md`, `examples/SDK-SDK-Examples-TimeSeries.md` |
-| Live streaming fields for an instrument | `reference/SDK/SDK.InfrontSDK.symbolData.md`, `reference/SDK/SDK.InfrontSDK.BasicField.md` |
+| Historical bars / time series | `reference/SDK/SDK.InfrontSDK.timeSeries.md`, `examples/SDK-SDK-Examples-TimeSeries.md`, and `field-notes/time-series.md` before subscribing |
+| Live streaming fields for an instrument | `reference/SDK/SDK.InfrontSDK.symbolData.md`, `reference/SDK/SDK.InfrontSDK.BasicField.md`, `field-notes/streaming.md` |
+| Turn an instrument name into a `{ feed, ticker }` that works | `field-notes/instrument-ids.md` |
+| Index constituents or an exchange's market lists | `field-notes/chains.md` |
+| Which markets a login can see, and their delay | `field-notes/feeds-test-user.md`, `field-notes/errors-and-access.md` |
 | Which fields exist at all | `reference/SDK/SDK.InfrontSDK.BasicField.md`, `reference/SDK/SDK.InfrontSDK.FundamentalField.md`, and the `CoreDataAPI` `*Field` types |
 | Charts | `reference/WTK/WTK.ChartWidgetOptions.md` and its parts |
 | Trading | `reference/SDK/_module.SDK.InfrontSDK.Trading.md`, `examples/SDK-SDK-Examples-Trading.md` |

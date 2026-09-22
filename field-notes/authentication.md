@@ -1,0 +1,51 @@
+---
+title: "Authentication — who holds which secret"
+kind: field-note
+page_type: field-note
+module: SDK
+verified: "2026-09-22"
+source: "guides/wtk-authentication.md; Infront's message to EFN (2026-09); live sandbox loginData"
+related: ["guides/wtk-authentication.md", "guides/sdk-setup.md", "reference/SDK/SDK.InfrontSDK.SDKOptions.md"]
+---
+
+# Authentication: who holds which secret
+
+## The production shape: a server-side token, a browser-side SDK
+
+`guides/wtk-authentication.md` documents it, and Infront's own message to EFN (September 2026) matches it
+exactly — they issue a **`client_id`, a secret and an endpoint "for server-side authentication"**, plus a
+**production user**:
+
+1. **The server** POSTs to the token endpoint (documented: `https://api.infrontservices.com/id/connect/token`)
+   with `grant_type=password`, the server-side user's `username`/`password`, `client_id`, `client_secret`
+   and `scope=openid`. These values "must only be used on the server side".
+2. It hands **only the returned `access_token`** to the browser.
+3. The browser constructs the SDK with it: `new InfrontSDK.SDK({ signedToken, onReady, onDisconnect })`
+   (`guides/sdk-setup.md`). With `signedToken`, the `environment` and `realm` options have no effect.
+
+So the secret never reaches a browser. What the browser holds is a bearer token, usable by anyone who can
+read it — keep the route that issues it off the public internet.
+
+## What is NOT API access
+
+EFN's **documentation test user** signs in to `docs.infrontfinance.com` and its sandbox. It is not the
+server-side credential set above, and it cannot stand in for it. It is, however, enough to query the live
+service through the sandbox ([sandbox-probing.md](sandbox-probing.md)).
+
+## What a logged-in session reports
+
+`sdk.get(InfrontSDK.loginData({ flags: { LoginDetails: true, Features: true } , onData }))`:
+
+- `loginDetails`: `environment` (`"cloud.eu"`), `realm` (`"infront"`), `subdomain`, `userType`, `expireDate`
+  (`20480101` — a date as a number), `loginServers` (space-separated IPs), `ownerProviderId`, `brokerCode`,
+  `brokerCountry`, `supportEmail`, `loginId`.
+- `features`: `HasTrading`, `HasCalendar`, `EnableDesktopBuilder`, `DefaultCurrency`, `DefaultLanguage`,
+  `HasInfinancials`, `HasInfinancialsFull`.
+- `connectionsStatus` (`flags: { ConnectionStatus: true }`) came back as an **empty** `ObservableArray` in
+  the sandbox, subscribed or not — it could not be used there to watch socket state.
+
+## Still unknown (not observable in the sandbox, which is pre-logged-in)
+
+Token lifetime and renewal; whether `signedToken` takes the IdP `access_token` unchanged (the docs say
+so); how many concurrent sessions one user may hold before `DisconnectEventReason.KickOut`. See
+[open-questions.md](open-questions.md).
