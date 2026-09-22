@@ -21,6 +21,8 @@ references: ["Utils.InfrontUtil.ObservableArray", "SDK.InfrontSDK.OrderbookLevel
 
 # Orderbook
 
+> Not the same page as [`orderbook`](./SDK.InfrontSDK.orderbook.md), the function — the names differ only in case.
+
 Orderbook interface returned by DataRequestOptions.onData callback.
 
 #### See

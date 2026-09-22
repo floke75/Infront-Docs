@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.NewsStoryOptions", "SDK.InfrontSDK.TypedDataRequest
 
 # newsStory
 
+> Not the same page as [`NewsStory`](./SDK.InfrontSDK.NewsStory.interface.md), the interface — the names differ only in case.
+
 ```ts
 newsStory(options: NewsStoryOptions): TypedDataRequest<NewsStory>
 ```
@@ -29,8 +31,8 @@ Request a news story based on specific news headline. The headline can be identi
 
   NewsStoryOptions
 
-#### Returns [TypedDataRequest](./SDK.InfrontSDK.TypedDataRequest.md)<[NewsStory](./SDK.InfrontSDK.NewsStory.md)>
+#### Returns [TypedDataRequest](./SDK.InfrontSDK.TypedDataRequest.md)<[NewsStory](./SDK.InfrontSDK.NewsStory.interface.md)>
 
 #### See
 
-[NewsStory](./SDK.InfrontSDK.NewsStory.md) | NewsStoryOptions
+[NewsStory](./SDK.InfrontSDK.NewsStory.interface.md) | NewsStoryOptions

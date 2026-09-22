@@ -5,7 +5,7 @@ page_type: symbol-index
 product: "Infront Web Toolkit"
 version: "4.3.1"
 module: "SDK"
-symbol_count: 181
+symbol_count: 180
 note: "Top-level symbols only. Members (methods, properties, enum members) are in index/symbols.tsv."
 ---
 
@@ -65,7 +65,7 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `ConnectionState` | enum | `SDK.InfrontSDK.ConnectionState` | [SDK.InfrontSDK.ConnectionState.md](../reference/SDK/SDK.InfrontSDK.ConnectionState.md) |
 | `ConnectionStatus` | interface | `SDK.InfrontSDK.ConnectionStatus` | [SDK.InfrontSDK.ConnectionStatus.md](../reference/SDK/SDK.InfrontSDK.ConnectionStatus.md) |
 | `consolidatedOrderbook` | function | `SDK.InfrontSDK.consolidatedOrderbook` | [SDK.InfrontSDK.consolidatedOrderbook.md](../reference/SDK/SDK.InfrontSDK.consolidatedOrderbook.md) |
-| `ConsolidatedOrderbook` | interface | `SDK.InfrontSDK.ConsolidatedOrderbook` | [SDK.InfrontSDK.ConsolidatedOrderbook.md](../reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbook.md) |
+| `ConsolidatedOrderbook` | interface | `SDK.InfrontSDK.ConsolidatedOrderbook` | [SDK.InfrontSDK.ConsolidatedOrderbook.interface.md](../reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbook.interface.md) |
 | `ConsolidatedOrderbookLevel` | interface | `SDK.InfrontSDK.ConsolidatedOrderbookLevel` | [SDK.InfrontSDK.ConsolidatedOrderbookLevel.md](../reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbookLevel.md) |
 | `ConsolidatedOrderbookOptions` | interface | `SDK.InfrontSDK.ConsolidatedOrderbookOptions` | [SDK.InfrontSDK.ConsolidatedOrderbookOptions.md](../reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbookOptions.md) |
 | `CoreDataAPI` | namespace | `SDK.InfrontSDK.CoreDataAPI` | [_module.SDK.InfrontSDK.CoreDataAPI.md](../reference/SDK/_module.SDK.InfrontSDK.CoreDataAPI.md) |
@@ -193,4 +193,3 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `CdapiCommonCurrenciesData` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonCurrenciesData` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonCurrenciesData.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonCurrenciesData.md) |
 | `CdapiCommonCurrency` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonCurrency` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonCurrency.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonCurrency.md) |
 | `CdapiCommonDataCatalogAssetClassCategoriesData` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogAssetClassCategoriesData` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogAssetClassCategoriesData.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogAssetClassCategoriesData.md) |
-| `CdapiCommonDataCatalogFeedsData` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogFeedsData` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogFeedsData.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogFeedsData.md) |

@@ -14,6 +14,8 @@ source_files: ["script.ts", "template.html", "config.json"]
 
 # GPRV
 
+> Not the same page as [`Gprv`](./Widgets-Analytics-widgets-Gprv.md), the example — the names differ only in case.
+
 Displays a GPRV widget using AnalyticsGprvWidgetOptions for a given instrument.
 
 ## Script (script.ts)

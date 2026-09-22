@@ -31,4 +31,4 @@ Request a regulatory document url by its id.
 
 #### See
 
-[DocumentUrlOptions](./SDK.InfrontSDK.DocumentUrlOptions.md) | [Document](./SDK.InfrontSDK.Document.md)
+[DocumentUrlOptions](./SDK.InfrontSDK.DocumentUrlOptions.md) | [Document](./SDK.InfrontSDK.Document.interface.md)

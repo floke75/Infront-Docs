@@ -52,7 +52,7 @@ A complete software development kit to get market data in realtime, trading, ana
 
 ### Documents
 
-[Document](./SDK.InfrontSDK.Document.md)
+[Document](./SDK.InfrontSDK.Document.interface.md)
 
 [DocumentMetadata](./SDK.InfrontSDK.DocumentMetadata.md)
 
@@ -60,7 +60,7 @@ A complete software development kit to get market data in realtime, trading, ana
 
 [DocumentsOptions](./SDK.InfrontSDK.DocumentsOptions.md)
 
-[DocumentUrl](./SDK.InfrontSDK.DocumentUrl.md)
+[DocumentUrl](./SDK.InfrontSDK.DocumentUrl.interface.md)
 
 [DocumentUrlOptions](./SDK.InfrontSDK.DocumentUrlOptions.md)
 
@@ -94,7 +94,7 @@ A complete software development kit to get market data in realtime, trading, ana
 
 [LoginDataFlags](./SDK.InfrontSDK.LoginDataFlags.md)
 
-[LoginData](./SDK.InfrontSDK.LoginData.md)
+[LoginData](./SDK.InfrontSDK.LoginData.interface.md)
 
 [LoginDataOptions](./SDK.InfrontSDK.LoginDataOptions.md)
 
@@ -108,7 +108,7 @@ A complete software development kit to get market data in realtime, trading, ana
 
 [NewsHeadlinesOptions](./SDK.InfrontSDK.NewsHeadlinesOptions.md)
 
-[NewsStory](./SDK.InfrontSDK.NewsStory.md)
+[NewsStory](./SDK.InfrontSDK.NewsStory.interface.md)
 
 [NewsStoryOptions](./SDK.InfrontSDK.NewsStoryOptions.md)
 
@@ -222,7 +222,7 @@ Trading
 
 [SubscriptionSignal](./SDK.InfrontSDK.SubscriptionSignal.md)
 
-[WatchlistContent](./SDK.InfrontSDK.WatchlistContent.md)
+[WatchlistContent](./SDK.InfrontSDK.WatchlistContent.class.md)
 
 [AlertData](./SDK.InfrontSDK.AlertData.md)
 
@@ -284,7 +284,7 @@ Trading
 
 [EstimatesTargetPrice](./SDK.InfrontSDK.EstimatesTargetPrice.md)
 
-[FeedInfo](./SDK.InfrontSDK.FeedInfo.md)
+[FeedInfo](./SDK.InfrontSDK.FeedInfo.interface.md)
 
 [FundamentalsFigure](./SDK.InfrontSDK.FundamentalsFigure.md)
 
@@ -380,7 +380,7 @@ Trading
 
 [TAPIRequestQuoteOptions](./SDK.InfrontSDK.TAPIRequestQuoteOptions.md)
 
-[TAPIRequestQuoteResults](./SDK.InfrontSDK.TAPIRequestQuoteResults.md)
+[TAPIRequestQuoteResults](./SDK.InfrontSDK.TAPIRequestQuoteResults.interface.md)
 
 [TAPIRequestQuoteResultsMetadata](./SDK.InfrontSDK.TAPIRequestQuoteResultsMetadata.md)
 
@@ -414,7 +414,7 @@ Trading
 
 [TAPIRFQUnsubOptions](./SDK.InfrontSDK.TAPIRFQUnsubOptions.md)
 
-[TAPITrades](./SDK.InfrontSDK.TAPITrades.md)
+[TAPITrades](./SDK.InfrontSDK.TAPITrades.interface.md)
 
 [TAPITradesMetadata](./SDK.InfrontSDK.TAPITradesMetadata.md)
 
@@ -428,7 +428,7 @@ Trading
 
 [WatchlistItem](./SDK.InfrontSDK.WatchlistItem.md)
 
-[WatchlistProviderAccess](./SDK.InfrontSDK.WatchlistProviderAccess.md)
+[WatchlistProviderAccess](./SDK.InfrontSDK.WatchlistProviderAccess.interface.md)
 
 [CompanyMetadataField](./SDK.InfrontSDK.CompanyMetadataField.md)
 
@@ -542,11 +542,11 @@ Trading
 
 [CompanySymbolsOptions](./SDK.InfrontSDK.CompanySymbolsOptions.md)
 
-[ConsolidatedOrderbook](./SDK.InfrontSDK.ConsolidatedOrderbook.md)
+[ConsolidatedOrderbook](./SDK.InfrontSDK.ConsolidatedOrderbook.interface.md)
 
 [ConsolidatedOrderbookOptions](./SDK.InfrontSDK.ConsolidatedOrderbookOptions.md)
 
-[History](./SDK.InfrontSDK.History.md)
+[History](./SDK.InfrontSDK.History.interface.md)
 
 [HistoryOptions](./SDK.InfrontSDK.HistoryOptions.md)
 
@@ -556,15 +556,15 @@ Trading
 
 [ListingsOptionsNoneInteractive](./SDK.InfrontSDK.ListingsOptionsNoneInteractive.md)
 
-[Orderbook](./SDK.InfrontSDK.Orderbook.md)
+[Orderbook](./SDK.InfrontSDK.Orderbook.interface.md)
 
 [OrderbookOptions](./SDK.InfrontSDK.OrderbookOptions.md)
 
-[SymbolData](./SDK.InfrontSDK.SymbolData.md)
+[SymbolData](./SDK.InfrontSDK.SymbolData.interface.md)
 
 [SymbolDataOptions](./SDK.InfrontSDK.SymbolDataOptions.md)
 
-[TimeSeries](./SDK.InfrontSDK.TimeSeries.md)
+[TimeSeries](./SDK.InfrontSDK.TimeSeries.interface.md)
 
 [TimeSeriesOptions](./SDK.InfrontSDK.TimeSeriesOptions.md)
 

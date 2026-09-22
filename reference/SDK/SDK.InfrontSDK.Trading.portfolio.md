@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.Trading.PortfolioOptions", "SDK.InfrontSDK.DataRequ
 
 # portfolio
 
+> Not the same page as [`Portfolio`](./SDK.InfrontSDK.Trading.Portfolio.interface.md), the interface — the names differ only in case.
+
 ```ts
 portfolio(options: PortfolioOptions): DataRequest
 ```

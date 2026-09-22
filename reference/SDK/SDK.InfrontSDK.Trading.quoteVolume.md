@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.Trading.QuoteVolumeOptions", "SDK.InfrontSDK.DataRe
 
 # quoteVolume
 
+> Not the same page as [`QuoteVolume`](./SDK.InfrontSDK.Trading.QuoteVolume.interface.md), the interface — the names differ only in case.
+
 ```ts
 quoteVolume(options: QuoteVolumeOptions): DataRequest
 ```

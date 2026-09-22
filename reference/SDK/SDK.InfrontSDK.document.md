@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.DocumentOptions", "SDK.InfrontSDK.DataRequest", "SD
 
 # document
 
+> Not the same page as [`Document`](./SDK.InfrontSDK.Document.interface.md), the interface — the names differ only in case.
+
 ```ts
 document(options: DocumentOptions): DataRequest
 ```
@@ -33,4 +35,4 @@ Request a regulatory document by its id.
 
 #### See
 
-[DocumentOptions](./SDK.InfrontSDK.DocumentOptions.md) | [Document](./SDK.InfrontSDK.Document.md)
+[DocumentOptions](./SDK.InfrontSDK.DocumentOptions.md) | [Document](./SDK.InfrontSDK.Document.interface.md)

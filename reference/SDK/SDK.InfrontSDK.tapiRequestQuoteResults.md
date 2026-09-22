@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.TAPIRequestQuoteResultsOptions", "SDK.InfrontSDK.Da
 
 # tapiRequestQuoteResults
 
+> Not the same page as [`TAPIRequestQuoteResults`](./SDK.InfrontSDK.TAPIRequestQuoteResults.interface.md), the interface — the names differ only in case.
+
 ```ts
 tapiRequestQuoteResults(options: TAPIRequestQuoteResultsOptions): DataRequest
 ```

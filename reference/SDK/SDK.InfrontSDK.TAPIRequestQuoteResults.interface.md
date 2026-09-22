@@ -15,4 +15,6 @@ defines: ["TAPIRequestQuoteResults"]
 
 # TAPIRequestQuoteResults
 
+> Not the same page as [`tapiRequestQuoteResults`](./SDK.InfrontSDK.tapiRequestQuoteResults.md), the function — the names differ only in case.
+
 

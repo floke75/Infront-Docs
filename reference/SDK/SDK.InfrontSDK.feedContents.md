@@ -39,7 +39,7 @@ Get the content of a feed as specified by the [FeedContentsOptions.contentType](
 #### Returns [TypedDataRequest](./SDK.InfrontSDK.TypedDataRequest.md)<
 | number[]
 | [SymbolId](./SDK.InfrontSDK.SymbolId.md)[]
-| [ObservableArray](../Utils/Utils.InfrontUtil.ObservableArray.md)<[SymbolData](./SDK.InfrontSDK.SymbolData.md)>
+| [ObservableArray](../Utils/Utils.InfrontUtil.ObservableArray.md)<[SymbolData](./SDK.InfrontSDK.SymbolData.interface.md)>
 | [ChainContent](./SDK.InfrontSDK.ChainContent.md)
 | [Ranking](./SDK.InfrontSDK.Ranking.md)[]
 | [ObservableArray](../Utils/Utils.InfrontUtil.ObservableArray.md)<[Ranking](./SDK.InfrontSDK.Ranking.md)>,

@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.DataRequestOptions", "SDK.InfrontSDK.WatchlistProvi
 
 # watchlistProviderAccess
 
+> Not the same page as [`WatchlistProviderAccess`](./SDK.InfrontSDK.WatchlistProviderAccess.interface.md), the interface — the names differ only in case.
+
 ```ts
 watchlistProviderAccess(
     options: DataRequestOptions<WatchlistProviderAccess>,
@@ -27,6 +29,6 @@ Request the provider list access for the current user
 
 #### Parameters
 
-- options: [DataRequestOptions](./SDK.InfrontSDK.DataRequestOptions.md)<[WatchlistProviderAccess](./SDK.InfrontSDK.WatchlistProviderAccess.md)>
+- options: [DataRequestOptions](./SDK.InfrontSDK.DataRequestOptions.md)<[WatchlistProviderAccess](./SDK.InfrontSDK.WatchlistProviderAccess.interface.md)>
 
 #### Returns [DataRequest](./SDK.InfrontSDK.DataRequest.md)

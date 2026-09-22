@@ -5,7 +5,7 @@ page_type: symbol-index
 product: "Infront Web Toolkit"
 version: "4.3.1"
 module: "SDK"
-symbol_count: 211
+symbol_count: 210
 note: "Top-level symbols only. Members (methods, properties, enum members) are in index/symbols.tsv."
 ---
 
@@ -135,7 +135,7 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `SubscriptionSignalEventMap` | interface | `SDK.InfrontSDK.SubscriptionSignalEventMap` | [SDK.InfrontSDK.SubscriptionSignalEventMap.md](../reference/SDK/SDK.InfrontSDK.SubscriptionSignalEventMap.md) |
 | `SymbolClassification` | enum | `SDK.InfrontSDK.SymbolClassification` | [SDK.InfrontSDK.SymbolClassification.md](../reference/SDK/SDK.InfrontSDK.SymbolClassification.md) |
 | `symbolData` | function | `SDK.InfrontSDK.symbolData` | [SDK.InfrontSDK.symbolData.md](../reference/SDK/SDK.InfrontSDK.symbolData.md) |
-| `SymbolData` | interface | `SDK.InfrontSDK.SymbolData` | [SDK.InfrontSDK.SymbolData.md](../reference/SDK/SDK.InfrontSDK.SymbolData.md) |
+| `SymbolData` | interface | `SDK.InfrontSDK.SymbolData` | [SDK.InfrontSDK.SymbolData.interface.md](../reference/SDK/SDK.InfrontSDK.SymbolData.interface.md) |
 | `SymbolDataContent` | enum | `SDK.InfrontSDK.SymbolDataContent` | [SDK.InfrontSDK.SymbolDataContent.md](../reference/SDK/SDK.InfrontSDK.SymbolDataContent.md) |
 | `SymbolDataContentSet` | type-alias | `SDK.InfrontSDK.SymbolDataContentSet` | [SDK.InfrontSDK.SymbolDataContentSet.md](../reference/SDK/SDK.InfrontSDK.SymbolDataContentSet.md) |
 | `SymbolDataOptions` | interface | `SDK.InfrontSDK.SymbolDataOptions` | [SDK.InfrontSDK.SymbolDataOptions.md](../reference/SDK/SDK.InfrontSDK.SymbolDataOptions.md) |
@@ -168,7 +168,7 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `TAPIRequestQuoteMetadata` | interface | `SDK.InfrontSDK.TAPIRequestQuoteMetadata` | [SDK.InfrontSDK.TAPIRequestQuoteMetadata.md](../reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteMetadata.md) |
 | `TAPIRequestQuoteOptions` | interface | `SDK.InfrontSDK.TAPIRequestQuoteOptions` | [SDK.InfrontSDK.TAPIRequestQuoteOptions.md](../reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteOptions.md) |
 | `tapiRequestQuoteResults` | function | `SDK.InfrontSDK.tapiRequestQuoteResults` | [SDK.InfrontSDK.tapiRequestQuoteResults.md](../reference/SDK/SDK.InfrontSDK.tapiRequestQuoteResults.md) |
-| `TAPIRequestQuoteResults` | interface | `SDK.InfrontSDK.TAPIRequestQuoteResults` | [SDK.InfrontSDK.TAPIRequestQuoteResults.md](../reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteResults.md) |
+| `TAPIRequestQuoteResults` | interface | `SDK.InfrontSDK.TAPIRequestQuoteResults` | [SDK.InfrontSDK.TAPIRequestQuoteResults.interface.md](../reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteResults.interface.md) |
 | `TAPIRequestQuoteResultsMetadata` | interface | `SDK.InfrontSDK.TAPIRequestQuoteResultsMetadata` | [SDK.InfrontSDK.TAPIRequestQuoteResultsMetadata.md](../reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteResultsMetadata.md) |
 | `TAPIRequestQuoteResultsOptions` | interface | `SDK.InfrontSDK.TAPIRequestQuoteResultsOptions` | [SDK.InfrontSDK.TAPIRequestQuoteResultsOptions.md](../reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteResultsOptions.md) |
 | `tapiRequestRFQQuote` | function | `SDK.InfrontSDK.tapiRequestRFQQuote` | [SDK.InfrontSDK.tapiRequestRFQQuote.md](../reference/SDK/SDK.InfrontSDK.tapiRequestRFQQuote.md) |
@@ -191,11 +191,11 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `TAPIRFQUnsubOptions` | interface | `SDK.InfrontSDK.TAPIRFQUnsubOptions` | [SDK.InfrontSDK.TAPIRFQUnsubOptions.md](../reference/SDK/SDK.InfrontSDK.TAPIRFQUnsubOptions.md) |
 | `tapiStaticResources` | function | `SDK.InfrontSDK.tapiStaticResources` | [SDK.InfrontSDK.tapiStaticResources.md](../reference/SDK/SDK.InfrontSDK.tapiStaticResources.md) |
 | `tapiTrades` | function | `SDK.InfrontSDK.tapiTrades` | [SDK.InfrontSDK.tapiTrades.md](../reference/SDK/SDK.InfrontSDK.tapiTrades.md) |
-| `TAPITrades` | interface | `SDK.InfrontSDK.TAPITrades` | [SDK.InfrontSDK.TAPITrades.md](../reference/SDK/SDK.InfrontSDK.TAPITrades.md) |
+| `TAPITrades` | interface | `SDK.InfrontSDK.TAPITrades` | [SDK.InfrontSDK.TAPITrades.interface.md](../reference/SDK/SDK.InfrontSDK.TAPITrades.interface.md) |
 | `TAPITradesMetadata` | interface | `SDK.InfrontSDK.TAPITradesMetadata` | [SDK.InfrontSDK.TAPITradesMetadata.md](../reference/SDK/SDK.InfrontSDK.TAPITradesMetadata.md) |
 | `TechnicalAnalysisField` | enum | `SDK.InfrontSDK.TechnicalAnalysisField` | [SDK.InfrontSDK.TechnicalAnalysisField.md](../reference/SDK/SDK.InfrontSDK.TechnicalAnalysisField.md) |
 | `timeSeries` | function | `SDK.InfrontSDK.timeSeries` | [SDK.InfrontSDK.timeSeries.md](../reference/SDK/SDK.InfrontSDK.timeSeries.md) |
-| `TimeSeries` | interface | `SDK.InfrontSDK.TimeSeries` | [SDK.InfrontSDK.TimeSeries.md](../reference/SDK/SDK.InfrontSDK.TimeSeries.md) |
+| `TimeSeries` | interface | `SDK.InfrontSDK.TimeSeries` | [SDK.InfrontSDK.TimeSeries.interface.md](../reference/SDK/SDK.InfrontSDK.TimeSeries.interface.md) |
 | `TimeSeriesOptions` | interface | `SDK.InfrontSDK.TimeSeriesOptions` | [SDK.InfrontSDK.TimeSeriesOptions.md](../reference/SDK/SDK.InfrontSDK.TimeSeriesOptions.md) |
 | `TitleProvider` | interface | `SDK.InfrontSDK.TitleProvider` | [SDK.InfrontSDK.TitleProvider.md](../reference/SDK/SDK.InfrontSDK.TitleProvider.md) |
 | `Trade` | interface | `SDK.InfrontSDK.Trade` | [SDK.InfrontSDK.Trade.md](../reference/SDK/SDK.InfrontSDK.Trade.md) |
@@ -220,7 +220,6 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `DisposableObservableArray` | type-alias | `SDK.InfrontSDK.Trading.DisposableObservableArray` | [SDK.InfrontSDK.Trading.DisposableObservableArray.md](../reference/SDK/SDK.InfrontSDK.Trading.DisposableObservableArray.md) |
 | `DropdownItem` | interface | `SDK.InfrontSDK.Trading.DropdownItem` | [SDK.InfrontSDK.Trading.DropdownItem.md](../reference/SDK/SDK.InfrontSDK.Trading.DropdownItem.md) |
 | `exposure` | function | `SDK.InfrontSDK.Trading.exposure` | [SDK.InfrontSDK.Trading.exposure.md](../reference/SDK/SDK.InfrontSDK.Trading.exposure.md) |
-| `Exposure` | interface | `SDK.InfrontSDK.Trading.Exposure` | [SDK.InfrontSDK.Trading.Exposure.md](../reference/SDK/SDK.InfrontSDK.Trading.Exposure.md) |
+| `Exposure` | interface | `SDK.InfrontSDK.Trading.Exposure` | [SDK.InfrontSDK.Trading.Exposure.interface.md](../reference/SDK/SDK.InfrontSDK.Trading.Exposure.interface.md) |
 | `ExposureGroup` | interface | `SDK.InfrontSDK.Trading.ExposureGroup` | [SDK.InfrontSDK.Trading.ExposureGroup.md](../reference/SDK/SDK.InfrontSDK.Trading.ExposureGroup.md) |
 | `ExposureItem` | interface | `SDK.InfrontSDK.Trading.ExposureItem` | [SDK.InfrontSDK.Trading.ExposureItem.md](../reference/SDK/SDK.InfrontSDK.Trading.ExposureItem.md) |
-| `ExposureOptions` | interface | `SDK.InfrontSDK.Trading.ExposureOptions` | [SDK.InfrontSDK.Trading.ExposureOptions.md](../reference/SDK/SDK.InfrontSDK.Trading.ExposureOptions.md) |

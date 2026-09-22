@@ -31,4 +31,4 @@ Request a regulatory document by its id.
 
 #### See
 
-[DocumentOptions](./SDK.InfrontSDK.DocumentOptions.md) | [Document](./SDK.InfrontSDK.Document.md)
+[DocumentOptions](./SDK.InfrontSDK.DocumentOptions.md) | [Document](./SDK.InfrontSDK.Document.interface.md)

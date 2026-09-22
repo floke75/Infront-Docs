@@ -31,4 +31,4 @@ Company history request.
 
 #### See
 
-[HistoryOptions](./SDK.InfrontSDK.HistoryOptions.md) | [History](./SDK.InfrontSDK.History.md)
+[HistoryOptions](./SDK.InfrontSDK.HistoryOptions.md) | [History](./SDK.InfrontSDK.History.interface.md)

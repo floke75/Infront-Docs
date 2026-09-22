@@ -21,6 +21,8 @@ references: ["SDK.InfrontSDK.document", "SDK.InfrontSDK.DocumentUrlOptions"]
 
 # DocumentUrl
 
+> Not the same page as [`documentUrl`](./SDK.InfrontSDK.documentUrl.md), the function — the names differ only in case.
+
 Document representation interface.
 
 #### See

@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.timeSeries", "SDK.InfrontSDK.TimeSeriesOptions"]
 
 # TimeSeries
 
+> Not the same page as [`timeSeries`](./SDK.InfrontSDK.timeSeries.md), the function — the names differ only in case.
+
 An interface used to store time series data.
 
 #### See

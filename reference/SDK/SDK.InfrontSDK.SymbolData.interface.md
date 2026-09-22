@@ -21,6 +21,8 @@ references: ["SDK.InfrontSDK.SymbolField", "SDK.InfrontSDK.SymbolFieldType", "SD
 
 # SymbolData
 
+> Not the same page as [`symbolData`](./SDK.InfrontSDK.symbolData.md), the function — the names differ only in case.
+
 Output interface used by [symbolData](./SDK.InfrontSDK.symbolData.md).
 
 #### See

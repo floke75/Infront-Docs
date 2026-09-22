@@ -21,6 +21,8 @@ references: ["SDK.InfrontSDK.NewsHeadline", "SDK.InfrontSDK.newsStory"]
 
 # NewsStory
 
+> Not the same page as [`newsStory`](./SDK.InfrontSDK.newsStory.md), the function — the names differ only in case.
+
 An interface used to store news story.
 
 #### See

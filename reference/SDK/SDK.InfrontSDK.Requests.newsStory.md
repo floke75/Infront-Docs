@@ -27,8 +27,8 @@ Request a news story based on specific news headline. The headline can be identi
 
 - options: [NewsStoryOptions](./SDK.InfrontSDK.NewsStoryOptions.md)
 
-#### Returns [TypedDataRequest](./SDK.InfrontSDK.TypedDataRequest.md)<[NewsStory](./SDK.InfrontSDK.NewsStory.md)>
+#### Returns [TypedDataRequest](./SDK.InfrontSDK.TypedDataRequest.md)<[NewsStory](./SDK.InfrontSDK.NewsStory.interface.md)>
 
 #### See
 
-[NewsStory](./SDK.InfrontSDK.NewsStory.md) | [NewsStoryOptions](./SDK.InfrontSDK.NewsStoryOptions.md)
+[NewsStory](./SDK.InfrontSDK.NewsStory.interface.md) | [NewsStoryOptions](./SDK.InfrontSDK.NewsStoryOptions.md)

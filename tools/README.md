@@ -17,7 +17,8 @@ bash run.sh              # convert, split, index, verify
 
 `run.sh` is the conversion pipeline and is safe to re-run on its own once the `raw*/`
 mirrors exist. It ends with `check.js`, which walks every emitted file and fails loudly
-if any relative link does not resolve.
+if any relative link does not resolve. `node tools/check.js .` from the repository root
+runs the same checks on the committed corpus.
 
 `fetch.js` needs `nav-flat.json`, which comes from decoding
 `https://docs.infrontfinance.com/docs/assets/navigation.js` — base64 of a deflate
@@ -47,7 +48,9 @@ that forgot the copy fails the link check instead of silently dropping the notes
 | `fixlinks.js` | Normalises relative links and de-links anything dead upstream. |
 | `index.js` | Builds `index/symbols.tsv`, `index/symbols.json`, `index/topics.md`, `manifest.json`. |
 | `readme.js` | Generates the corpus README from the manifest, so its counts stay true. |
-| `check.js` | Verifies every relative link resolves. |
+| `casefold.js` | The naming rule `convert*.js` apply so no two output paths differ only by case. |
+| `check.js` | Verifies every relative link resolves (case-exact), no two paths are equal ignoring case, and the indexes name only existing files. |
+| `migrate-case-collisions.js` | One-off: applied `casefold.js` to the corpus committed before the rule existed. Not part of `run.sh`. |
 
 ## Things that will bite you
 
@@ -66,6 +69,13 @@ that forgot the copy fails the link check instead of silently dropping the notes
   `ERR_TOO_MANY_RETRIES` — retry, it is flaky rather than blocked.
 - **Missing example files** come back as the SPA shell with `content-type: text/html`
   and status 200. Check the content type, not the status.
+- **Names that differ only by case.** TypeDoc emits `SDK.InfrontSDK.SymbolData` (interface)
+  and `SDK.InfrontSDK.symbolData` (function) as separate pages, and the examples index lists
+  `GPRV` and `Gprv`. On Windows or macOS those would be one file. `casefold.js` keeps the
+  name that sorts last (the lowercase one) and gives the other its kind
+  (`SDK.InfrontSDK.SymbolData.interface.md`) or, when the kinds match, a number (`…-2.md`).
+  Both pages then link to each other. Any new generator that picks file names must run
+  them through it; `check.js` fails if two paths still differ only by case.
 
 ## Credentials
 

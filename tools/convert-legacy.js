@@ -1,5 +1,6 @@
 const fs=require("fs"),path=require("path");
 const {parse}=require("node-html-parser");
+const {uncollide,caseNote}=require("./casefold");
 const OUT=process.env.OUT||"out";
 const ORIGIN="https://doc.infrontfinance.com";
 const pages=JSON.parse(fs.readFileSync("legacy-pages.json","utf8"));
@@ -145,9 +146,13 @@ for(const pg of pages){
     plan.push({pg,block:root.querySelector("div.content-wrapper")||root.querySelector("body"),id:null,out,page:name,ver:v});
   }
 }
+// names equal ignoring case would share one file on Windows; see casefold.js
+const {rename:caseRename,groups:caseGroups}=uncollide(plan.map(it=>({path:it.out,kind:it.id?"legacy-widget":"legacy-page"})));
+for(const it of plan) if(caseRename.has(it.out)) it.out=caseRename.get(it.out);
+for(const ix of [blockIndex,pageIndex]) for(const k in ix) if(caseRename.has(ix[k])) ix[k]=caseRename.get(ix[k]);
 
 let written=0;
-const made=[];
+const made=[],pending=[];
 for(const it of plan){
   const b=it.block; if(!b) continue;
   b.querySelectorAll("nav, .nav-wrapper, .wtk-menu-wrapper, .dropdown-content, script, style, .link-external").forEach(n=>n.remove());
@@ -176,11 +181,20 @@ for(const it of plan){
   if(opts.length){ L.push(`option_count: ${opts.length}`); L.push(`options: ${yl(opts.map(o=>o.name))}`); }
   L.push(`source_url: ${JSON.stringify(ORIGIN+it.pg.path+(it.id?"#"+it.id:""))}`);
   L.push("---");
-  const dest=path.join(OUT,it.out);
-  fs.mkdirSync(path.dirname(dest),{recursive:true});
-  fs.writeFileSync(dest,L.join("\n")+`\n\n# ${title}\n\n${body}\n`);
+  pending.push({out:it.out,title,head:L.join("\n"),body});
   made.push({file:it.out,title,page:it.page,ver:verLabel,id:it.id,options:opts.length,optionNames:opts.map(o=>o.name)});
   written++;
+}
+// pages whose names differ only by case point at each other
+const titleOf=new Map(pending.map(p=>[p.out,p.title])), caseNotes=new Map();
+for(const g of caseGroups){
+  const live=g.filter(m=>titleOf.has(m.path)).map(m=>({...m,title:titleOf.get(m.path)}));
+  if(live.length>1) for(const m of live) caseNotes.set(m.path,caseNote(m,live.filter(o=>o!==m))+"\n\n");
+}
+for(const p of pending){
+  const dest=path.join(OUT,p.out);
+  fs.mkdirSync(path.dirname(dest),{recursive:true});
+  fs.writeFileSync(dest,p.head+`\n\n# ${p.title}\n\n${caseNotes.get(p.out)||""}${p.body}\n`);
 }
 // per-page index files
 const byPage={};

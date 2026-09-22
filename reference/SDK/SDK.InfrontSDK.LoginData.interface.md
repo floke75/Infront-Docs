@@ -21,6 +21,8 @@ references: ["Utils.InfrontUtil.ObservableArray", "SDK.InfrontSDK.ConnectionStat
 
 # LoginData
 
+> Not the same page as [`loginData`](./SDK.InfrontSDK.loginData.md), the function — the names differ only in case.
+
 Output interface for [loginData](./SDK.InfrontSDK.loginData.md). Content would be presented based on the selected flags when calling [loginData](./SDK.InfrontSDK.loginData.md).
 
 #### See

@@ -36,6 +36,6 @@ FormatterFn
   #### Parameters
 
   - value: [TValue](#tvalue)
-  - `Optional` symbolDataLike: [SymbolData](../SDK/SDK.InfrontSDK.SymbolData.md) | [PortfolioItem](../SDK/SDK.InfrontSDK.Trading.PortfolioItem.md)
+  - `Optional` symbolDataLike: [SymbolData](../SDK/SDK.InfrontSDK.SymbolData.interface.md) | [PortfolioItem](../SDK/SDK.InfrontSDK.Trading.PortfolioItem.md)
 
   #### Returns string

@@ -21,6 +21,8 @@ references: ["SDK.InfrontSDK.Dividend", "SDK.InfrontSDK.Split", "SDK.InfrontSDK.
 
 # History
 
+> Not the same page as [`history`](./SDK.InfrontSDK.history.md), the function — the names differ only in case.
+
 An interface used to store company history.
 
 #### See

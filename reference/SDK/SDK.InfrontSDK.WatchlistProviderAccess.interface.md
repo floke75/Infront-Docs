@@ -15,4 +15,6 @@ defines: ["WatchlistProviderAccess"]
 
 # WatchlistProviderAccess
 
+> Not the same page as [`watchlistProviderAccess`](./SDK.InfrontSDK.watchlistProviderAccess.md), the function — the names differ only in case.
+
 

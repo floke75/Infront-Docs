@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.TAPIOrdersOptions", "SDK.InfrontSDK.DataRequest"]
 
 # tapiTrades
 
+> Not the same page as [`TAPITrades`](./SDK.InfrontSDK.TAPITrades.interface.md), the interface — the names differ only in case.
+
 ```ts
 tapiTrades(options: TAPIOrdersOptions): DataRequest
 ```

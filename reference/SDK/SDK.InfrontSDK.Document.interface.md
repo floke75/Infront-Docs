@@ -21,6 +21,8 @@ references: ["SDK.InfrontSDK.document", "SDK.InfrontSDK.DocumentOptions"]
 
 # Document
 
+> Not the same page as [`document`](./SDK.InfrontSDK.document.md), the function — the names differ only in case.
+
 Document representation interface.
 
 #### See

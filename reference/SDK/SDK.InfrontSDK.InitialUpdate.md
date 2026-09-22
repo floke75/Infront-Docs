@@ -21,7 +21,7 @@ references: ["SDK.InfrontSDK.SymbolData"]
 
 # InitialUpdate
 
-Enum used to set the default behavior for [SymbolData.observe](./SDK.InfrontSDK.SymbolData.md#observe) method. Setting the initial update to
+Enum used to set the default behavior for [SymbolData.observe](./SDK.InfrontSDK.SymbolData.interface.md#observe) method. Setting the initial update to
 
 - [Always](#always) will cause to do a callback even when no value is available yet.
 - [None](#none) will never do an initial callback after observing the value.

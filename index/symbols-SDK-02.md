@@ -13,6 +13,7 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 
 | Symbol | Kind | Qualified name | Page |
 |---|---|---|---|
+| `CdapiCommonDataCatalogFeedsData` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogFeedsData` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogFeedsData.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogFeedsData.md) |
 | `CdapiCommonDataCatalogRegionsData` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogRegionsData` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogRegionsData.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogRegionsData.md) |
 | `CdapiCommonDataCatalogSource` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogSource` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogSource.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogSource.md) |
 | `CdapiCommonDataCatalogSourcesData` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogSourcesData` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogSourcesData.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonDataCatalogSourcesData.md) |
@@ -167,4 +168,3 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `CdapiCommonPeergroupEsgRisk` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonPeergroupEsgRisk` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonPeergroupEsgRisk.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonPeergroupEsgRisk.md) |
 | `CdapiCommonPeergroupEsgRiskData` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonPeergroupEsgRiskData` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonPeergroupEsgRiskData.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonPeergroupEsgRiskData.md) |
 | `CdapiCommonPeergroupEsgRiskSource` | type-alias | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonPeergroupEsgRiskSource` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonPeergroupEsgRiskSource.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonPeergroupEsgRiskSource.md) |
-| `CdapiCommonPurgeCacheRequest` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonPurgeCacheRequest` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonPurgeCacheRequest.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonPurgeCacheRequest.md) |

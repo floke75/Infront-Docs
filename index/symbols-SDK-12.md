@@ -147,14 +147,14 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `DisconnectEventReason` | enum | `SDK.InfrontSDK.DisconnectEventReason` | [SDK.InfrontSDK.DisconnectEventReason.md](../reference/SDK/SDK.InfrontSDK.DisconnectEventReason.md) |
 | `Dividend` | interface | `SDK.InfrontSDK.Dividend` | [SDK.InfrontSDK.Dividend.md](../reference/SDK/SDK.InfrontSDK.Dividend.md) |
 | `document` | function | `SDK.InfrontSDK.document` | [SDK.InfrontSDK.document.md](../reference/SDK/SDK.InfrontSDK.document.md) |
-| `Document` | interface | `SDK.InfrontSDK.Document` | [SDK.InfrontSDK.Document.md](../reference/SDK/SDK.InfrontSDK.Document.md) |
+| `Document` | interface | `SDK.InfrontSDK.Document` | [SDK.InfrontSDK.Document.interface.md](../reference/SDK/SDK.InfrontSDK.Document.interface.md) |
 | `DocumentMetadata` | interface | `SDK.InfrontSDK.DocumentMetadata` | [SDK.InfrontSDK.DocumentMetadata.md](../reference/SDK/SDK.InfrontSDK.DocumentMetadata.md) |
 | `DocumentOptions` | interface | `SDK.InfrontSDK.DocumentOptions` | [SDK.InfrontSDK.DocumentOptions.md](../reference/SDK/SDK.InfrontSDK.DocumentOptions.md) |
 | `documents` | function | `SDK.InfrontSDK.documents` | [SDK.InfrontSDK.documents.md](../reference/SDK/SDK.InfrontSDK.documents.md) |
 | `DocumentsOptions` | interface | `SDK.InfrontSDK.DocumentsOptions` | [SDK.InfrontSDK.DocumentsOptions.md](../reference/SDK/SDK.InfrontSDK.DocumentsOptions.md) |
 | `DocumentType` | enum | `SDK.InfrontSDK.DocumentType` | [SDK.InfrontSDK.DocumentType.md](../reference/SDK/SDK.InfrontSDK.DocumentType.md) |
 | `documentUrl` | function | `SDK.InfrontSDK.documentUrl` | [SDK.InfrontSDK.documentUrl.md](../reference/SDK/SDK.InfrontSDK.documentUrl.md) |
-| `DocumentUrl` | interface | `SDK.InfrontSDK.DocumentUrl` | [SDK.InfrontSDK.DocumentUrl.md](../reference/SDK/SDK.InfrontSDK.DocumentUrl.md) |
+| `DocumentUrl` | interface | `SDK.InfrontSDK.DocumentUrl` | [SDK.InfrontSDK.DocumentUrl.interface.md](../reference/SDK/SDK.InfrontSDK.DocumentUrl.interface.md) |
 | `DocumentUrlOptions` | interface | `SDK.InfrontSDK.DocumentUrlOptions` | [SDK.InfrontSDK.DocumentUrlOptions.md](../reference/SDK/SDK.InfrontSDK.DocumentUrlOptions.md) |
 | `EsgField` | enum | `SDK.InfrontSDK.EsgField` | [SDK.InfrontSDK.EsgField.md](../reference/SDK/SDK.InfrontSDK.EsgField.md) |
 | `ESMACode` | enum | `SDK.InfrontSDK.ESMACode` | [SDK.InfrontSDK.ESMACode.md](../reference/SDK/SDK.InfrontSDK.ESMACode.md) |
@@ -173,7 +173,7 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `FeedContentType` | enum | `SDK.InfrontSDK.FeedContentType` | [SDK.InfrontSDK.FeedContentType.md](../reference/SDK/SDK.InfrontSDK.FeedContentType.md) |
 | `FeedField` | enum | `SDK.InfrontSDK.FeedField` | [SDK.InfrontSDK.FeedField.md](../reference/SDK/SDK.InfrontSDK.FeedField.md) |
 | `feedInfo` | function | `SDK.InfrontSDK.feedInfo` | [SDK.InfrontSDK.feedInfo.md](../reference/SDK/SDK.InfrontSDK.feedInfo.md) |
-| `FeedInfo` | interface | `SDK.InfrontSDK.FeedInfo` | [SDK.InfrontSDK.FeedInfo.md](../reference/SDK/SDK.InfrontSDK.FeedInfo.md) |
+| `FeedInfo` | interface | `SDK.InfrontSDK.FeedInfo` | [SDK.InfrontSDK.FeedInfo.interface.md](../reference/SDK/SDK.InfrontSDK.FeedInfo.interface.md) |
 | `FeedInfoOptions` | interface | `SDK.InfrontSDK.FeedInfoOptions` | [SDK.InfrontSDK.FeedInfoOptions.md](../reference/SDK/SDK.InfrontSDK.FeedInfoOptions.md) |
 | `FeedInfoType` | enum | `SDK.InfrontSDK.FeedInfoType` | [SDK.InfrontSDK.FeedInfoType.md](../reference/SDK/SDK.InfrontSDK.FeedInfoType.md) |
 | `feedList` | function | `SDK.InfrontSDK.feedList` | [SDK.InfrontSDK.feedList.md](../reference/SDK/SDK.InfrontSDK.feedList.md) |

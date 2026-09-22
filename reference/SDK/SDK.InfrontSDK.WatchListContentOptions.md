@@ -128,7 +128,7 @@ A callback to be called to pass the output.
 
 ##### Parameters
 
-- data: boolean | [WatchlistContent](./SDK.InfrontSDK.WatchlistContent.md)
+- data: boolean | [WatchlistContent](./SDK.InfrontSDK.WatchlistContent.class.md)
 
   Output should be passed here.
 

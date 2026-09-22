@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.WatchListContentOptions", "SDK.InfrontSDK.DataReque
 
 # watchListContent
 
+> Not the same page as [`WatchlistContent`](./SDK.InfrontSDK.WatchlistContent.class.md), the class — the names differ only in case.
+
 ```ts
 watchListContent(options: WatchListContentOptions): DataRequest
 ```

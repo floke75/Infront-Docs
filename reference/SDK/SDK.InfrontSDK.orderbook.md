@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.OrderbookOptions", "SDK.InfrontSDK.DataRequest", "S
 
 # orderbook
 
+> Not the same page as [`Orderbook`](./SDK.InfrontSDK.Orderbook.interface.md), the interface — the names differ only in case.
+
 ```ts
 orderbook(options: OrderbookOptions): DataRequest
 ```
@@ -33,4 +35,4 @@ Orderbook request.
 
 #### See
 
-[OrderbookOptions](./SDK.InfrontSDK.OrderbookOptions.md) | [Orderbook](./SDK.InfrontSDK.Orderbook.md)
+[OrderbookOptions](./SDK.InfrontSDK.OrderbookOptions.md) | [Orderbook](./SDK.InfrontSDK.Orderbook.interface.md)

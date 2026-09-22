@@ -21,6 +21,8 @@ references: ["SDK.InfrontSDK.Trading.PortfolioType", "SDK.InfrontSDK.Trading.por
 
 # Portfolio
 
+> Not the same page as [`portfolio`](./SDK.InfrontSDK.Trading.portfolio.md), the function — the names differ only in case.
+
 output interface for name, description and type of portfolio.
 An array of Portfolio is returned from the [portfolio](./SDK.InfrontSDK.Trading.portfolio.md) request with PortfolioAction.Portfolios
 

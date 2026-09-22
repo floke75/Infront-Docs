@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.HistoryOptions", "SDK.InfrontSDK.DataRequest", "SDK
 
 # history
 
+> Not the same page as [`History`](./SDK.InfrontSDK.History.interface.md), the interface — the names differ only in case.
+
 ```ts
 history(options: HistoryOptions): DataRequest
 ```
@@ -31,4 +33,4 @@ Company history request.
 
 #### See
 
-[HistoryOptions](./SDK.InfrontSDK.HistoryOptions.md) | [History](./SDK.InfrontSDK.History.md)
+[HistoryOptions](./SDK.InfrontSDK.HistoryOptions.md) | [History](./SDK.InfrontSDK.History.interface.md)

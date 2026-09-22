@@ -22,6 +22,8 @@ references: ["SDK.InfrontSDK.WatchlistItem"]
 
 # WatchlistContent
 
+> Not the same page as [`watchListContent`](./SDK.InfrontSDK.watchListContent.md), the function — the names differ only in case.
+
 Watchlist content.
 
 ### Properties

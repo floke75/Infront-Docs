@@ -1,21 +1,63 @@
+// Verifies a corpus tree and exits non-zero on any problem:
+//   - every relative Markdown link resolves to a file or directory of exactly that name
+//     (compared against directory listings, so a case-insensitive filesystem cannot hide
+//     a link whose case is wrong);
+//   - no two paths are equal ignoring case (they would be one file on Windows and macOS);
+//   - every file named by index/symbols.tsv, index/symbols.json and manifest.json exists.
+// Usage: node check.js [root]   root defaults to $OUT, then out/. `node tools/check.js .`
+// from the repository root checks the committed corpus.
 const fs=require("fs"),path=require("path");
-const OUT="out";
-function walk(d,a=[]){for(const e of fs.readdirSync(d,{withFileTypes:true})){const p=path.join(d,e.name);e.isDirectory()?walk(p,a):(e.name.endsWith(".md")&&a.push(p));}return a;}
-let total=0,broken=0;const samples=[];
-for(const f of walk(OUT)){
-  const txt=fs.readFileSync(f,"utf8");
+const ROOT=process.argv[2]||process.env.OUT||"out";
+const SKIP=new Set(["node_modules","out"]);          // build artefacts under a checked-out root
+
+const files=new Set(),dirs=new Set();
+(function walk(rel){
+  for(const e of fs.readdirSync(path.join(ROOT,rel),{withFileTypes:true})){
+    if(e.name.startsWith(".")) continue;
+    const p=rel?rel+"/"+e.name:e.name;
+    if(e.isDirectory()){ if(SKIP.has(e.name)) continue; dirs.add(p); walk(p); }
+    else files.add(p);
+  }
+})("");
+const exists=p=>files.has(p)||dirs.has(p);
+let failed=false;
+const report=(label,bad,total)=>{
+  console.log(label+(total!==undefined?` ${total}, `:" ")+`broken: ${bad.length}`);
+  bad.slice(0,12).forEach(s=>console.log("  "+s));
+  if(bad.length) failed=true;
+};
+
+// relative links
+let total=0;const broken=[];
+for(const f of [...files].filter(f=>f.endsWith(".md")).sort()){
+  const txt=fs.readFileSync(path.join(ROOT,f),"utf8");
   for(const m of txt.matchAll(/\]\(([^)\s]+)\)/g)){
     const href=m[1];
     if(/^https?:|^mailto:|^#/.test(href)) continue;
     total++;
-    const target=path.resolve(path.dirname(f),href.split("#")[0]);
-    if(!fs.existsSync(target)){broken++;if(samples.length<12)samples.push(path.relative(OUT,f)+" -> "+href);}
+    const target=path.posix.normalize(path.posix.join(path.posix.dirname(f),href.split("#")[0])).replace(/\/$/,"");
+    if(target.startsWith("..")||!exists(target)) broken.push(f+" -> "+href);
   }
 }
-console.log("relative links:",total,"broken:",broken);
-samples.forEach(s=>console.log("  "+s));
-// TSV file column integrity
-const tsv=fs.readFileSync(path.join(OUT,"index/symbols.tsv"),"utf8").split("\n").slice(1).filter(Boolean);
-let bad=0;const seen=new Set();
-for(const l of tsv){const c=l.split("\t");if(!c[3])continue;if(!seen.has(c[3])){seen.add(c[3]);if(!fs.existsSync(path.join(OUT,c[3])))bad++;}}
-console.log("symbols.tsv distinct files:",seen.size,"missing:",bad);
+report("relative links:",broken,total);
+
+// paths equal ignoring case
+const folded=new Map();
+for(const p of [...files,...dirs]){ const k=p.toLowerCase(); folded.set(k,[...(folded.get(k)||[]),p]); }
+report("paths equal ignoring case:",[...folded.values()].filter(g=>g.length>1).map(g=>g.join("  ==  ")));
+
+// files the indexes point at
+const named=new Set();
+const read=rel=>fs.readFileSync(path.join(ROOT,rel),"utf8");
+if(files.has("index/symbols.tsv"))
+  for(const l of read("index/symbols.tsv").split(/\r?\n/).slice(1)){ const c=l.split("\t"); if(c[3]) named.add(c[3]); }
+if(files.has("index/symbols.json"))
+  for(const list of Object.values(JSON.parse(read("index/symbols.json")).symbols)) for(const s of list) named.add(s.f);
+if(files.has("manifest.json")){
+  const M=JSON.parse(read("manifest.json"));
+  for(const e of M.files) named.add(e.file);
+  for(const p of [...Object.values(M.entry_points),...M.symbol_index.tables,...M.guides.map(g=>g.file)]) named.add(p);
+}
+report("files named by the indexes:",[...named].filter(p=>!files.has(p)).sort(),named.size);
+
+if(failed){ console.error("check failed"); process.exit(1); }

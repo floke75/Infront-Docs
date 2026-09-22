@@ -25,7 +25,7 @@ Enumeration type to specify the document types.
 
 #### See
 
-[Document](./SDK.InfrontSDK.Document.md)
+[Document](./SDK.InfrontSDK.Document.interface.md)
 
 ### Enumeration Members
 

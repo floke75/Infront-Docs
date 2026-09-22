@@ -21,6 +21,8 @@ references: ["Utils.InfrontUtil.ObservableArray", "SDK.InfrontSDK.ConsolidatedOr
 
 # ConsolidatedOrderbook
 
+> Not the same page as [`consolidatedOrderbook`](./SDK.InfrontSDK.consolidatedOrderbook.md), the function — the names differ only in case.
+
 Consolidated orderbook interface with aggregated levels.
 
 #### See

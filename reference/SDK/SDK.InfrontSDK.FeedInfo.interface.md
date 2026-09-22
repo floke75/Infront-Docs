@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.feedList", "SDK.InfrontSDK.feedInfo"]
 
 # FeedInfo
 
+> Not the same page as [`feedInfo`](./SDK.InfrontSDK.feedInfo.md), the function — the names differ only in case.
+
 An interface used to store feed meta data.
 
 #### See

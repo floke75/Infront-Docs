@@ -33,4 +33,4 @@ Orderbook request.
 
 #### See
 
-[OrderbookOptions](./SDK.InfrontSDK.OrderbookOptions.md) | [Orderbook](./SDK.InfrontSDK.Orderbook.md)
+[OrderbookOptions](./SDK.InfrontSDK.OrderbookOptions.md) | [Orderbook](./SDK.InfrontSDK.Orderbook.interface.md)

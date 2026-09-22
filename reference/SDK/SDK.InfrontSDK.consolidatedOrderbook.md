@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.ConsolidatedOrderbookOptions", "SDK.InfrontSDK.Data
 
 # consolidatedOrderbook
 
+> Not the same page as [`ConsolidatedOrderbook`](./SDK.InfrontSDK.ConsolidatedOrderbook.interface.md), the interface — the names differ only in case.
+
 ```ts
 consolidatedOrderbook(options: ConsolidatedOrderbookOptions): DataRequest
 ```
@@ -35,4 +37,4 @@ then subscribes to orderbook data from each market and consolidates orders by pr
 
 #### See
 
-[ConsolidatedOrderbookOptions](./SDK.InfrontSDK.ConsolidatedOrderbookOptions.md) | [ConsolidatedOrderbook](./SDK.InfrontSDK.ConsolidatedOrderbook.md)
+[ConsolidatedOrderbookOptions](./SDK.InfrontSDK.ConsolidatedOrderbookOptions.md) | [ConsolidatedOrderbook](./SDK.InfrontSDK.ConsolidatedOrderbook.interface.md)

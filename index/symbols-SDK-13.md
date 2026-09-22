@@ -27,7 +27,7 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `getValueFromPath` | function | `SDK.InfrontSDK.getValueFromPath` | [SDK.InfrontSDK.getValueFromPath.md](../reference/SDK/SDK.InfrontSDK.getValueFromPath.md) |
 | `GetValuesFromFields` | function | `SDK.InfrontSDK.GetValuesFromFields` | [SDK.InfrontSDK.GetValuesFromFields.md](../reference/SDK/SDK.InfrontSDK.GetValuesFromFields.md) |
 | `history` | function | `SDK.InfrontSDK.history` | [SDK.InfrontSDK.history.md](../reference/SDK/SDK.InfrontSDK.history.md) |
-| `History` | interface | `SDK.InfrontSDK.History` | [SDK.InfrontSDK.History.md](../reference/SDK/SDK.InfrontSDK.History.md) |
+| `History` | interface | `SDK.InfrontSDK.History` | [SDK.InfrontSDK.History.interface.md](../reference/SDK/SDK.InfrontSDK.History.interface.md) |
 | `HistoryOptions` | interface | `SDK.InfrontSDK.HistoryOptions` | [SDK.InfrontSDK.HistoryOptions.md](../reference/SDK/SDK.InfrontSDK.HistoryOptions.md) |
 | `HistPerformanceField` | enum | `SDK.InfrontSDK.HistPerformanceField` | [SDK.InfrontSDK.HistPerformanceField.md](../reference/SDK/SDK.InfrontSDK.HistPerformanceField.md) |
 | `HitterTaker` | enum | `SDK.InfrontSDK.HitterTaker` | [SDK.InfrontSDK.HitterTaker.md](../reference/SDK/SDK.InfrontSDK.HitterTaker.md) |
@@ -49,7 +49,7 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `ListingsOptionsInteractive` | interface | `SDK.InfrontSDK.ListingsOptionsInteractive` | [SDK.InfrontSDK.ListingsOptionsInteractive.md](../reference/SDK/SDK.InfrontSDK.ListingsOptionsInteractive.md) |
 | `ListingsOptionsNoneInteractive` | interface | `SDK.InfrontSDK.ListingsOptionsNoneInteractive` | [SDK.InfrontSDK.ListingsOptionsNoneInteractive.md](../reference/SDK/SDK.InfrontSDK.ListingsOptionsNoneInteractive.md) |
 | `loginData` | function | `SDK.InfrontSDK.loginData` | [SDK.InfrontSDK.loginData.md](../reference/SDK/SDK.InfrontSDK.loginData.md) |
-| `LoginData` | interface | `SDK.InfrontSDK.LoginData` | [SDK.InfrontSDK.LoginData.md](../reference/SDK/SDK.InfrontSDK.LoginData.md) |
+| `LoginData` | interface | `SDK.InfrontSDK.LoginData` | [SDK.InfrontSDK.LoginData.interface.md](../reference/SDK/SDK.InfrontSDK.LoginData.interface.md) |
 | `LoginDataFlags` | enum | `SDK.InfrontSDK.LoginDataFlags` | [SDK.InfrontSDK.LoginDataFlags.md](../reference/SDK/SDK.InfrontSDK.LoginDataFlags.md) |
 | `LoginDataOptions` | interface | `SDK.InfrontSDK.LoginDataOptions` | [SDK.InfrontSDK.LoginDataOptions.md](../reference/SDK/SDK.InfrontSDK.LoginDataOptions.md) |
 | `LoginDetails` | interface | `SDK.InfrontSDK.LoginDetails` | [SDK.InfrontSDK.LoginDetails.md](../reference/SDK/SDK.InfrontSDK.LoginDetails.md) |
@@ -62,12 +62,12 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `newsHeadlines` | function | `SDK.InfrontSDK.newsHeadlines` | [SDK.InfrontSDK.newsHeadlines.md](../reference/SDK/SDK.InfrontSDK.newsHeadlines.md) |
 | `NewsHeadlinesOptions` | interface | `SDK.InfrontSDK.NewsHeadlinesOptions` | [SDK.InfrontSDK.NewsHeadlinesOptions.md](../reference/SDK/SDK.InfrontSDK.NewsHeadlinesOptions.md) |
 | `newsStory` | function | `SDK.InfrontSDK.newsStory` | [SDK.InfrontSDK.newsStory.md](../reference/SDK/SDK.InfrontSDK.newsStory.md) |
-| `NewsStory` | interface | `SDK.InfrontSDK.NewsStory` | [SDK.InfrontSDK.NewsStory.md](../reference/SDK/SDK.InfrontSDK.NewsStory.md) |
+| `NewsStory` | interface | `SDK.InfrontSDK.NewsStory` | [SDK.InfrontSDK.NewsStory.interface.md](../reference/SDK/SDK.InfrontSDK.NewsStory.interface.md) |
 | `NewsStoryOptions` | type-alias | `SDK.InfrontSDK.NewsStoryOptions` | [SDK.InfrontSDK.NewsStoryOptions.md](../reference/SDK/SDK.InfrontSDK.NewsStoryOptions.md) |
 | `NewsStoryOptionsByFeedAndID` | interface | `SDK.InfrontSDK.NewsStoryOptionsByFeedAndID` | [SDK.InfrontSDK.NewsStoryOptionsByFeedAndID.md](../reference/SDK/SDK.InfrontSDK.NewsStoryOptionsByFeedAndID.md) |
 | `NewsStoryOptionsByHeadline` | interface | `SDK.InfrontSDK.NewsStoryOptionsByHeadline` | [SDK.InfrontSDK.NewsStoryOptionsByHeadline.md](../reference/SDK/SDK.InfrontSDK.NewsStoryOptionsByHeadline.md) |
 | `orderbook` | function | `SDK.InfrontSDK.orderbook` | [SDK.InfrontSDK.orderbook.md](../reference/SDK/SDK.InfrontSDK.orderbook.md) |
-| `Orderbook` | interface | `SDK.InfrontSDK.Orderbook` | [SDK.InfrontSDK.Orderbook.md](../reference/SDK/SDK.InfrontSDK.Orderbook.md) |
+| `Orderbook` | interface | `SDK.InfrontSDK.Orderbook` | [SDK.InfrontSDK.Orderbook.interface.md](../reference/SDK/SDK.InfrontSDK.Orderbook.interface.md) |
 | `OrderbookLevel` | interface | `SDK.InfrontSDK.OrderbookLevel` | [SDK.InfrontSDK.OrderbookLevel.md](../reference/SDK/SDK.InfrontSDK.OrderbookLevel.md) |
 | `OrderbookOptions` | interface | `SDK.InfrontSDK.OrderbookOptions` | [SDK.InfrontSDK.OrderbookOptions.md](../reference/SDK/SDK.InfrontSDK.OrderbookOptions.md) |
 | `OrderbookOrder` | interface | `SDK.InfrontSDK.OrderbookOrder` | [SDK.InfrontSDK.OrderbookOrder.md](../reference/SDK/SDK.InfrontSDK.OrderbookOrder.md) |

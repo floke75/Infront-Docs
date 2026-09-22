@@ -41,7 +41,7 @@ Requests
 
 [DropdownItem](./SDK.InfrontSDK.Trading.DropdownItem.md)
 
-[Exposure](./SDK.InfrontSDK.Trading.Exposure.md)
+[Exposure](./SDK.InfrontSDK.Trading.Exposure.interface.md)
 
 [ExposureGroup](./SDK.InfrontSDK.Trading.ExposureGroup.md)
 
@@ -79,7 +79,7 @@ Requests
 
 [AcceptQuoteOrderOptions](./SDK.InfrontSDK.Trading.AcceptQuoteOrderOptions.md)
 
-[QuoteVolume](./SDK.InfrontSDK.Trading.QuoteVolume.md)
+[QuoteVolume](./SDK.InfrontSDK.Trading.QuoteVolume.interface.md)
 
 [QuoteVolumeOptions](./SDK.InfrontSDK.Trading.QuoteVolumeOptions.md)
 
@@ -119,7 +119,7 @@ Requests
 
 [OrderEntryOptions](./SDK.InfrontSDK.Trading.OrderEntryOptions.md)
 
-[Portfolio](./SDK.InfrontSDK.Trading.Portfolio.md)
+[Portfolio](./SDK.InfrontSDK.Trading.Portfolio.interface.md)
 
 [PortfolioItem](./SDK.InfrontSDK.Trading.PortfolioItem.md)
 

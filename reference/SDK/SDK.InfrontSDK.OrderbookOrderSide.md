@@ -25,7 +25,7 @@ Enumeration type to describe order side in orderbook.
 
 #### See
 
-[Orderbook](./SDK.InfrontSDK.Orderbook.md)
+[Orderbook](./SDK.InfrontSDK.Orderbook.interface.md)
 
 ### Enumeration Members
 

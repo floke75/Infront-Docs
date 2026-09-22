@@ -25,7 +25,7 @@ Specify [loginData](./SDK.InfrontSDK.loginData.md) output by switching on the fo
 
 #### See
 
-[LoginDataOptions.flags](./SDK.InfrontSDK.LoginDataOptions.md#flags) | [loginData](./SDK.InfrontSDK.loginData.md) | [LoginData](./SDK.InfrontSDK.LoginData.md).
+[LoginDataOptions.flags](./SDK.InfrontSDK.LoginDataOptions.md#flags) | [loginData](./SDK.InfrontSDK.loginData.md) | [LoginData](./SDK.InfrontSDK.LoginData.interface.md).
 
 ### Enumeration Members
 

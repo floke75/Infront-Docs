@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.SymbolId", "SDK.InfrontSDK.SymbolDataOptions", "SDK
 
 # symbolData
 
+> Not the same page as [`SymbolData`](./SDK.InfrontSDK.SymbolData.interface.md), the interface — the names differ only in case.
+
 ```ts
 symbolData<T extends SymbolId | SymbolId[] = SymbolId>(
     options: SymbolDataOptions<T>,

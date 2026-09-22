@@ -30,13 +30,13 @@ The documentation's own navigation, with every reference page in place.
       - [FinancialCalendarOptions<T>](../reference/SDK/SDK.InfrontSDK.FinancialCalendarOptions.md) — interface
     - **Documents**
       - [document](../reference/SDK/SDK.InfrontSDK.document.md) — function
-      - [Document](../reference/SDK/SDK.InfrontSDK.Document.md) — interface
+      - [Document](../reference/SDK/SDK.InfrontSDK.Document.interface.md) — interface
       - [DocumentMetadata](../reference/SDK/SDK.InfrontSDK.DocumentMetadata.md) — interface
       - [DocumentOptions](../reference/SDK/SDK.InfrontSDK.DocumentOptions.md) — interface
       - [documents](../reference/SDK/SDK.InfrontSDK.documents.md) — function
       - [DocumentsOptions](../reference/SDK/SDK.InfrontSDK.DocumentsOptions.md) — interface
       - [documentUrl](../reference/SDK/SDK.InfrontSDK.documentUrl.md) — function
-      - [DocumentUrl](../reference/SDK/SDK.InfrontSDK.DocumentUrl.md) — interface
+      - [DocumentUrl](../reference/SDK/SDK.InfrontSDK.DocumentUrl.interface.md) — interface
       - [DocumentUrlOptions](../reference/SDK/SDK.InfrontSDK.DocumentUrlOptions.md) — interface
     - **Feeds**
       - [feedContents](../reference/SDK/SDK.InfrontSDK.feedContents.md) — function
@@ -50,7 +50,7 @@ The documentation's own navigation, with every reference page in place.
       - [FeedListType](../reference/SDK/SDK.InfrontSDK.FeedListType.md) — enum
     - **Login**
       - [loginData](../reference/SDK/SDK.InfrontSDK.loginData.md) — function
-      - [LoginData](../reference/SDK/SDK.InfrontSDK.LoginData.md) — interface
+      - [LoginData](../reference/SDK/SDK.InfrontSDK.LoginData.interface.md) — interface
       - [LoginDataFlags](../reference/SDK/SDK.InfrontSDK.LoginDataFlags.md) — enum
       - [LoginDataOptions](../reference/SDK/SDK.InfrontSDK.LoginDataOptions.md) — interface
     - **News**
@@ -59,7 +59,7 @@ The documentation's own navigation, with every reference page in place.
       - [newsHeadlines](../reference/SDK/SDK.InfrontSDK.newsHeadlines.md) — function
       - [NewsHeadlinesOptions](../reference/SDK/SDK.InfrontSDK.NewsHeadlinesOptions.md) — interface
       - [newsStory](../reference/SDK/SDK.InfrontSDK.newsStory.md) — function
-      - [NewsStory](../reference/SDK/SDK.InfrontSDK.NewsStory.md) — interface
+      - [NewsStory](../reference/SDK/SDK.InfrontSDK.NewsStory.interface.md) — interface
       - [NewsStoryOptions](../reference/SDK/SDK.InfrontSDK.NewsStoryOptions.md) — type-alias
     - **Other**
       - **CoreDataAPI**
@@ -2066,7 +2066,7 @@ The documentation's own navigation, with every reference page in place.
           - [Credentials](../reference/SDK/SDK.InfrontSDK.Trading.Credentials.md) — interface
           - [DisposableObservableArray<T>](../reference/SDK/SDK.InfrontSDK.Trading.DisposableObservableArray.md) — type-alias
           - [DropdownItem](../reference/SDK/SDK.InfrontSDK.Trading.DropdownItem.md) — interface
-          - [Exposure](../reference/SDK/SDK.InfrontSDK.Trading.Exposure.md) — interface
+          - [Exposure](../reference/SDK/SDK.InfrontSDK.Trading.Exposure.interface.md) — interface
           - [ExposureGroup<T>](../reference/SDK/SDK.InfrontSDK.Trading.ExposureGroup.md) — interface
           - [ExposureItem](../reference/SDK/SDK.InfrontSDK.Trading.ExposureItem.md) — interface
           - [FieldData](../reference/SDK/SDK.InfrontSDK.Trading.FieldData.md) — interface
@@ -2088,7 +2088,7 @@ The documentation's own navigation, with every reference page in place.
           - [acceptQuoteOrder](../reference/SDK/SDK.InfrontSDK.Trading.acceptQuoteOrder.md) — function
           - [AcceptQuoteOrderOptions](../reference/SDK/SDK.InfrontSDK.Trading.AcceptQuoteOrderOptions.md) — interface
           - [quoteVolume](../reference/SDK/SDK.InfrontSDK.Trading.quoteVolume.md) — function
-          - [QuoteVolume](../reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md) — interface
+          - [QuoteVolume](../reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md) — interface
           - [QuoteVolumeOptions](../reference/SDK/SDK.InfrontSDK.Trading.QuoteVolumeOptions.md) — interface
           - [SettleType](../reference/SDK/SDK.InfrontSDK.Trading.SettleType.md) — enum
         - **Trading**
@@ -2103,7 +2103,7 @@ The documentation's own navigation, with every reference page in place.
           - [OrderData](../reference/SDK/SDK.InfrontSDK.Trading.OrderData.md) — interface
           - [OrderEntryOptions](../reference/SDK/SDK.InfrontSDK.Trading.OrderEntryOptions.md) — interface
           - [OrderState](../reference/SDK/SDK.InfrontSDK.Trading.OrderState.md) — enum
-          - [Portfolio](../reference/SDK/SDK.InfrontSDK.Trading.Portfolio.md) — interface
+          - [Portfolio](../reference/SDK/SDK.InfrontSDK.Trading.Portfolio.interface.md) — interface
           - [PortfolioAction](../reference/SDK/SDK.InfrontSDK.Trading.PortfolioAction.md) — enum
           - [PortfolioFilterFunction](../reference/SDK/SDK.InfrontSDK.Trading.PortfolioFilterFunction.md) — type-alias
           - [PortfolioItem](../reference/SDK/SDK.InfrontSDK.Trading.PortfolioItem.md) — interface
@@ -2182,7 +2182,7 @@ The documentation's own navigation, with every reference page in place.
       - [EventType](../reference/SDK/SDK.InfrontSDK.EventType.md) — enum
       - [FeedAccess](../reference/SDK/SDK.InfrontSDK.FeedAccess.md) — enum
       - [FeedField](../reference/SDK/SDK.InfrontSDK.FeedField.md) — enum
-      - [FeedInfo](../reference/SDK/SDK.InfrontSDK.FeedInfo.md) — interface
+      - [FeedInfo](../reference/SDK/SDK.InfrontSDK.FeedInfo.interface.md) — interface
       - [FeedListItem](../reference/SDK/SDK.InfrontSDK.FeedListItem.md) — class
       - [FundamentalField](../reference/SDK/SDK.InfrontSDK.FundamentalField.md) — type-alias
       - [FundamentalFieldConst](../reference/SDK/SDK.InfrontSDK.FundamentalField.md) — variable
@@ -2278,7 +2278,7 @@ The documentation's own navigation, with every reference page in place.
       - [TAPIRequestQuoteMetadata](../reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteMetadata.md) — interface
       - [TAPIRequestQuoteOptions](../reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteOptions.md) — interface
       - [tapiRequestQuoteResults](../reference/SDK/SDK.InfrontSDK.tapiRequestQuoteResults.md) — function
-      - [TAPIRequestQuoteResults](../reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteResults.md) — interface
+      - [TAPIRequestQuoteResults](../reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteResults.interface.md) — interface
       - [TAPIRequestQuoteResultsMetadata](../reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteResultsMetadata.md) — interface
       - [TAPIRequestQuoteResultsOptions](../reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteResultsOptions.md) — interface
       - [tapiRequestRFQQuote](../reference/SDK/SDK.InfrontSDK.tapiRequestRFQQuote.md) — function
@@ -2301,7 +2301,7 @@ The documentation's own navigation, with every reference page in place.
       - [TAPIRFQUnsubOptions](../reference/SDK/SDK.InfrontSDK.TAPIRFQUnsubOptions.md) — interface
       - [tapiStaticResources](../reference/SDK/SDK.InfrontSDK.tapiStaticResources.md) — function
       - [tapiTrades](../reference/SDK/SDK.InfrontSDK.tapiTrades.md) — function
-      - [TAPITrades](../reference/SDK/SDK.InfrontSDK.TAPITrades.md) — interface
+      - [TAPITrades](../reference/SDK/SDK.InfrontSDK.TAPITrades.interface.md) — interface
       - [TAPITradesMetadata](../reference/SDK/SDK.InfrontSDK.TAPITradesMetadata.md) — interface
       - [TechnicalAnalysisField](../reference/SDK/SDK.InfrontSDK.TechnicalAnalysisField.md) — enum
       - [TitleProvider](../reference/SDK/SDK.InfrontSDK.TitleProvider.md) — interface
@@ -2314,10 +2314,10 @@ The documentation's own navigation, with every reference page in place.
       - [Unsubscribe](../reference/SDK/SDK.InfrontSDK.Unsubscribe.md) — interface
       - [validSymbolId](../reference/SDK/SDK.InfrontSDK.validSymbolId.md) — function
       - [Watchlist](../reference/SDK/SDK.InfrontSDK.Watchlist.md) — interface
-      - [WatchlistContent](../reference/SDK/SDK.InfrontSDK.WatchlistContent.md) — class
+      - [WatchlistContent](../reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md) — class
       - [WatchlistItem](../reference/SDK/SDK.InfrontSDK.WatchlistItem.md) — interface
       - [watchlistProviderAccess](../reference/SDK/SDK.InfrontSDK.watchlistProviderAccess.md) — function
-      - [WatchlistProviderAccess](../reference/SDK/SDK.InfrontSDK.WatchlistProviderAccess.md) — interface
+      - [WatchlistProviderAccess](../reference/SDK/SDK.InfrontSDK.WatchlistProviderAccess.interface.md) — interface
     - **Search**
       - [fieldSearch](../reference/SDK/SDK.InfrontSDK.fieldSearch.md) — function
       - [FieldSearchOptions](../reference/SDK/SDK.InfrontSDK.FieldSearchOptions.md) — interface
@@ -2330,26 +2330,26 @@ The documentation's own navigation, with every reference page in place.
       - [companySymbols](../reference/SDK/SDK.InfrontSDK.companySymbols.md) — function
       - [CompanySymbolsOptions](../reference/SDK/SDK.InfrontSDK.CompanySymbolsOptions.md) — interface
       - [consolidatedOrderbook](../reference/SDK/SDK.InfrontSDK.consolidatedOrderbook.md) — function
-      - [ConsolidatedOrderbook](../reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbook.md) — interface
+      - [ConsolidatedOrderbook](../reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbook.interface.md) — interface
       - [ConsolidatedOrderbookOptions](../reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbookOptions.md) — interface
       - [history](../reference/SDK/SDK.InfrontSDK.history.md) — function
-      - [History](../reference/SDK/SDK.InfrontSDK.History.md) — interface
+      - [History](../reference/SDK/SDK.InfrontSDK.History.interface.md) — interface
       - [HistoryOptions](../reference/SDK/SDK.InfrontSDK.HistoryOptions.md) — interface
       - [ListingsOptions](../reference/SDK/SDK.InfrontSDK.ListingsOptions.md) — type-alias
       - [ListingsOptionsBase<T>](../reference/SDK/SDK.InfrontSDK.ListingsOptionsBase.md) — interface
       - [ListingsOptionsInteractive](../reference/SDK/SDK.InfrontSDK.ListingsOptionsInteractive.md) — interface
       - [ListingsOptionsNoneInteractive](../reference/SDK/SDK.InfrontSDK.ListingsOptionsNoneInteractive.md) — interface
       - [orderbook](../reference/SDK/SDK.InfrontSDK.orderbook.md) — function
-      - [Orderbook](../reference/SDK/SDK.InfrontSDK.Orderbook.md) — interface
+      - [Orderbook](../reference/SDK/SDK.InfrontSDK.Orderbook.interface.md) — interface
       - [OrderbookOptions](../reference/SDK/SDK.InfrontSDK.OrderbookOptions.md) — interface
       - [symbolData](../reference/SDK/SDK.InfrontSDK.symbolData.md) — function
-      - [SymbolData](../reference/SDK/SDK.InfrontSDK.SymbolData.md) — interface
+      - [SymbolData](../reference/SDK/SDK.InfrontSDK.SymbolData.interface.md) — interface
       - [SymbolDataOptions<T>](../reference/SDK/SDK.InfrontSDK.SymbolDataOptions.md) — interface
       - [symbolListings](../reference/SDK/SDK.InfrontSDK.symbolListings.md) — function
       - [SymbolSubType](../reference/SDK/SDK.InfrontSDK.SymbolSubType.md) — enum
       - [SymbolType](../reference/SDK/SDK.InfrontSDK.SymbolType.md) — enum
       - [timeSeries](../reference/SDK/SDK.InfrontSDK.timeSeries.md) — function
-      - [TimeSeries](../reference/SDK/SDK.InfrontSDK.TimeSeries.md) — interface
+      - [TimeSeries](../reference/SDK/SDK.InfrontSDK.TimeSeries.interface.md) — interface
       - [TimeSeriesOptions](../reference/SDK/SDK.InfrontSDK.TimeSeriesOptions.md) — interface
       - [Trade](../reference/SDK/SDK.InfrontSDK.Trade.md) — interface
       - [trades](../reference/SDK/SDK.InfrontSDK.trades.md) — function

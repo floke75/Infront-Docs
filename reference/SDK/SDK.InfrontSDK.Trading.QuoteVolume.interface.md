@@ -19,6 +19,8 @@ member_groups:
 
 # QuoteVolume
 
+> Not the same page as [`quoteVolume`](./SDK.InfrontSDK.Trading.quoteVolume.md), the function — the names differ only in case.
+
 A single quote response received from a broker.
 
 ```ts

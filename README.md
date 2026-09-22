@@ -90,7 +90,11 @@ field-notes/           hand-written, verified against the live service; not gene
 
 A reference file is named after its qualified name, so
 `reference/SDK/SDK.InfrontSDK.timeSeries.md` is exactly what it sounds like. That
-makes direct opens possible without consulting an index.
+makes direct opens possible without consulting an index. Where two qualified names
+differ only by case, the function keeps the plain name and the other page gets its kind
+appended: `SDK.InfrontSDK.timeSeries.md` is the request function,
+`SDK.InfrontSDK.TimeSeries.interface.md` the interface. No two files collide on a
+case-insensitive filesystem, and each page of such a pair links to the other.
 
 ## Front matter
 
@@ -156,9 +160,3 @@ parent keeps `is_index: true`.
   with a `status` field saying so, and `library_version` gives the version. When it
   disagrees with `reference/`, `reference/` wins.
 - 3,558 Markdown files, 16.4 MB, plus 7.2 MB of indexes. Every relative link resolved and checked.
-- **On a case-insensitive filesystem (Windows, default macOS), 18 pages are shadowed.** Eighteen pairs of
-  files differ only by case — the capitalised one is the INTERFACE, the lowercase one the request FUNCTION
-  (`SDK.InfrontSDK.SymbolData.md` vs `SDK.InfrontSDK.symbolData.md`, likewise `TimeSeries`, `LoginData`,
-  `FeedInfo`, `History`, `Orderbook`, …). Such a checkout holds one file's content under both names, and
-  `git status` shows them modified. Read the shadowed page from git: `git show HEAD:<path>`; list every pair
-  with `git ls-files | sort -f | uniq -Di`.

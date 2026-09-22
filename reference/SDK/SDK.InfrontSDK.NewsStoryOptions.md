@@ -25,4 +25,4 @@ Options interface to request news story. This can only be used with news that ha
 
 #### See
 
-[newsStory](./SDK.InfrontSDK.newsStory.md) | [NewsStory](./SDK.InfrontSDK.NewsStory.md)
+[newsStory](./SDK.InfrontSDK.newsStory.md) | [NewsStory](./SDK.InfrontSDK.NewsStory.interface.md)

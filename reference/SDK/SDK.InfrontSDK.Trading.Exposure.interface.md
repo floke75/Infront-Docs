@@ -15,4 +15,6 @@ defines: ["Exposure"]
 
 # Exposure
 
+> Not the same page as [`exposure`](./SDK.InfrontSDK.Trading.exposure.md), the function — the names differ only in case.
+
 This object contains four categories of Portfolio exposure with each category item sorted by percentage of total portfolio value.

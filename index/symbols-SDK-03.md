@@ -5,7 +5,7 @@ page_type: symbol-index
 product: "Infront Web Toolkit"
 version: "4.3.1"
 module: "SDK"
-symbol_count: 157
+symbol_count: 158
 note: "Top-level symbols only. Members (methods, properties, enum members) are in index/symbols.tsv."
 ---
 
@@ -13,6 +13,7 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 
 | Symbol | Kind | Qualified name | Page |
 |---|---|---|---|
+| `CdapiCommonPurgeCacheRequest` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonPurgeCacheRequest` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonPurgeCacheRequest.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonPurgeCacheRequest.md) |
 | `CdapiCommonRating` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonRating` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonRating.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonRating.md) |
 | `CdapiCommonRatingSource` | type-alias | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonRatingSource` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonRatingSource.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonRatingSource.md) |
 | `CdapiCommonRegion` | interface | `SDK.InfrontSDK.CoreDataAPI.CdapiCommonRegion` | [SDK.InfrontSDK.CoreDataAPI.CdapiCommonRegion.md](../reference/SDK/SDK.InfrontSDK.CoreDataAPI.CdapiCommonRegion.md) |

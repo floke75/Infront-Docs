@@ -12,6 +12,8 @@ source_files: ["script.ts", "template.html", "config.json"]
 
 # Gprv
 
+> Not the same page as [`GPRV`](./Widgets-Analytics-widgets-GPRV-2.md), the example — the names differ only in case.
+
 ## Script (script.ts)
 
 ```typescript

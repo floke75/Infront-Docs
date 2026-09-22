@@ -1,5 +1,6 @@
 const fs=require("fs"),path=require("path");
 const {parse}=require("node-html-parser");
+const {uncollide,caseNote}=require("./casefold");
 
 const BASE="https://docs.infrontfinance.com/docs/";
 const OUT=process.env.OUT||"out";
@@ -25,6 +26,10 @@ const pathMap={}; // typedoc relative path -> out path
 for(const r of nav) pathMap[r.path]=outPathFor(r.path);
 pathMap["index.html"]=outPathFor("index.html");
 pathMap["hierarchy.html"]=outPathFor("hierarchy.html");
+function kindOf(p){ const r=navBy[p]; return r?KIND[r.kind]||String(r.kind):(p==="index.html"?"guide":"reference"); }
+// SymbolData (interface) and symbolData (function) would share one file on Windows; see casefold.js
+const {rename:caseRename,groups:caseGroups}=uncollide(Object.entries(pathMap).map(([td,out])=>({path:out,kind:kindOf(td),td})));
+for(const td in pathMap) if(caseRename.has(pathMap[td])) pathMap[td]=caseRename.get(pathMap[td]);
 
 // ---------- helpers ----------
 const ENT={"&amp;":"&","&lt;":"<","&gt;":">","&quot;":'"',"&#39;":"'","&nbsp;":" ","&#x27;":"'","&apos;":"'"};
@@ -259,7 +264,7 @@ function convert(tdPath,html){
 
   const navRow=navBy[tdPath];
   const q=tdPath==="index.html"?null:qualifiedOf(tdPath);
-  const kind=navRow?KIND[navRow.kind]||String(navRow.kind):(tdPath==="index.html"?"guide":"reference");
+  const kind=kindOf(tdPath);
   const trail=navRow?navRow.trail.split(" > "):crumb;
 
   return {tdPath,outPath,title:h1txt,qualified:q,kind,trail,memberIndex,hier:[...new Set(hier)].filter(x=>x!==q),refs:[...ctx.refs].filter(x=>x!==q&&x!=="hierarchy"&&x!=="index"),body};
@@ -321,10 +326,16 @@ function run(){
     if(!p){skipped++;continue;}
     pages.push(p);
   }
+  // pages whose names differ only by case point at each other
+  const byTd=new Map(pages.map(p=>[p.tdPath,p])), caseNotes=new Map();
+  for(const g of caseGroups){
+    const live=g.filter(m=>byTd.has(m.td)).map(m=>({...m,title:byTd.get(m.td).title}));
+    if(live.length>1) for(const m of live) caseNotes.set(m.td,caseNote(m,live.filter(o=>o!==m))+"\n\n");
+  }
   for(const p of pages){
     const dest=path.join(OUT,p.outPath);
     fs.mkdirSync(path.dirname(dest),{recursive:true});
-    const md=frontMatter(p)+"\n\n# "+p.title+"\n\n"+p.body.trim()+"\n";
+    const md=frontMatter(p)+"\n\n# "+p.title+"\n\n"+(caseNotes.get(p.tdPath)||"")+p.body.trim()+"\n";
     fs.writeFileSync(dest,md);
   }
   fs.writeFileSync("pages.json",JSON.stringify(pages.map(p=>({tdPath:p.tdPath,outPath:p.outPath,title:p.title,qualified:p.qualified,kind:p.kind,trail:p.trail,members:p.memberIndex,hier:p.hier,refs:p.refs,bytes:p.body.length})),null,1));

@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.DocumentUrlOptions", "SDK.InfrontSDK.DataRequest", 
 
 # documentUrl
 
+> Not the same page as [`DocumentUrl`](./SDK.InfrontSDK.DocumentUrl.interface.md), the interface — the names differ only in case.
+
 ```ts
 documentUrl(options: DocumentUrlOptions): DataRequest
 ```
@@ -33,4 +35,4 @@ Request a regulatory document url by its id.
 
 #### See
 
-[DocumentUrlOptions](./SDK.InfrontSDK.DocumentUrlOptions.md) | [Document](./SDK.InfrontSDK.Document.md)
+[DocumentUrlOptions](./SDK.InfrontSDK.DocumentUrlOptions.md) | [Document](./SDK.InfrontSDK.Document.interface.md)

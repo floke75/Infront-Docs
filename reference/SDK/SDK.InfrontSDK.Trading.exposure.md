@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.Trading.ExposureOptions", "SDK.InfrontSDK.DataReque
 
 # exposure
 
+> Not the same page as [`Exposure`](./SDK.InfrontSDK.Trading.Exposure.interface.md), the interface — the names differ only in case.
+
 ```ts
 exposure(options: ExposureOptions): DataRequest
 ```

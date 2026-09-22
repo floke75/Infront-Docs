@@ -31,8 +31,8 @@ Request for time series for specific symbol. It is possible to request intraday 
 
   Time series request options.
 
-#### Returns [TypedDataRequest](./SDK.InfrontSDK.TypedDataRequest.md)<[ObservableArray](../Utils/Utils.InfrontUtil.ObservableArray.md)<[TimeSeries](./SDK.InfrontSDK.TimeSeries.md)>>
+#### Returns [TypedDataRequest](./SDK.InfrontSDK.TypedDataRequest.md)<[ObservableArray](../Utils/Utils.InfrontUtil.ObservableArray.md)<[TimeSeries](./SDK.InfrontSDK.TimeSeries.interface.md)>>
 
 #### See
 
-[TimeSeries](./SDK.InfrontSDK.TimeSeries.md) | [TimeSeriesOptions](./SDK.InfrontSDK.TimeSeriesOptions.md)
+[TimeSeries](./SDK.InfrontSDK.TimeSeries.interface.md) | [TimeSeriesOptions](./SDK.InfrontSDK.TimeSeriesOptions.md)

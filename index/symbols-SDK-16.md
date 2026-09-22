@@ -5,7 +5,7 @@ page_type: symbol-index
 product: "Infront Web Toolkit"
 version: "4.3.1"
 module: "SDK"
-symbol_count: 63
+symbol_count: 64
 note: "Top-level symbols only. Members (methods, properties, enum members) are in index/symbols.tsv."
 ---
 
@@ -13,6 +13,7 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 
 | Symbol | Kind | Qualified name | Page |
 |---|---|---|---|
+| `ExposureOptions` | interface | `SDK.InfrontSDK.Trading.ExposureOptions` | [SDK.InfrontSDK.Trading.ExposureOptions.md](../reference/SDK/SDK.InfrontSDK.Trading.ExposureOptions.md) |
 | `FieldData` | interface | `SDK.InfrontSDK.Trading.FieldData` | [SDK.InfrontSDK.Trading.FieldData.md](../reference/SDK/SDK.InfrontSDK.Trading.FieldData.md) |
 | `FxDealingOptions` | interface | `SDK.InfrontSDK.Trading.FxDealingOptions` | [SDK.InfrontSDK.Trading.FxDealingOptions.md](../reference/SDK/SDK.InfrontSDK.Trading.FxDealingOptions.md) |
 | `MarketPlace` | interface | `SDK.InfrontSDK.Trading.MarketPlace` | [SDK.InfrontSDK.Trading.MarketPlace.md](../reference/SDK/SDK.InfrontSDK.Trading.MarketPlace.md) |
@@ -23,7 +24,7 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `OrderEntryOptions` | interface | `SDK.InfrontSDK.Trading.OrderEntryOptions` | [SDK.InfrontSDK.Trading.OrderEntryOptions.md](../reference/SDK/SDK.InfrontSDK.Trading.OrderEntryOptions.md) |
 | `OrderState` | enum | `SDK.InfrontSDK.Trading.OrderState` | [SDK.InfrontSDK.Trading.OrderState.md](../reference/SDK/SDK.InfrontSDK.Trading.OrderState.md) |
 | `portfolio` | function | `SDK.InfrontSDK.Trading.portfolio` | [SDK.InfrontSDK.Trading.portfolio.md](../reference/SDK/SDK.InfrontSDK.Trading.portfolio.md) |
-| `Portfolio` | interface | `SDK.InfrontSDK.Trading.Portfolio` | [SDK.InfrontSDK.Trading.Portfolio.md](../reference/SDK/SDK.InfrontSDK.Trading.Portfolio.md) |
+| `Portfolio` | interface | `SDK.InfrontSDK.Trading.Portfolio` | [SDK.InfrontSDK.Trading.Portfolio.interface.md](../reference/SDK/SDK.InfrontSDK.Trading.Portfolio.interface.md) |
 | `PortfolioAction` | enum | `SDK.InfrontSDK.Trading.PortfolioAction` | [SDK.InfrontSDK.Trading.PortfolioAction.md](../reference/SDK/SDK.InfrontSDK.Trading.PortfolioAction.md) |
 | `PortfolioData` | interface | `SDK.InfrontSDK.Trading.PortfolioData` | [SDK.InfrontSDK.Trading.PortfolioData.md](../reference/SDK/SDK.InfrontSDK.Trading.PortfolioData.md) |
 | `PortfolioFilterFunction` | type-alias | `SDK.InfrontSDK.Trading.PortfolioFilterFunction` | [SDK.InfrontSDK.Trading.PortfolioFilterFunction.md](../reference/SDK/SDK.InfrontSDK.Trading.PortfolioFilterFunction.md) |
@@ -37,7 +38,7 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `PositionFilter` | interface | `SDK.InfrontSDK.Trading.PositionFilter` | [SDK.InfrontSDK.Trading.PositionFilter.md](../reference/SDK/SDK.InfrontSDK.Trading.PositionFilter.md) |
 | `PositionType` | enum | `SDK.InfrontSDK.Trading.PositionType` | [SDK.InfrontSDK.Trading.PositionType.md](../reference/SDK/SDK.InfrontSDK.Trading.PositionType.md) |
 | `quoteVolume` | function | `SDK.InfrontSDK.Trading.quoteVolume` | [SDK.InfrontSDK.Trading.quoteVolume.md](../reference/SDK/SDK.InfrontSDK.Trading.quoteVolume.md) |
-| `QuoteVolume` | interface | `SDK.InfrontSDK.Trading.QuoteVolume` | [SDK.InfrontSDK.Trading.QuoteVolume.md](../reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md) |
+| `QuoteVolume` | interface | `SDK.InfrontSDK.Trading.QuoteVolume` | [SDK.InfrontSDK.Trading.QuoteVolume.interface.md](../reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md) |
 | `QuoteVolumeOptions` | interface | `SDK.InfrontSDK.Trading.QuoteVolumeOptions` | [SDK.InfrontSDK.Trading.QuoteVolumeOptions.md](../reference/SDK/SDK.InfrontSDK.Trading.QuoteVolumeOptions.md) |
 | `Requests` | namespace | `SDK.InfrontSDK.Trading.Requests` | [_module.SDK.InfrontSDK.Trading.Requests.md](../reference/SDK/_module.SDK.InfrontSDK.Trading.Requests.md) |
 | `connection` | function | `SDK.InfrontSDK.Trading.Requests.connection` | [SDK.InfrontSDK.Trading.Requests.connection.md](../reference/SDK/SDK.InfrontSDK.Trading.Requests.connection.md) |
@@ -64,12 +65,12 @@ note: "Top-level symbols only. Members (methods, properties, enum members) are i
 | `validSymbolId` | function | `SDK.InfrontSDK.validSymbolId` | [SDK.InfrontSDK.validSymbolId.md](../reference/SDK/SDK.InfrontSDK.validSymbolId.md) |
 | `Watchlist` | interface | `SDK.InfrontSDK.Watchlist` | [SDK.InfrontSDK.Watchlist.md](../reference/SDK/SDK.InfrontSDK.Watchlist.md) |
 | `watchListContent` | function | `SDK.InfrontSDK.watchListContent` | [SDK.InfrontSDK.watchListContent.md](../reference/SDK/SDK.InfrontSDK.watchListContent.md) |
-| `WatchlistContent` | class | `SDK.InfrontSDK.WatchlistContent` | [SDK.InfrontSDK.WatchlistContent.md](../reference/SDK/SDK.InfrontSDK.WatchlistContent.md) |
+| `WatchlistContent` | class | `SDK.InfrontSDK.WatchlistContent` | [SDK.InfrontSDK.WatchlistContent.class.md](../reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md) |
 | `WatchListContentAction` | enum | `SDK.InfrontSDK.WatchListContentAction` | [SDK.InfrontSDK.WatchListContentAction.md](../reference/SDK/SDK.InfrontSDK.WatchListContentAction.md) |
 | `WatchListContentOptions` | interface | `SDK.InfrontSDK.WatchListContentOptions` | [SDK.InfrontSDK.WatchListContentOptions.md](../reference/SDK/SDK.InfrontSDK.WatchListContentOptions.md) |
 | `WatchlistItem` | interface | `SDK.InfrontSDK.WatchlistItem` | [SDK.InfrontSDK.WatchlistItem.md](../reference/SDK/SDK.InfrontSDK.WatchlistItem.md) |
 | `watchlistProviderAccess` | function | `SDK.InfrontSDK.watchlistProviderAccess` | [SDK.InfrontSDK.watchlistProviderAccess.md](../reference/SDK/SDK.InfrontSDK.watchlistProviderAccess.md) |
-| `WatchlistProviderAccess` | interface | `SDK.InfrontSDK.WatchlistProviderAccess` | [SDK.InfrontSDK.WatchlistProviderAccess.md](../reference/SDK/SDK.InfrontSDK.WatchlistProviderAccess.md) |
+| `WatchlistProviderAccess` | interface | `SDK.InfrontSDK.WatchlistProviderAccess` | [SDK.InfrontSDK.WatchlistProviderAccess.interface.md](../reference/SDK/SDK.InfrontSDK.WatchlistProviderAccess.interface.md) |
 | `watchLists` | function | `SDK.InfrontSDK.watchLists` | [SDK.InfrontSDK.watchLists.md](../reference/SDK/SDK.InfrontSDK.watchLists.md) |
 | `watchListsAsObservableArray` | function | `SDK.InfrontSDK.watchListsAsObservableArray` | [SDK.InfrontSDK.watchListsAsObservableArray.md](../reference/SDK/SDK.InfrontSDK.watchListsAsObservableArray.md) |
 | `WatchListsObservableArrayOptions` | interface | `SDK.InfrontSDK.WatchListsObservableArrayOptions` | [SDK.InfrontSDK.WatchListsObservableArrayOptions.md](../reference/SDK/SDK.InfrontSDK.WatchListsObservableArrayOptions.md) |

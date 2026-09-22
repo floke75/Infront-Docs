@@ -1,4 +1,5 @@
 const fs=require("fs"),path=require("path");
+const {uncollide,caseNote}=require("./casefold");
 const OUT=process.env.OUT||"out";
 const EX=JSON.parse(fs.readFileSync("examples-flat.json","utf8"));
 const TE=JSON.parse(fs.readFileSync("tests-index.json","utf8"));
@@ -13,7 +14,7 @@ function yl(a){return "["+a.map(x=>JSON.stringify(x)).join(", ")+"]";}
 function symbolsFromTags(tags){ return [...new Set((tags||[]).filter(t=>t.includes(":")).map(t=>t.split(":").slice(1).join(":")))]; }
 
 function build(kind,rows,rawRoot,outDir,urlRoot){
-  const made=[];
+  const jobs=[];
   const used=new Set(); const donePaths=new Set();
   for(const r of rows){
     if(donePaths.has(r.path)) continue;   // the same example is listed twice in Infront's index
@@ -30,7 +31,16 @@ function build(kind,rows,rawRoot,outDir,urlRoot){
     let name=slug(r.trail?r.trail.replace(/ > /g,"-"):r.path.replace(/\//g,"-"));
     if(used.has(name)){ let n=2; while(used.has(`${name}-${n}`)) n++; name=`${name}-${n}`; }
     used.add(name);
-    const out=path.join(outDir,name+".md");
+    jobs.push({r,files,cfg,name});
+  }
+  // GPRV and Gprv would share one file on Windows; see casefold.js
+  const {rename,groups}=uncollide(jobs.map(j=>({path:j.name+".md",kind,title:j.r.title})));
+  const caseNotes=new Map();
+  for(const g of groups) for(const m of g) caseNotes.set(m.path,caseNote(m,g.filter(o=>o!==m))+"\n\n");
+  const made=[];
+  for(const {r,files,cfg,name} of jobs){
+    const file=rename.get(name+".md")||name+".md";
+    const out=path.join(outDir,file);
     const syms=symbolsFromTags(r.tags);
     const L=["---"];
     L.push(`title: ${esc(r.title)}`);
@@ -46,7 +56,7 @@ function build(kind,rows,rawRoot,outDir,urlRoot){
     L.push(`source_url: ${esc(urlRoot+"/"+r.path)}`);
     L.push(`source_files: ${yl(Object.keys(files))}`);
     L.push("---");
-    let md=L.join("\n")+`\n\n# ${r.title}\n\n`;
+    let md=L.join("\n")+`\n\n# ${r.title}\n\n`+(caseNotes.get(file)||"");
     if(r.description) md+=r.description+"\n\n";
     if(syms.length) md+=`Demonstrates: ${syms.map(s=>"`"+s+"`").join(", ")}\n\n`;
     for(const f of ["script.ts","template.html","style.css"]){

@@ -36,7 +36,7 @@ SymbolField:
 ```
 
 Enumeration type used to represent all available symbol fields.
-This can be used with [SymbolData.get](./SDK.InfrontSDK.SymbolData.md#get) and [SymbolData.observe](./SDK.InfrontSDK.SymbolData.md#observe).
+This can be used with [SymbolData.get](./SDK.InfrontSDK.SymbolData.interface.md#get) and [SymbolData.observe](./SDK.InfrontSDK.SymbolData.interface.md#observe).
 
 #### Remarks
 

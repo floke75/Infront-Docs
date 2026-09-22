@@ -10048,7 +10048,7 @@ prefix	property	SDK.InfrontSDK.Trading.CustomField.prefix	reference/SDK/SDK.Infr
 properties	property	SDK.InfrontSDK.Trading.CustomField.properties	reference/SDK/SDK.InfrontSDK.Trading.CustomField.md	properties
 value	property	SDK.InfrontSDK.Trading.CustomField.value	reference/SDK/SDK.InfrontSDK.Trading.CustomField.md	value
 DropdownItem	interface	SDK.InfrontSDK.Trading.DropdownItem	reference/SDK/SDK.InfrontSDK.Trading.DropdownItem.md	
-Exposure	interface	SDK.InfrontSDK.Trading.Exposure	reference/SDK/SDK.InfrontSDK.Trading.Exposure.md	
+Exposure	interface	SDK.InfrontSDK.Trading.Exposure	reference/SDK/SDK.InfrontSDK.Trading.Exposure.interface.md	
 ExposureGroup	interface	SDK.InfrontSDK.Trading.ExposureGroup	reference/SDK/SDK.InfrontSDK.Trading.ExposureGroup.md	
 ExposureItem	interface	SDK.InfrontSDK.Trading.ExposureItem	reference/SDK/SDK.InfrontSDK.Trading.ExposureItem.md	
 ExposureOptions	interface	SDK.InfrontSDK.Trading.ExposureOptions	reference/SDK/SDK.InfrontSDK.Trading.ExposureOptions.md	
@@ -10099,14 +10099,14 @@ subscribe	property	SDK.InfrontSDK.Trading.OrderEntryOptions.subscribe	reference/
 onData	method	SDK.InfrontSDK.Trading.OrderEntryOptions.onData	reference/SDK/SDK.InfrontSDK.Trading.OrderEntryOptions.md	ondata
 onError	method	SDK.InfrontSDK.Trading.OrderEntryOptions.onError	reference/SDK/SDK.InfrontSDK.Trading.OrderEntryOptions.md	onerror
 onStatus	method	SDK.InfrontSDK.Trading.OrderEntryOptions.onStatus	reference/SDK/SDK.InfrontSDK.Trading.OrderEntryOptions.md	onstatus
-Portfolio	interface	SDK.InfrontSDK.Trading.Portfolio	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.md	
-description	property	SDK.InfrontSDK.Trading.Portfolio.description	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.md	description
-displayName	property	SDK.InfrontSDK.Trading.Portfolio.displayName	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.md	displayname
-fullName	property	SDK.InfrontSDK.Trading.Portfolio.fullName	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.md	fullname
-name	property	SDK.InfrontSDK.Trading.Portfolio.name	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.md	name
-portfolioType	property	SDK.InfrontSDK.Trading.Portfolio.portfolioType	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.md	portfoliotype
-tradingPower	property	SDK.InfrontSDK.Trading.Portfolio.tradingPower	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.md	tradingpower
-tradingPowerCurrency	property	SDK.InfrontSDK.Trading.Portfolio.tradingPowerCurrency	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.md	tradingpowercurrency
+Portfolio	interface	SDK.InfrontSDK.Trading.Portfolio	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.interface.md	
+description	property	SDK.InfrontSDK.Trading.Portfolio.description	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.interface.md	description
+displayName	property	SDK.InfrontSDK.Trading.Portfolio.displayName	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.interface.md	displayname
+fullName	property	SDK.InfrontSDK.Trading.Portfolio.fullName	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.interface.md	fullname
+name	property	SDK.InfrontSDK.Trading.Portfolio.name	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.interface.md	name
+portfolioType	property	SDK.InfrontSDK.Trading.Portfolio.portfolioType	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.interface.md	portfoliotype
+tradingPower	property	SDK.InfrontSDK.Trading.Portfolio.tradingPower	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.interface.md	tradingpower
+tradingPowerCurrency	property	SDK.InfrontSDK.Trading.Portfolio.tradingPowerCurrency	reference/SDK/SDK.InfrontSDK.Trading.Portfolio.interface.md	tradingpowercurrency
 PortfolioData	interface	SDK.InfrontSDK.Trading.PortfolioData	reference/SDK/SDK.InfrontSDK.Trading.PortfolioData.md	
 events	property	SDK.InfrontSDK.Trading.PortfolioData.events	reference/SDK/SDK.InfrontSDK.Trading.PortfolioData.md	events
 fullName	property	SDK.InfrontSDK.Trading.PortfolioData.fullName	reference/SDK/SDK.InfrontSDK.Trading.PortfolioData.md	fullname
@@ -10158,21 +10158,21 @@ includeMarkets	property	SDK.InfrontSDK.Trading.PositionFilter.includeMarkets	ref
 includePositionTypes	property	SDK.InfrontSDK.Trading.PositionFilter.includePositionTypes	reference/SDK/SDK.InfrontSDK.Trading.PositionFilter.md	includepositiontypes
 includeSymbolSubTypes	property	SDK.InfrontSDK.Trading.PositionFilter.includeSymbolSubTypes	reference/SDK/SDK.InfrontSDK.Trading.PositionFilter.md	includesymbolsubtypes
 includeSymbolTypes	property	SDK.InfrontSDK.Trading.PositionFilter.includeSymbolTypes	reference/SDK/SDK.InfrontSDK.Trading.PositionFilter.md	includesymboltypes
-QuoteVolume	interface	SDK.InfrontSDK.Trading.QuoteVolume	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	
-accruedInterest	property	SDK.InfrontSDK.Trading.QuoteVolume.accruedInterest	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	accruedinterest
-accruedInterestDays	property	SDK.InfrontSDK.Trading.QuoteVolume.accruedInterestDays	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	accruedinterestdays
-ask	property	SDK.InfrontSDK.Trading.QuoteVolume.ask	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	ask
-askVolume	property	SDK.InfrontSDK.Trading.QuoteVolume.askVolume	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	askvolume
-bid	property	SDK.InfrontSDK.Trading.QuoteVolume.bid	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	bid
-bidVolume	property	SDK.InfrontSDK.Trading.QuoteVolume.bidVolume	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	bidvolume
-brokerId	property	SDK.InfrontSDK.Trading.QuoteVolume.brokerId	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	brokerid
-errorMessage	property	SDK.InfrontSDK.Trading.QuoteVolume.errorMessage	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	errormessage
-portfolio	property	SDK.InfrontSDK.Trading.QuoteVolume.portfolio	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	portfolio
-rfqQuoteId	property	SDK.InfrontSDK.Trading.QuoteVolume.rfqQuoteId	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	rfqquoteid
-settlementDate	property	SDK.InfrontSDK.Trading.QuoteVolume.settlementDate	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	settlementdate
-validFrom	property	SDK.InfrontSDK.Trading.QuoteVolume.validFrom	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	validfrom
-validUntil	property	SDK.InfrontSDK.Trading.QuoteVolume.validUntil	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	validuntil
-volume	property	SDK.InfrontSDK.Trading.QuoteVolume.volume	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.md	volume
+QuoteVolume	interface	SDK.InfrontSDK.Trading.QuoteVolume	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	
+accruedInterest	property	SDK.InfrontSDK.Trading.QuoteVolume.accruedInterest	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	accruedinterest
+accruedInterestDays	property	SDK.InfrontSDK.Trading.QuoteVolume.accruedInterestDays	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	accruedinterestdays
+ask	property	SDK.InfrontSDK.Trading.QuoteVolume.ask	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	ask
+askVolume	property	SDK.InfrontSDK.Trading.QuoteVolume.askVolume	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	askvolume
+bid	property	SDK.InfrontSDK.Trading.QuoteVolume.bid	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	bid
+bidVolume	property	SDK.InfrontSDK.Trading.QuoteVolume.bidVolume	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	bidvolume
+brokerId	property	SDK.InfrontSDK.Trading.QuoteVolume.brokerId	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	brokerid
+errorMessage	property	SDK.InfrontSDK.Trading.QuoteVolume.errorMessage	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	errormessage
+portfolio	property	SDK.InfrontSDK.Trading.QuoteVolume.portfolio	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	portfolio
+rfqQuoteId	property	SDK.InfrontSDK.Trading.QuoteVolume.rfqQuoteId	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	rfqquoteid
+settlementDate	property	SDK.InfrontSDK.Trading.QuoteVolume.settlementDate	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	settlementdate
+validFrom	property	SDK.InfrontSDK.Trading.QuoteVolume.validFrom	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	validfrom
+validUntil	property	SDK.InfrontSDK.Trading.QuoteVolume.validUntil	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	validuntil
+volume	property	SDK.InfrontSDK.Trading.QuoteVolume.volume	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolume.interface.md	volume
 QuoteVolumeOptions	interface	SDK.InfrontSDK.Trading.QuoteVolumeOptions	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolumeOptions.md	
 clientBIC	property	SDK.InfrontSDK.Trading.QuoteVolumeOptions.clientBIC	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolumeOptions.md	clientbic
 comment	property	SDK.InfrontSDK.Trading.QuoteVolumeOptions.comment	reference/SDK/SDK.InfrontSDK.Trading.QuoteVolumeOptions.md	comment
@@ -11992,30 +11992,30 @@ onabort	property	SDK.InfrontSDK.SubscriptionSignal.onabort	reference/SDK/SDK.Inf
 reason	property	SDK.InfrontSDK.SubscriptionSignal.reason	reference/SDK/SDK.InfrontSDK.SubscriptionSignal.md	reason
 dispatchEvent	method	SDK.InfrontSDK.SubscriptionSignal.dispatchEvent	reference/SDK/SDK.InfrontSDK.SubscriptionSignal.md	dispatchevent
 throwIfAborted	method	SDK.InfrontSDK.SubscriptionSignal.throwIfAborted	reference/SDK/SDK.InfrontSDK.SubscriptionSignal.md	throwifaborted
-WatchlistContent	class	SDK.InfrontSDK.WatchlistContent	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	
-id	property	SDK.InfrontSDK.WatchlistContent.id	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	id
-isReadOnly	property	SDK.InfrontSDK.WatchlistContent.isReadOnly	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	isreadonly
-listChecksum	property	SDK.InfrontSDK.WatchlistContent.listChecksum	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	listchecksum
-listName	property	SDK.InfrontSDK.WatchlistContent.listName	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	listname
-provider	property	SDK.InfrontSDK.WatchlistContent.provider	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	provider
-beginUpdate	method	SDK.InfrontSDK.WatchlistContent.beginUpdate	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	beginupdate
-clear	method	SDK.InfrontSDK.WatchlistContent.clear	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	clear
-endUpdate	method	SDK.InfrontSDK.WatchlistContent.endUpdate	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	endupdate
-find	method	SDK.InfrontSDK.WatchlistContent.find	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	find
-foreach	method	SDK.InfrontSDK.WatchlistContent.foreach	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	foreach
-get	method	SDK.InfrontSDK.WatchlistContent.get	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	get
-insert	method	SDK.InfrontSDK.WatchlistContent.insert	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	insert
-move	method	SDK.InfrontSDK.WatchlistContent.move	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	move
-moveItemAt	method	SDK.InfrontSDK.WatchlistContent.moveItemAt	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	moveitemat
-pop	method	SDK.InfrontSDK.WatchlistContent.pop	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	pop
-push	method	SDK.InfrontSDK.WatchlistContent.push	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	push
-remove	method	SDK.InfrontSDK.WatchlistContent.remove	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	remove
-removeItemAt	method	SDK.InfrontSDK.WatchlistContent.removeItemAt	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	removeitemat
-replaceWith	method	SDK.InfrontSDK.WatchlistContent.replaceWith	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	replacewith
-sort	method	SDK.InfrontSDK.WatchlistContent.sort	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	sort
-unshift	method	SDK.InfrontSDK.WatchlistContent.unshift	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	unshift
-update	method	SDK.InfrontSDK.WatchlistContent.update	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	update
-updateItemAt	method	SDK.InfrontSDK.WatchlistContent.updateItemAt	reference/SDK/SDK.InfrontSDK.WatchlistContent.md	updateitemat
+WatchlistContent	class	SDK.InfrontSDK.WatchlistContent	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	
+id	property	SDK.InfrontSDK.WatchlistContent.id	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	id
+isReadOnly	property	SDK.InfrontSDK.WatchlistContent.isReadOnly	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	isreadonly
+listChecksum	property	SDK.InfrontSDK.WatchlistContent.listChecksum	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	listchecksum
+listName	property	SDK.InfrontSDK.WatchlistContent.listName	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	listname
+provider	property	SDK.InfrontSDK.WatchlistContent.provider	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	provider
+beginUpdate	method	SDK.InfrontSDK.WatchlistContent.beginUpdate	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	beginupdate
+clear	method	SDK.InfrontSDK.WatchlistContent.clear	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	clear
+endUpdate	method	SDK.InfrontSDK.WatchlistContent.endUpdate	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	endupdate
+find	method	SDK.InfrontSDK.WatchlistContent.find	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	find
+foreach	method	SDK.InfrontSDK.WatchlistContent.foreach	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	foreach
+get	method	SDK.InfrontSDK.WatchlistContent.get	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	get
+insert	method	SDK.InfrontSDK.WatchlistContent.insert	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	insert
+move	method	SDK.InfrontSDK.WatchlistContent.move	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	move
+moveItemAt	method	SDK.InfrontSDK.WatchlistContent.moveItemAt	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	moveitemat
+pop	method	SDK.InfrontSDK.WatchlistContent.pop	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	pop
+push	method	SDK.InfrontSDK.WatchlistContent.push	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	push
+remove	method	SDK.InfrontSDK.WatchlistContent.remove	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	remove
+removeItemAt	method	SDK.InfrontSDK.WatchlistContent.removeItemAt	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	removeitemat
+replaceWith	method	SDK.InfrontSDK.WatchlistContent.replaceWith	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	replacewith
+sort	method	SDK.InfrontSDK.WatchlistContent.sort	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	sort
+unshift	method	SDK.InfrontSDK.WatchlistContent.unshift	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	unshift
+update	method	SDK.InfrontSDK.WatchlistContent.update	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	update
+updateItemAt	method	SDK.InfrontSDK.WatchlistContent.updateItemAt	reference/SDK/SDK.InfrontSDK.WatchlistContent.class.md	updateitemat
 AlertData	interface	SDK.InfrontSDK.AlertData	reference/SDK/SDK.InfrontSDK.AlertData.md	
 comment	property	SDK.InfrontSDK.AlertData.comment	reference/SDK/SDK.InfrontSDK.AlertData.md	comment
 enabled	property	SDK.InfrontSDK.AlertData.enabled	reference/SDK/SDK.InfrontSDK.AlertData.md	enabled
@@ -12131,10 +12131,10 @@ onStatus	method	SDK.InfrontSDK.CompanySymbolsOptions.onStatus	reference/SDK/SDK.
 ConnectionStatus	interface	SDK.InfrontSDK.ConnectionStatus	reference/SDK/SDK.InfrontSDK.ConnectionStatus.md	
 serverDescription	property	SDK.InfrontSDK.ConnectionStatus.serverDescription	reference/SDK/SDK.InfrontSDK.ConnectionStatus.md	serverdescription
 serverType	property	SDK.InfrontSDK.ConnectionStatus.serverType	reference/SDK/SDK.InfrontSDK.ConnectionStatus.md	servertype
-ConsolidatedOrderbook	interface	SDK.InfrontSDK.ConsolidatedOrderbook	reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbook.md	
-askLevels	property	SDK.InfrontSDK.ConsolidatedOrderbook.askLevels	reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbook.md	asklevels
-bidLevels	property	SDK.InfrontSDK.ConsolidatedOrderbook.bidLevels	reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbook.md	bidlevels
-markets	property	SDK.InfrontSDK.ConsolidatedOrderbook.markets	reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbook.md	markets
+ConsolidatedOrderbook	interface	SDK.InfrontSDK.ConsolidatedOrderbook	reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbook.interface.md	
+askLevels	property	SDK.InfrontSDK.ConsolidatedOrderbook.askLevels	reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbook.interface.md	asklevels
+bidLevels	property	SDK.InfrontSDK.ConsolidatedOrderbook.bidLevels	reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbook.interface.md	bidlevels
+markets	property	SDK.InfrontSDK.ConsolidatedOrderbook.markets	reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbook.interface.md	markets
 ConsolidatedOrderbookLevel	interface	SDK.InfrontSDK.ConsolidatedOrderbookLevel	reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbookLevel.md	
 marketOrders	property	SDK.InfrontSDK.ConsolidatedOrderbookLevel.marketOrders	reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbookLevel.md	marketorders
 ordersCount	property	SDK.InfrontSDK.ConsolidatedOrderbookLevel.ordersCount	reference/SDK/SDK.InfrontSDK.ConsolidatedOrderbookLevel.md	orderscount
@@ -12178,9 +12178,9 @@ Dividend	interface	SDK.InfrontSDK.Dividend	reference/SDK/SDK.InfrontSDK.Dividend
 amount	property	SDK.InfrontSDK.Dividend.amount	reference/SDK/SDK.InfrontSDK.Dividend.md	amount
 currency	property	SDK.InfrontSDK.Dividend.currency	reference/SDK/SDK.InfrontSDK.Dividend.md	currency
 date	property	SDK.InfrontSDK.Dividend.date	reference/SDK/SDK.InfrontSDK.Dividend.md	date
-Document	interface	SDK.InfrontSDK.Document	reference/SDK/SDK.InfrontSDK.Document.md	
-content	property	SDK.InfrontSDK.Document.content	reference/SDK/SDK.InfrontSDK.Document.md	content
-link	property	SDK.InfrontSDK.Document.link	reference/SDK/SDK.InfrontSDK.Document.md	link
+Document	interface	SDK.InfrontSDK.Document	reference/SDK/SDK.InfrontSDK.Document.interface.md	
+content	property	SDK.InfrontSDK.Document.content	reference/SDK/SDK.InfrontSDK.Document.interface.md	content
+link	property	SDK.InfrontSDK.Document.link	reference/SDK/SDK.InfrontSDK.Document.interface.md	link
 DocumentMetadata	interface	SDK.InfrontSDK.DocumentMetadata	reference/SDK/SDK.InfrontSDK.DocumentMetadata.md	
 author	property	SDK.InfrontSDK.DocumentMetadata.author	reference/SDK/SDK.InfrontSDK.DocumentMetadata.md	author
 contentType	property	SDK.InfrontSDK.DocumentMetadata.contentType	reference/SDK/SDK.InfrontSDK.DocumentMetadata.md	contenttype
@@ -12213,9 +12213,9 @@ type	property	SDK.InfrontSDK.DocumentsOptions.type	reference/SDK/SDK.InfrontSDK.
 onData	method	SDK.InfrontSDK.DocumentsOptions.onData	reference/SDK/SDK.InfrontSDK.DocumentsOptions.md	ondata
 onError	method	SDK.InfrontSDK.DocumentsOptions.onError	reference/SDK/SDK.InfrontSDK.DocumentsOptions.md	onerror
 onStatus	method	SDK.InfrontSDK.DocumentsOptions.onStatus	reference/SDK/SDK.InfrontSDK.DocumentsOptions.md	onstatus
-DocumentUrl	interface	SDK.InfrontSDK.DocumentUrl	reference/SDK/SDK.InfrontSDK.DocumentUrl.md	
-content	property	SDK.InfrontSDK.DocumentUrl.content	reference/SDK/SDK.InfrontSDK.DocumentUrl.md	content
-link	property	SDK.InfrontSDK.DocumentUrl.link	reference/SDK/SDK.InfrontSDK.DocumentUrl.md	link
+DocumentUrl	interface	SDK.InfrontSDK.DocumentUrl	reference/SDK/SDK.InfrontSDK.DocumentUrl.interface.md	
+content	property	SDK.InfrontSDK.DocumentUrl.content	reference/SDK/SDK.InfrontSDK.DocumentUrl.interface.md	content
+link	property	SDK.InfrontSDK.DocumentUrl.link	reference/SDK/SDK.InfrontSDK.DocumentUrl.interface.md	link
 DocumentUrlOptions	interface	SDK.InfrontSDK.DocumentUrlOptions	reference/SDK/SDK.InfrontSDK.DocumentUrlOptions.md	
 signal	property	SDK.InfrontSDK.DocumentUrlOptions.signal	reference/SDK/SDK.InfrontSDK.DocumentUrlOptions.md	signal
 subscribe	property	SDK.InfrontSDK.DocumentUrlOptions.subscribe	reference/SDK/SDK.InfrontSDK.DocumentUrlOptions.md	subscribe
@@ -12242,7 +12242,7 @@ subscribe	property	SDK.InfrontSDK.FeedContentsOptions.subscribe	reference/SDK/SD
 onData	method	SDK.InfrontSDK.FeedContentsOptions.onData	reference/SDK/SDK.InfrontSDK.FeedContentsOptions.md	ondata
 onError	method	SDK.InfrontSDK.FeedContentsOptions.onError	reference/SDK/SDK.InfrontSDK.FeedContentsOptions.md	onerror
 onStatus	method	SDK.InfrontSDK.FeedContentsOptions.onStatus	reference/SDK/SDK.InfrontSDK.FeedContentsOptions.md	onstatus
-FeedInfo	interface	SDK.InfrontSDK.FeedInfo	reference/SDK/SDK.InfrontSDK.FeedInfo.md	
+FeedInfo	interface	SDK.InfrontSDK.FeedInfo	reference/SDK/SDK.InfrontSDK.FeedInfo.interface.md	
 FeedInfoOptions	interface	SDK.InfrontSDK.FeedInfoOptions	reference/SDK/SDK.InfrontSDK.FeedInfoOptions.md	
 feed	property	SDK.InfrontSDK.FeedInfoOptions.feed	reference/SDK/SDK.InfrontSDK.FeedInfoOptions.md	feed
 infoType	property	SDK.InfrontSDK.FeedInfoOptions.infoType	reference/SDK/SDK.InfrontSDK.FeedInfoOptions.md	infotype
@@ -12283,10 +12283,10 @@ FundamentalsFigure	interface	SDK.InfrontSDK.FundamentalsFigure	reference/SDK/SDK
 code	property	SDK.InfrontSDK.FundamentalsFigure.code	reference/SDK/SDK.InfrontSDK.FundamentalsFigure.md	code
 name	property	SDK.InfrontSDK.FundamentalsFigure.name	reference/SDK/SDK.InfrontSDK.FundamentalsFigure.md	name
 years	property	SDK.InfrontSDK.FundamentalsFigure.years	reference/SDK/SDK.InfrontSDK.FundamentalsFigure.md	years
-History	interface	SDK.InfrontSDK.History	reference/SDK/SDK.InfrontSDK.History.md	
-dividends	property	SDK.InfrontSDK.History.dividends	reference/SDK/SDK.InfrontSDK.History.md	dividends
-splits	property	SDK.InfrontSDK.History.splits	reference/SDK/SDK.InfrontSDK.History.md	splits
-trades	property	SDK.InfrontSDK.History.trades	reference/SDK/SDK.InfrontSDK.History.md	trades
+History	interface	SDK.InfrontSDK.History	reference/SDK/SDK.InfrontSDK.History.interface.md	
+dividends	property	SDK.InfrontSDK.History.dividends	reference/SDK/SDK.InfrontSDK.History.interface.md	dividends
+splits	property	SDK.InfrontSDK.History.splits	reference/SDK/SDK.InfrontSDK.History.interface.md	splits
+trades	property	SDK.InfrontSDK.History.trades	reference/SDK/SDK.InfrontSDK.History.interface.md	trades
 HistoryOptions	interface	SDK.InfrontSDK.HistoryOptions	reference/SDK/SDK.InfrontSDK.HistoryOptions.md	
 adjustDividends	property	SDK.InfrontSDK.HistoryOptions.adjustDividends	reference/SDK/SDK.InfrontSDK.HistoryOptions.md	adjustdividends
 adjustSplits	property	SDK.InfrontSDK.HistoryOptions.adjustSplits	reference/SDK/SDK.InfrontSDK.HistoryOptions.md	adjustsplits
@@ -12368,10 +12368,10 @@ subscribe	property	SDK.InfrontSDK.ListingsOptionsNoneInteractive.subscribe	refer
 onData	method	SDK.InfrontSDK.ListingsOptionsNoneInteractive.onData	reference/SDK/SDK.InfrontSDK.ListingsOptionsNoneInteractive.md	ondata
 onError	method	SDK.InfrontSDK.ListingsOptionsNoneInteractive.onError	reference/SDK/SDK.InfrontSDK.ListingsOptionsNoneInteractive.md	onerror
 onStatus	method	SDK.InfrontSDK.ListingsOptionsNoneInteractive.onStatus	reference/SDK/SDK.InfrontSDK.ListingsOptionsNoneInteractive.md	onstatus
-LoginData	interface	SDK.InfrontSDK.LoginData	reference/SDK/SDK.InfrontSDK.LoginData.md	
-connectionsStatus	property	SDK.InfrontSDK.LoginData.connectionsStatus	reference/SDK/SDK.InfrontSDK.LoginData.md	connectionsstatus
-features	property	SDK.InfrontSDK.LoginData.features	reference/SDK/SDK.InfrontSDK.LoginData.md	features
-loginDetails	property	SDK.InfrontSDK.LoginData.loginDetails	reference/SDK/SDK.InfrontSDK.LoginData.md	logindetails
+LoginData	interface	SDK.InfrontSDK.LoginData	reference/SDK/SDK.InfrontSDK.LoginData.interface.md	
+connectionsStatus	property	SDK.InfrontSDK.LoginData.connectionsStatus	reference/SDK/SDK.InfrontSDK.LoginData.interface.md	connectionsstatus
+features	property	SDK.InfrontSDK.LoginData.features	reference/SDK/SDK.InfrontSDK.LoginData.interface.md	features
+loginDetails	property	SDK.InfrontSDK.LoginData.loginDetails	reference/SDK/SDK.InfrontSDK.LoginData.interface.md	logindetails
 LoginDataOptions	interface	SDK.InfrontSDK.LoginDataOptions	reference/SDK/SDK.InfrontSDK.LoginDataOptions.md	
 flags	property	SDK.InfrontSDK.LoginDataOptions.flags	reference/SDK/SDK.InfrontSDK.LoginDataOptions.md	flags
 signal	property	SDK.InfrontSDK.LoginDataOptions.signal	reference/SDK/SDK.InfrontSDK.LoginDataOptions.md	signal
@@ -12416,10 +12416,10 @@ to	property	SDK.InfrontSDK.NewsHeadlinesOptions.to	reference/SDK/SDK.InfrontSDK.
 onData	method	SDK.InfrontSDK.NewsHeadlinesOptions.onData	reference/SDK/SDK.InfrontSDK.NewsHeadlinesOptions.md	ondata
 onError	method	SDK.InfrontSDK.NewsHeadlinesOptions.onError	reference/SDK/SDK.InfrontSDK.NewsHeadlinesOptions.md	onerror
 onStatus	method	SDK.InfrontSDK.NewsHeadlinesOptions.onStatus	reference/SDK/SDK.InfrontSDK.NewsHeadlinesOptions.md	onstatus
-NewsStory	interface	SDK.InfrontSDK.NewsStory	reference/SDK/SDK.InfrontSDK.NewsStory.md	
-body	property	SDK.InfrontSDK.NewsStory.body	reference/SDK/SDK.InfrontSDK.NewsStory.md	body
-headline	property	SDK.InfrontSDK.NewsStory.headline	reference/SDK/SDK.InfrontSDK.NewsStory.md	headline
-logo	property	SDK.InfrontSDK.NewsStory.logo	reference/SDK/SDK.InfrontSDK.NewsStory.md	logo
+NewsStory	interface	SDK.InfrontSDK.NewsStory	reference/SDK/SDK.InfrontSDK.NewsStory.interface.md	
+body	property	SDK.InfrontSDK.NewsStory.body	reference/SDK/SDK.InfrontSDK.NewsStory.interface.md	body
+headline	property	SDK.InfrontSDK.NewsStory.headline	reference/SDK/SDK.InfrontSDK.NewsStory.interface.md	headline
+logo	property	SDK.InfrontSDK.NewsStory.logo	reference/SDK/SDK.InfrontSDK.NewsStory.interface.md	logo
 NewsStoryOptionsByFeedAndID	interface	SDK.InfrontSDK.NewsStoryOptionsByFeedAndID	reference/SDK/SDK.InfrontSDK.NewsStoryOptionsByFeedAndID.md	
 feed	property	SDK.InfrontSDK.NewsStoryOptionsByFeedAndID.feed	reference/SDK/SDK.InfrontSDK.NewsStoryOptionsByFeedAndID.md	feed
 headline	property	SDK.InfrontSDK.NewsStoryOptionsByFeedAndID.headline	reference/SDK/SDK.InfrontSDK.NewsStoryOptionsByFeedAndID.md	headline
@@ -12438,10 +12438,10 @@ subscribe	property	SDK.InfrontSDK.NewsStoryOptionsByHeadline.subscribe	reference
 onData	method	SDK.InfrontSDK.NewsStoryOptionsByHeadline.onData	reference/SDK/SDK.InfrontSDK.NewsStoryOptionsByHeadline.md	ondata
 onError	method	SDK.InfrontSDK.NewsStoryOptionsByHeadline.onError	reference/SDK/SDK.InfrontSDK.NewsStoryOptionsByHeadline.md	onerror
 onStatus	method	SDK.InfrontSDK.NewsStoryOptionsByHeadline.onStatus	reference/SDK/SDK.InfrontSDK.NewsStoryOptionsByHeadline.md	onstatus
-Orderbook	interface	SDK.InfrontSDK.Orderbook	reference/SDK/SDK.InfrontSDK.Orderbook.md	
-askLevels	property	SDK.InfrontSDK.Orderbook.askLevels	reference/SDK/SDK.InfrontSDK.Orderbook.md	asklevels
-bidLevels	property	SDK.InfrontSDK.Orderbook.bidLevels	reference/SDK/SDK.InfrontSDK.Orderbook.md	bidlevels
-hasDetails	property	SDK.InfrontSDK.Orderbook.hasDetails	reference/SDK/SDK.InfrontSDK.Orderbook.md	hasdetails
+Orderbook	interface	SDK.InfrontSDK.Orderbook	reference/SDK/SDK.InfrontSDK.Orderbook.interface.md	
+askLevels	property	SDK.InfrontSDK.Orderbook.askLevels	reference/SDK/SDK.InfrontSDK.Orderbook.interface.md	asklevels
+bidLevels	property	SDK.InfrontSDK.Orderbook.bidLevels	reference/SDK/SDK.InfrontSDK.Orderbook.interface.md	bidlevels
+hasDetails	property	SDK.InfrontSDK.Orderbook.hasDetails	reference/SDK/SDK.InfrontSDK.Orderbook.interface.md	hasdetails
 OrderbookLevel	interface	SDK.InfrontSDK.OrderbookLevel	reference/SDK/SDK.InfrontSDK.OrderbookLevel.md	
 level	property	SDK.InfrontSDK.OrderbookLevel.level	reference/SDK/SDK.InfrontSDK.OrderbookLevel.md	level
 market	property	SDK.InfrontSDK.OrderbookLevel.market	reference/SDK/SDK.InfrontSDK.OrderbookLevel.md	market
@@ -12527,11 +12527,11 @@ onData	method	SDK.InfrontSDK.SubscribeAlertsOptions.onData	reference/SDK/SDK.Inf
 onError	method	SDK.InfrontSDK.SubscribeAlertsOptions.onError	reference/SDK/SDK.InfrontSDK.SubscribeAlertsOptions.md	onerror
 onStatus	method	SDK.InfrontSDK.SubscribeAlertsOptions.onStatus	reference/SDK/SDK.InfrontSDK.SubscribeAlertsOptions.md	onstatus
 SubscriptionSignalEventMap	interface	SDK.InfrontSDK.SubscriptionSignalEventMap	reference/SDK/SDK.InfrontSDK.SubscriptionSignalEventMap.md	
-SymbolData	interface	SDK.InfrontSDK.SymbolData	reference/SDK/SDK.InfrontSDK.SymbolData.md	
-get	method	SDK.InfrontSDK.SymbolData.get	reference/SDK/SDK.InfrontSDK.SymbolData.md	get
-getConverted	method	SDK.InfrontSDK.SymbolData.getConverted	reference/SDK/SDK.InfrontSDK.SymbolData.md	getconverted
-notifyOnContent	method	SDK.InfrontSDK.SymbolData.notifyOnContent	reference/SDK/SDK.InfrontSDK.SymbolData.md	notifyoncontent
-observe	method	SDK.InfrontSDK.SymbolData.observe	reference/SDK/SDK.InfrontSDK.SymbolData.md	observe
+SymbolData	interface	SDK.InfrontSDK.SymbolData	reference/SDK/SDK.InfrontSDK.SymbolData.interface.md	
+get	method	SDK.InfrontSDK.SymbolData.get	reference/SDK/SDK.InfrontSDK.SymbolData.interface.md	get
+getConverted	method	SDK.InfrontSDK.SymbolData.getConverted	reference/SDK/SDK.InfrontSDK.SymbolData.interface.md	getconverted
+notifyOnContent	method	SDK.InfrontSDK.SymbolData.notifyOnContent	reference/SDK/SDK.InfrontSDK.SymbolData.interface.md	notifyoncontent
+observe	method	SDK.InfrontSDK.SymbolData.observe	reference/SDK/SDK.InfrontSDK.SymbolData.interface.md	observe
 SymbolDataOptions	interface	SDK.InfrontSDK.SymbolDataOptions	reference/SDK/SDK.InfrontSDK.SymbolDataOptions.md	
 content	property	SDK.InfrontSDK.SymbolDataOptions.content	reference/SDK/SDK.InfrontSDK.SymbolDataOptions.md	content
 fields	property	SDK.InfrontSDK.SymbolDataOptions.fields	reference/SDK/SDK.InfrontSDK.SymbolDataOptions.md	fields
@@ -12619,7 +12619,7 @@ subscribe	property	SDK.InfrontSDK.TAPIRequestQuoteOptions.subscribe	reference/SD
 onData	method	SDK.InfrontSDK.TAPIRequestQuoteOptions.onData	reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteOptions.md	ondata
 onError	method	SDK.InfrontSDK.TAPIRequestQuoteOptions.onError	reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteOptions.md	onerror
 onStatus	method	SDK.InfrontSDK.TAPIRequestQuoteOptions.onStatus	reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteOptions.md	onstatus
-TAPIRequestQuoteResults	interface	SDK.InfrontSDK.TAPIRequestQuoteResults	reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteResults.md	
+TAPIRequestQuoteResults	interface	SDK.InfrontSDK.TAPIRequestQuoteResults	reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteResults.interface.md	
 TAPIRequestQuoteResultsMetadata	interface	SDK.InfrontSDK.TAPIRequestQuoteResultsMetadata	reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteResultsMetadata.md	
 TAPIRequestQuoteResultsOptions	interface	SDK.InfrontSDK.TAPIRequestQuoteResultsOptions	reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteResultsOptions.md	
 signal	property	SDK.InfrontSDK.TAPIRequestQuoteResultsOptions.signal	reference/SDK/SDK.InfrontSDK.TAPIRequestQuoteResultsOptions.md	signal
@@ -12667,9 +12667,9 @@ subscribe	property	SDK.InfrontSDK.TAPIRFQUnsubOptions.subscribe	reference/SDK/SD
 onData	method	SDK.InfrontSDK.TAPIRFQUnsubOptions.onData	reference/SDK/SDK.InfrontSDK.TAPIRFQUnsubOptions.md	ondata
 onError	method	SDK.InfrontSDK.TAPIRFQUnsubOptions.onError	reference/SDK/SDK.InfrontSDK.TAPIRFQUnsubOptions.md	onerror
 onStatus	method	SDK.InfrontSDK.TAPIRFQUnsubOptions.onStatus	reference/SDK/SDK.InfrontSDK.TAPIRFQUnsubOptions.md	onstatus
-TAPITrades	interface	SDK.InfrontSDK.TAPITrades	reference/SDK/SDK.InfrontSDK.TAPITrades.md	
+TAPITrades	interface	SDK.InfrontSDK.TAPITrades	reference/SDK/SDK.InfrontSDK.TAPITrades.interface.md	
 TAPITradesMetadata	interface	SDK.InfrontSDK.TAPITradesMetadata	reference/SDK/SDK.InfrontSDK.TAPITradesMetadata.md	
-TimeSeries	interface	SDK.InfrontSDK.TimeSeries	reference/SDK/SDK.InfrontSDK.TimeSeries.md	
+TimeSeries	interface	SDK.InfrontSDK.TimeSeries	reference/SDK/SDK.InfrontSDK.TimeSeries.interface.md	
 TimeSeriesOptions	interface	SDK.InfrontSDK.TimeSeriesOptions	reference/SDK/SDK.InfrontSDK.TimeSeriesOptions.md	
 adjustDividends	property	SDK.InfrontSDK.TimeSeriesOptions.adjustDividends	reference/SDK/SDK.InfrontSDK.TimeSeriesOptions.md	adjustdividends
 adjustFromDate	property	SDK.InfrontSDK.TimeSeriesOptions.adjustFromDate	reference/SDK/SDK.InfrontSDK.TimeSeriesOptions.md	adjustfromdate
@@ -12731,7 +12731,7 @@ onError	method	SDK.InfrontSDK.WatchListContentOptions.onError	reference/SDK/SDK.
 onStatus	method	SDK.InfrontSDK.WatchListContentOptions.onStatus	reference/SDK/SDK.InfrontSDK.WatchListContentOptions.md	onstatus
 WatchlistItem	interface	SDK.InfrontSDK.WatchlistItem	reference/SDK/SDK.InfrontSDK.WatchlistItem.md	
 feedInfo	property	SDK.InfrontSDK.WatchlistItem.feedInfo	reference/SDK/SDK.InfrontSDK.WatchlistItem.md	feedinfo
-WatchlistProviderAccess	interface	SDK.InfrontSDK.WatchlistProviderAccess	reference/SDK/SDK.InfrontSDK.WatchlistProviderAccess.md	
+WatchlistProviderAccess	interface	SDK.InfrontSDK.WatchlistProviderAccess	reference/SDK/SDK.InfrontSDK.WatchlistProviderAccess.interface.md	
 WatchListsObservableArrayOptions	interface	SDK.InfrontSDK.WatchListsObservableArrayOptions	reference/SDK/SDK.InfrontSDK.WatchListsObservableArrayOptions.md	
 signal	property	SDK.InfrontSDK.WatchListsObservableArrayOptions.signal	reference/SDK/SDK.InfrontSDK.WatchListsObservableArrayOptions.md	signal
 subscribe	property	SDK.InfrontSDK.WatchListsObservableArrayOptions.subscribe	reference/SDK/SDK.InfrontSDK.WatchListsObservableArrayOptions.md	subscribe

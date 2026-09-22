@@ -15,4 +15,6 @@ defines: ["TAPITrades"]
 
 # TAPITrades
 
+> Not the same page as [`tapiTrades`](./SDK.InfrontSDK.tapiTrades.md), the function — the names differ only in case.
+
 

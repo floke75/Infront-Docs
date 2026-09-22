@@ -17,6 +17,8 @@ references: ["SDK.InfrontSDK.LoginDataOptions", "SDK.InfrontSDK.DataRequest"]
 
 # loginData
 
+> Not the same page as [`LoginData`](./SDK.InfrontSDK.LoginData.interface.md), the interface — the names differ only in case.
+
 ```ts
 loginData(options: LoginDataOptions): DataRequest
 ```
