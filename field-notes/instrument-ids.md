@@ -28,10 +28,11 @@ examples, and several of them do not work** — resolve ids against the live ser
 | Nikkei 225 | `6150` `N225` | Index | 20-minute delay; **`Last` came back empty** while `ChangePercent` and `YesterdayClose` were present |
 | Nasdaq Composite | `2087` `COMP` | Index | Nasdaq, Indices |
 
-**Not reachable by the test user:** S&P 500, Dow Jones Industrial Average, DAX. It has no S&P Dow Jones
-Indices feed and no Xetra feed ([feeds-test-user.md](feeds-test-user.md)). The docs' `2088:SP500`,
-`20:DJI` and `2098:DAX` fail with the opaque data error ([errors-and-access.md](errors-and-access.md)).
-Whether a production contract includes them is a question for Infront.
+**Not entitled for the test user:** S&P 500, Dow Jones Industrial Average, DAX. Its feed list has no S&P
+Dow Jones Indices feed and no Xetra feed ([feeds-test-user.md](feeds-test-user.md)), and the docs' ids
+`2088:SP500`, `20:DJI`, `2098:DAX` (and `2229:BRT`) answer `NoAccess` — which a feed number that does not
+exist answers too ([errors-and-access.md](errors-and-access.md)), so whether these are the right ids for a
+production contract is for Infront to confirm.
 
 ## Resolving an id
 

@@ -64,6 +64,12 @@ w.__probe.unsub = w.sdk.get(S.timeSeries({ /* … */ subscribe: true,
 // …later call: read w.__probe, then w.__probe.unbind(); w.__probe.unsub();
 ```
 
+## Errors: keep all of them
+
+A failing request can call `onError` more than once, and the first call is the informative one (a
+`NoAccess` naming the feed and ticker, before a generic `Internal error!`). Push every error into a list;
+a probe that keeps only the last one reports the useless error ([errors-and-access.md](errors-and-access.md)).
+
 ## Clean up
 
 Call the `Unsubscribe` every `sdk.get` returns and every `Unbind` from `observe`. Unbinding alone does not
