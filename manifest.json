@@ -13,7 +13,7 @@
   "https://docs.infrontfinance.com/tests/ (per-widget snippets)"
  ],
  "file_count": 3570,
- "total_bytes": 17310321,
+ "total_bytes": 17311717,
  "by_page_type": {
   "corpus-readme": 1,
   "example": 273,
@@ -1677,7 +1677,7 @@
    "title": "EFN's production user — first login",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 4281,
+   "bytes": 5531,
    "module": "SDK"
   },
   {
@@ -1693,7 +1693,7 @@
    "title": "Streaming live fields — shapes, rates, batching",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 3413,
+   "bytes": 3559,
    "module": "SDK"
   },
   {

@@ -70,6 +70,21 @@ request (17 ids), items read by position 1.5 s after `onData` carried other inst
 the same ids came back aligned. Match each item to what you asked for by its own `get("Feed")` and
 `get("Ticker")`, never by index ([streaming.md](streaming.md)).
 
+**Why, from the 3.1.42 source** (read in the served bundle, 2026-09-23): an array `symbolData` creates an
+empty `ObservableArray`, sends **one single-id request per id**, and **pushes each id's item into the
+list when its answer lands** — so the list is in arrival order, and `onData(list)` runs right after the
+requests go out, when the list may be empty or half full. Answers already cached arrive in request
+order, which is why repeat requests looked aligned. Observe the list (`itemAdded`, `reInit`) and key
+each item by `Feed` + `Ticker`. An id the SDK cannot resolve is never pushed: it fires `onError`
+(`InvalidIdError`) instead, so "every asked id has an item" is not a condition to wait for.
+
+Two more 3.1.42 behaviours from the same reading: `ObservableArray.observe(...)` calls `reInit` at once
+with whatever the list holds — **even when that is nothing**, so a handler that treats `reInit` as
+"replace everything" wipes its state on an empty list; and `SymbolData.observe(field, cb)` delivers the
+field's current value immediately when it has one. A refused login is reported through the SDK option
+`onLoginFailed`, not through `onDisconnect`; `DisconnectEventReason` keeps KickOut 0, Disconnect 1,
+InvalidSessionToken 2, Unknown 3.
+
 **Search results are objects on 3.1.42**, not the plain records the sandbox's SDK 2.3.1 returned: each
 exposes `get(field)` (own keys `type`, `get`, `getConverted`, `inspect`), so `r.Ticker` is `undefined` and
 `r.get("Ticker")` is the value ([instrument-ids.md](instrument-ids.md)).

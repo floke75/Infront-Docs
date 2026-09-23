@@ -25,7 +25,9 @@ sdk.get(InfrontSDK.symbolData({ id, content: { Basic: true }, subscribe: true, o
   request, though later requests came back aligned ([production-user.md](production-user.md)). Key each
   item by its own `get("Feed")` and `get("Ticker")`.
 - **Values are present on the first `onData`** for `content: { Basic: true }` — `item(0).get("Last")`
-  returned OMXS30's last value immediately. Unlike search results, nothing needs waiting for.
+  returned OMXS30's last value immediately in the sandbox (SDK 2.3.1). **Not on WTK 3.1.42**: there the
+  list starts empty and each id's item is pushed as its answer lands, so observe the list
+  ([production-user.md](production-user.md)).
 - `symbolData.get(field)` returns numbers, strings and **`Date` objects** (`TradeTime`, `LastTradedAt`).
   `symbolData.observe(field, cb)` returns an `Unbind`; the `Unsubscribe` from `sdk.get` ends the stream.
 
