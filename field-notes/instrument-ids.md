@@ -46,7 +46,8 @@ sdk.get(InfrontSDK.symbolSearch({
 }));
 ```
 
-Search results are **plain objects** (`r.Feed`, `r.Ticker`), and they carry `FeedAccess` and `FeedDelayStr`
+Search results are **plain objects** on the sandbox's SDK 2.3.1 (`r.Feed`, `r.Ticker`) — on WTK 3.1.42 they
+are objects read with `r.get("Feed")` ([production-user.md](production-user.md)), and they carry `FeedAccess` and `FeedDelayStr`
 — check entitlement before you subscribe.
 
 ## Traps

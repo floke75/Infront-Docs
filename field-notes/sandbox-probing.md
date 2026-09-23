@@ -46,7 +46,8 @@ const search = (parameters, limit = 15) => new Promise((resolve) => {
                                              itemAdded: (x) => { got.push(x); settle(); } }); settle(); },
   }));
 });
-// search results are plain objects: r.Feed, r.Ticker, r.FeedAccess, …
+// search results are plain objects here (SDK 2.3.1): r.Feed, r.Ticker, r.FeedAccess, …
+// on WTK 3.1.42 they are objects read with r.get("Feed") — see production-user.md
 ```
 
 `symbolData` with an ARRAY of ids is the exception that proves the rule: its `ObservableArray` already

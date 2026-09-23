@@ -149,7 +149,7 @@ parent keeps \`is_index: true\`.
 | Live streaming fields for an instrument | \`reference/SDK/SDK.InfrontSDK.symbolData.md\`, \`reference/SDK/SDK.InfrontSDK.BasicField.md\`, \`field-notes/streaming.md\` |
 | Turn an instrument name into a \`{ feed, ticker }\` that works | \`field-notes/instrument-ids.md\` |
 | Index constituents or an exchange's market lists | \`field-notes/chains.md\` |
-| Which markets a login can see, and their delay | \`field-notes/feeds-test-user.md\`, \`field-notes/errors-and-access.md\` |
+| Which markets a login can see, and their delay | \`field-notes/feeds-test-user.md\`, \`field-notes/production-user.md\`, \`field-notes/errors-and-access.md\` |
 | Which fields exist at all | \`reference/SDK/SDK.InfrontSDK.BasicField.md\`, \`reference/SDK/SDK.InfrontSDK.FundamentalField.md\`, and the \`CoreDataAPI\` \`*Field\` types |
 | Charts | \`reference/WTK/WTK.ChartWidgetOptions.md\` and its parts |
 | Trading | \`reference/SDK/_module.SDK.InfrontSDK.Trading.md\`, \`examples/SDK-SDK-Examples-Trading.md\` |

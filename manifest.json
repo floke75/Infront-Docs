@@ -12,13 +12,13 @@
   "https://docs.infrontfinance.com/examples/ (runnable examples)",
   "https://docs.infrontfinance.com/tests/ (per-widget snippets)"
  ],
- "file_count": 3569,
- "total_bytes": 17303982,
+ "file_count": 3570,
+ "total_bytes": 17311717,
  "by_page_type": {
   "corpus-readme": 1,
   "example": 273,
   "field-notes-index": 1,
-  "field-note": 9,
+  "field-note": 10,
   "guide": 8,
   "concept-index": 1,
   "symbol-index": 19,
@@ -29,7 +29,7 @@
  "by_kind": {
   "index": 34,
   "example": 166,
-  "field-note": 9,
+  "field-note": 10,
   "guide": 8,
   "legacy-page": 3,
   "legacy-widget": 176,
@@ -121,7 +121,7 @@
    "title": "Infront Web Toolkit documentation corpus",
    "kind": "index",
    "page_type": "corpus-readme",
-   "bytes": 9268
+   "bytes": 9302
   },
   {
    "file": "examples/SDK-SDK-API-Feeds-Get-Accessible-Feeds.md",
@@ -1622,14 +1622,14 @@
    "title": "Field notes — verified against the live service",
    "kind": "index",
    "page_type": "field-notes-index",
-   "bytes": 2768
+   "bytes": 3055
   },
   {
    "file": "field-notes/authentication.md",
    "title": "Authentication — who holds which secret",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 2789,
+   "bytes": 3212,
    "module": "SDK"
   },
   {
@@ -1661,7 +1661,7 @@
    "title": "Instrument ids that work, and how to find the rest",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 3526,
+   "bytes": 3657,
    "module": "SDK"
   },
   {
@@ -1669,7 +1669,15 @@
    "title": "Open questions for Infront",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 2058,
+   "bytes": 2721,
+   "module": "SDK"
+  },
+  {
+   "file": "field-notes/production-user.md",
+   "title": "EFN's production user — first login",
+   "kind": "field-note",
+   "page_type": "field-note",
+   "bytes": 5531,
    "module": "SDK"
   },
   {
@@ -1677,7 +1685,7 @@
    "title": "Probing the live service through the sandbox",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 3445,
+   "bytes": 3547,
    "module": "SDK"
   },
   {
@@ -1685,7 +1693,7 @@
    "title": "Streaming live fields — shapes, rates, batching",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 3049,
+   "bytes": 3559,
    "module": "SDK"
   },
   {
@@ -1780,7 +1788,7 @@
    "title": "Concept index — plain English to Infront symbols",
    "kind": "index",
    "page_type": "concept-index",
-   "bytes": 19404
+   "bytes": 19458
   },
   {
    "file": "index/symbols-SDK-01.md",

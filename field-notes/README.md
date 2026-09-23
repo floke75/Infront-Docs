@@ -2,7 +2,7 @@
 title: "Field notes — verified against the live service"
 kind: index
 page_type: field-notes-index
-verified: "2026-09-22"
+verified: "2026-09-23"
 source: "live sandbox (docs.infrontfinance.com/sandbox), EFN documentation test user, SDK 2.3.1"
 ---
 
@@ -16,7 +16,8 @@ would have sent the work the wrong way.
 **Provenance.** Observed 2026-09-22 in Infront's online sandbox, signed in as EFN's documentation test
 user: SDK `2.3.1` (`sdk.version()`), environment `cloud.eu`, realm `infront`. **Entitlements belong to the
 login that observed them.** The test user's feeds, delays and missing markets are not production's — EFN's
-production user gets real-time Nasdaq Stockholm data where the test user gets 15-minute delayed data.
+production contract was expected to give real-time Nasdaq Stockholm data, but the production user's first
+login (2026-09-23, [production-user.md](production-user.md)) read every OMX instrument as delayed too.
 Anything a note says about access, delay or which feeds exist is scoped to the test user unless it says
 otherwise.
 
@@ -38,4 +39,5 @@ route to it; a regeneration that forgot the copy fails the link check rather tha
 | [streaming.md](streaming.md) | subscribing to live fields, the shapes that come back, update rates, batching |
 | [time-series.md](time-series.md) | intraday bars — and the ordering trap in a live series |
 | [errors-and-access.md](errors-and-access.md) | an id "fails", or you need real-time vs delayed per feed and per symbol |
+| [production-user.md](production-user.md) | what EFN's production user actually gets: access per instrument, the SDK build the CDN serves, and where it differs from the sandbox |
 | [open-questions.md](open-questions.md) | what only Infront can answer, collected for the next conversation with them |

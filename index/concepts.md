@@ -191,7 +191,8 @@ explanation, then confirm the current shape in `reference/WTK/`.
 
 [field-notes/](../field-notes/README.md) — hand-written notes from querying the live service: working
 instrument ids ([instrument-ids](../field-notes/instrument-ids.md)), the OMXS30 constituents chain
-([chains](../field-notes/chains.md)), feeds and delays per login ([feeds-test-user](../field-notes/feeds-test-user.md)),
+([chains](../field-notes/chains.md)), feeds and delays per login ([feeds-test-user](../field-notes/feeds-test-user.md),
+[production-user](../field-notes/production-user.md)),
 update rates and batching ([streaming](../field-notes/streaming.md)), the live-series ordering trap
 ([time-series](../field-notes/time-series.md)), opaque vs descriptive errors
 ([errors-and-access](../field-notes/errors-and-access.md)). Where a note and the reference disagree, the note
