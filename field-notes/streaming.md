@@ -20,6 +20,10 @@ sdk.get(InfrontSDK.symbolData({ id, content: { Basic: true }, subscribe: true, o
 - **An array of ids** → `onData(list)`: an `InfrontUtil.ObservableArray<SymbolData>` with `length()`,
   `item(i)`, `observe({ reInit, itemAdded, itemChanged, itemRemoved, itemMoved })`, `foreach`, `find`.
   (`length` is a method; the `ObservableArray` reference page omits `observe`, which every example uses.)
+- **Match items by identity, not position.** With EFN's production user on WTK 3.1.42 (2026-09-23), the
+  items of a 17-id request read by index carried other instruments' values on the session's first data
+  request, though later requests came back aligned ([production-user.md](production-user.md)). Key each
+  item by its own `get("Feed")` and `get("Ticker")`.
 - **Values are present on the first `onData`** for `content: { Basic: true }` — `item(0).get("Last")`
   returned OMXS30's last value immediately. Unlike search results, nothing needs waiting for.
 - `symbolData.get(field)` returns numbers, strings and **`Date` objects** (`TradeTime`, `LastTradedAt`).

@@ -26,6 +26,13 @@ exactly — they issue a **`client_id`, a secret and an endpoint "for server-sid
 So the secret never reaches a browser. What the browser holds is a bearer token, usable by anyone who can
 read it — keep the route that issues it off the public internet.
 
+## Direct login with a user and password
+
+`new InfrontSDK.SDK({ userId, password, environment: "cloud.eu", realm: "infront", onReady })` logs in
+without the server-side flow. It worked for EFN's production user on 2026-09-23
+([production-user.md](production-user.md)). It puts the password itself in the page, so it suits a
+person checking entitlements at a desk, not a broadcast page that anyone on the network can open.
+
 ## What is NOT API access
 
 EFN's **documentation test user** signs in to `docs.infrontfinance.com` and its sandbox. It is not the
