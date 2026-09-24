@@ -2,7 +2,7 @@
 title: "Field notes — verified against the live service"
 kind: index
 page_type: field-notes-index
-verified: "2026-09-23"
+verified: "2026-09-24"
 source: "live sandbox (docs.infrontfinance.com/sandbox), EFN documentation test user, SDK 2.3.1"
 ---
 
@@ -33,6 +33,7 @@ route to it; a regeneration that forgot the copy fails the link check rather tha
 |---|---|
 | [sandbox-probing.md](sandbox-probing.md) | you want an answer from the live service instead of the docs |
 | [authentication.md](authentication.md) | wiring login: who holds which secret, and what reaches the browser |
+| [live-token-stage.md](live-token-stage.md) | production token rejection, data-socket loss without onDisconnect, or concurrent-login kickout in WTK 3.1.42 |
 | [instrument-ids.md](instrument-ids.md) | turning "OMXS30", "SAAB B" or "Brent" into a `{ feed, ticker }` that works |
 | [chains.md](chains.md) | you need an index's constituents or an exchange's market lists |
 | [feeds-test-user.md](feeds-test-user.md) | which markets a login can see, with their delay and trading hours |

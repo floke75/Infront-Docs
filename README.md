@@ -5,7 +5,7 @@ page_type: corpus-readme
 product: "Infront Web Toolkit"
 version: "4.3.1"
 extracted: "2026-09-19"
-file_count: 3569
+file_count: 3571
 ---
 
 # Infront Web Toolkit — documentation corpus
@@ -159,7 +159,7 @@ parent keeps `is_index: true`.
   APIs are written down. Every file in it is marked `page_type: legacy-reference`
   with a `status` field saying so, and `library_version` gives the version. When it
   disagrees with `reference/`, `reference/` wins.
-- 3,569 Markdown files, 16.5 MB, plus 7.2 MB of indexes. Every relative link resolved and checked.
+- 3,571 Markdown files, 16.5 MB, plus 7.2 MB of indexes. Every relative link resolved and checked.
 - **Cloning on Windows:** some paths are long, and Windows refuses a full path over 259
   characters unless long paths are enabled. Clone into a folder whose own path is at most
   107 characters (`C:\Users\<name>\Documents\GitHub\Infront-Docs` is fine), or run

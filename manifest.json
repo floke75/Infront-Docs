@@ -12,13 +12,13 @@
   "https://docs.infrontfinance.com/examples/ (runnable examples)",
   "https://docs.infrontfinance.com/tests/ (per-widget snippets)"
  ],
- "file_count": 3570,
- "total_bytes": 17311717,
+ "file_count": 3571,
+ "total_bytes": 17316816,
  "by_page_type": {
   "corpus-readme": 1,
   "example": 273,
   "field-notes-index": 1,
-  "field-note": 10,
+  "field-note": 11,
   "guide": 8,
   "concept-index": 1,
   "symbol-index": 19,
@@ -29,7 +29,7 @@
  "by_kind": {
   "index": 34,
   "example": 166,
-  "field-note": 10,
+  "field-note": 11,
   "guide": 8,
   "legacy-page": 3,
   "legacy-widget": 176,
@@ -1622,14 +1622,14 @@
    "title": "Field notes — verified against the live service",
    "kind": "index",
    "page_type": "field-notes-index",
-   "bytes": 3055
+   "bytes": 3213
   },
   {
    "file": "field-notes/authentication.md",
    "title": "Authentication — who holds which secret",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 3212,
+   "bytes": 3281,
    "module": "SDK"
   },
   {
@@ -1645,7 +1645,7 @@
    "title": "Errors and entitlements — NoAccess, silent unknown tickers, access per feed and symbol",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 3610,
+   "bytes": 3716,
    "module": "SDK"
   },
   {
@@ -1665,11 +1665,19 @@
    "module": "SDK"
   },
   {
+   "file": "field-notes/live-token-stage.md",
+   "title": "Production token, transport loss and concurrent logins",
+   "kind": "field-note",
+   "page_type": "field-note",
+   "bytes": 4222,
+   "module": "SDK"
+  },
+  {
    "file": "field-notes/open-questions.md",
    "title": "Open questions for Infront",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 2721,
+   "bytes": 3265,
    "module": "SDK"
   },
   {
