@@ -3,7 +3,7 @@ title: "Open questions for Infront"
 kind: field-note
 page_type: field-note
 module: SDK
-verified: "2026-09-23"
+verified: "2026-09-24"
 source: "gaps left after the docs and the live sandbox"
 ---
 
@@ -19,15 +19,21 @@ Infront settles them in one pass; move each answer into the note it belongs to, 
    (Xetra)**, which neither the test user nor (by free-text search) the production user could find as
    indices — and which are real-time. **On 2026-09-23 the production user read every Nasdaq Stockholm
    instrument as `Delayed`** ([production-user.md](production-user.md)): is real-time OMX part of EFN's
-   contract, and if so, when does this user get it?
-3. Why `6150:N225` returns no `Last` while `ChangePercent` and `YesterdayClose` are present.
+   contract, and if so, when does this user get it? Johan is handling this at account level; it does not
+   block the integration work.
+3. Why `6150:N225` sometimes has no `Last`: it was absent in earlier probes but present in the
+   2026-09-24 token-route run ([live-token-stage.md](live-token-stage.md)).
 
 **Authentication and sessions**
-4. Access-token lifetime and renewal; whether `signedToken` takes the IdP `access_token` unchanged; whether
-   a live SDK instance survives its token's expiry or must be rebuilt.
+4. Whether a live SDK instance survives natural token expiry or must be rebuilt. The issued lifetime
+   is ten hours; unchanged access-token acceptance, reissue and signature-rejection recovery are verified
+   ([live-token-stage.md](live-token-stage.md)).
 5. How many concurrent sessions one user may hold (a preview screen and a playout screen on the same
-   production user), and what triggers `DisconnectEventReason.KickOut`.
-6. Does the SDK reconnect and re-subscribe on its own after a network drop, and which events fire?
+   production user)? Two independent stages caused KickOut reason 0 and competed on retry in the
+   2026-09-24 run; the broader contract remains unconfirmed.
+6. Physical/half-open network behavior beyond the scoped browser outage remains unqualified. In the
+   observed outage the SDK reconnected and resumed subscriptions without another onReady/onDisconnect;
+   loginData ConnectionStatus exposed the Realtime state transitions ([live-token-stage.md](live-token-stage.md)).
 
 **Delivery**
 7. Access to the private npm registry for `@infront/sdk` (it is not on the public registry), versus the

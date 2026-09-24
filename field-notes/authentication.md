@@ -51,8 +51,9 @@ service through the sandbox ([sandbox-probing.md](sandbox-probing.md)).
 - `connectionsStatus` (`flags: { ConnectionStatus: true }`) came back as an **empty** `ObservableArray` in
   the sandbox, subscribed or not — it could not be used there to watch socket state.
 
-## Still unknown (not observable in the sandbox, which is pre-logged-in)
+## Production verification
 
-Token lifetime and renewal; whether `signedToken` takes the IdP `access_token` unchanged (the docs say
-so); how many concurrent sessions one user may hold before `DisconnectEventReason.KickOut`. See
-[open-questions.md](open-questions.md).
+[live-token-stage.md](live-token-stage.md) records the issued endpoint, ten-hour lifetime, unchanged
+access-token acceptance, signature-rejection recovery, data-transport states and observed login kick-out.
+Natural expiry of a running session and the account's general concurrent-session contract remain open;
+see [open-questions.md](open-questions.md).

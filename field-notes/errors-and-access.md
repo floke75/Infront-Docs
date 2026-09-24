@@ -40,9 +40,9 @@ Probed with `symbolData`, one id at a time and mixed into an array, collecting *
   `delayStr` ([feeds-test-user.md](feeds-test-user.md)).
 - Delays seen for the test user: Nasdaq Stockholm and most exchanges **15 min**, Nikkei **20 min**, Oslo
   NOTC 2 min, funds and fixings a day; **World Commodities real-time**.
-- **EFN's production user receives real-time Nasdaq Stockholm data** (per EFN, 2026-09-22; not yet
-  observed). Mixed access within one screen is therefore normal, not an edge case: a display showing
-  prices has to be able to mark *which* values are delayed, symbol by symbol.
+- **EFN's production user reported delayed Nasdaq Stockholm data** on 2026-09-23 and 24. Johan is
+  handling entitlements at account level. Mark delayed values per symbol: Brent and gold were real-time
+  alongside delayed exchange feeds ([live-token-stage.md](live-token-stage.md)).
 
 ## Session-level signals
 
@@ -51,3 +51,5 @@ Probed with `symbolData`, one id at a time and mixed into an array, collecting *
 is `None`, `Connecting`, `WaitFirstPacket`, `Running`, `Closing`, `Suspended`, `Closed`. None of these could
 be triggered in the pre-logged-in sandbox; the connection-status list from `loginData` was empty there
 ([authentication.md](authentication.md)).
+
+Production transport and concurrent-login observations: [live-token-stage.md](live-token-stage.md).
