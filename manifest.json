@@ -13,7 +13,7 @@
   "https://docs.infrontfinance.com/tests/ (per-widget snippets)"
  ],
  "file_count": 3571,
- "total_bytes": 17316816,
+ "total_bytes": 17322180,
  "by_page_type": {
   "corpus-readme": 1,
   "example": 273,
@@ -121,7 +121,7 @@
    "title": "Infront Web Toolkit documentation corpus",
    "kind": "index",
    "page_type": "corpus-readme",
-   "bytes": 9302
+   "bytes": 9626
   },
   {
    "file": "examples/SDK-SDK-API-Feeds-Get-Accessible-Feeds.md",
@@ -1622,14 +1622,14 @@
    "title": "Field notes — verified against the live service",
    "kind": "index",
    "page_type": "field-notes-index",
-   "bytes": 3213
+   "bytes": 3655
   },
   {
    "file": "field-notes/authentication.md",
    "title": "Authentication — who holds which secret",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 3281,
+   "bytes": 3454,
    "module": "SDK"
   },
   {
@@ -1669,7 +1669,7 @@
    "title": "Production token, transport loss and concurrent logins",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 4222,
+   "bytes": 7808,
    "module": "SDK"
   },
   {
@@ -1685,7 +1685,7 @@
    "title": "EFN's production user — first login",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 5531,
+   "bytes": 5685,
    "module": "SDK"
   },
   {
@@ -1701,7 +1701,7 @@
    "title": "Streaming live fields — shapes, rates, batching",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 3559,
+   "bytes": 4114,
    "module": "SDK"
   },
   {
@@ -1796,7 +1796,7 @@
    "title": "Concept index — plain English to Infront symbols",
    "kind": "index",
    "page_type": "concept-index",
-   "bytes": 19458
+   "bytes": 19588
   },
   {
    "file": "index/symbols-SDK-01.md",

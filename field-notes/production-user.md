@@ -14,6 +14,8 @@ Infront sent EFN's production **username and password** on 2026-09-23. The `clie
 endpoint for the server-side flow ([authentication.md](authentication.md)) were still to come, so this
 login used the SDK's own `userId`/`password` option in a throwaway local page — typed in by a person,
 never stored. Everything below is scoped to **this login on this date**.
+For the later server-token integration, transport health, login sharing and updated field observations,
+read [production lifecycle](live-token-stage.md).
 
 ## The SDK build the CDN actually serves
 

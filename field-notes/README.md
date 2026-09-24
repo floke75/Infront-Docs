@@ -3,7 +3,7 @@ title: "Field notes — verified against the live service"
 kind: index
 page_type: field-notes-index
 verified: "2026-09-24"
-source: "live sandbox (docs.infrontfinance.com/sandbox), EFN documentation test user, SDK 2.3.1"
+source: "live sandbox, SDK 2.3.1; EFN production account, WTK 3.1.42; each note scopes its evidence"
 ---
 
 # Field notes: what the live Infront service actually does
@@ -21,6 +21,11 @@ login (2026-09-23, [production-user.md](production-user.md)) read every OMX inst
 Anything a note says about access, delay or which feeds exist is scoped to the test user unless it says
 otherwise.
 
+**Starting another EFN integration:** use [authentication](authentication.md) for the server/browser
+boundary, [production build differences](production-user.md#the-sdk-build-the-cdn-actually-serves) for
+the pinned runtime, and [production lifecycle](live-token-stage.md) before designing health, retries or
+multiple app sessions. That note distinguishes vendor observations from EFN-Loop's implementation choices.
+
 **Trust order:** observed here > `reference/` > `examples/` > `legacy/`. A note that contradicts the docs
 says so, and names the page.
 
@@ -33,7 +38,7 @@ route to it; a regeneration that forgot the copy fails the link check rather tha
 |---|---|
 | [sandbox-probing.md](sandbox-probing.md) | you want an answer from the live service instead of the docs |
 | [authentication.md](authentication.md) | wiring login: who holds which secret, and what reaches the browser |
-| [live-token-stage.md](live-token-stage.md) | production token rejection, data-socket loss without onDisconnect, or concurrent-login kickout in WTK 3.1.42 |
+| [live-token-stage.md](live-token-stage.md) | production token rejection, stuck startup, silent data-socket loss, concurrent EFN apps or practical recovery probes in WTK 3.1.42 |
 | [instrument-ids.md](instrument-ids.md) | turning "OMXS30", "SAAB B" or "Brent" into a `{ feed, ticker }` that works |
 | [chains.md](chains.md) | you need an index's constituents or an exchange's market lists |
 | [feeds-test-user.md](feeds-test-user.md) | which markets a login can see, with their delay and trading hours |

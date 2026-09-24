@@ -53,10 +53,14 @@ but ranks it badly, because the reference is generated from TypeScript and carri
 almost no prose synonyms; that file is the ranking.
 
 **Want what the live service actually does** — [\`field-notes/\`](field-notes/README.md). Hand-written notes
-verified against the live service through Infront's sandbox: instrument ids that work (several of the
+verified in Infront's sandbox and EFN's production integration: instrument ids that work (several of the
 docs' example ids do not), the OMXS30 constituents chain, which feeds a login sees and with what delay,
 live update rates, and the ordering trap in live time series. Where a note and the reference disagree,
 the note records what the service did.
+
+**Building another EFN app** — start with the [integration reading path](field-notes/README.md), then
+[production lifecycle](field-notes/live-token-stage.md) for token recovery, transport health and shared-login
+conflicts. The notes distinguish observed vendor behavior from application choices and unmeasured limits.
 
 **Looking up a symbol you already know the name of** — this is the fast path.
 

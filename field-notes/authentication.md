@@ -3,8 +3,8 @@ title: "Authentication — who holds which secret"
 kind: field-note
 page_type: field-note
 module: SDK
-verified: "2026-09-22"
-source: "guides/wtk-authentication.md; Infront's message to EFN (2026-09); live sandbox loginData"
+verified: "2026-09-24"
+source: "guides/wtk-authentication.md; Infront's message to EFN; live sandbox loginData; production token flow in live-token-stage.md"
 related: ["guides/wtk-authentication.md", "guides/sdk-setup.md", "reference/SDK/SDK.InfrontSDK.SDKOptions.md"]
 ---
 
@@ -16,11 +16,13 @@ related: ["guides/wtk-authentication.md", "guides/sdk-setup.md", "reference/SDK/
 exactly — they issue a **`client_id`, a secret and an endpoint "for server-side authentication"**, plus a
 **production user**:
 
-1. **The server** POSTs to the token endpoint (documented: `https://api.infrontservices.com/id/connect/token`)
+1. **The server** POSTs to the endpoint issued for the account; EFN's verified endpoint is in
+   [live-token-stage.md](live-token-stage.md). The generic guide uses `https://api.infrontservices.com/id/connect/token`.
+   Send the form
    with `grant_type=password`, the server-side user's `username`/`password`, `client_id`, `client_secret`
    and `scope=openid`. These values "must only be used on the server side".
 2. It hands **only the returned `access_token`** to the browser.
-3. The browser constructs the SDK with it: `new InfrontSDK.SDK({ signedToken, onReady, onDisconnect })`
+3. The browser constructs the SDK with it: `new InfrontSDK.SDK({ signedToken, onReady, onDisconnect, onLoginFailed })`
    (`guides/sdk-setup.md`). With `signedToken`, the `environment` and `realm` options have no effect.
 
 So the secret never reaches a browser. What the browser holds is a bearer token, usable by anyone who can

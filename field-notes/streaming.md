@@ -3,12 +3,17 @@ title: "Streaming live fields — shapes, rates, batching"
 kind: field-note
 page_type: field-note
 module: SDK
-verified: "2026-09-22"
-source: "live sandbox symbolData, EFN documentation test user"
+verified: "2026-09-24"
+source: "2026-09-22 sandbox symbolData, EFN test user; production differences and later fields linked inline"
 related: ["reference/SDK/SDK.InfrontSDK.SymbolDataOptions.md", "reference/SDK/SDK.InfrontSDK.BasicField.md", "examples/SDK-SDK-Examples-Feed-Symbol.md"]
 ---
 
 # Streaming live fields: shapes, rates, batching
+
+**Detecting outages or sharing data across EFN apps:** read
+[production transport behavior](live-token-stage.md#data-transport-loss-is-not-a-top-level-disconnect)
+and [concurrent login](live-token-stage.md#concurrent-login). Price ticks, local keepalives and top-level
+SDK callbacks alone cannot establish that a data connection is healthy.
 
 ## What `onData` receives depends on how you pass `id`
 
@@ -42,8 +47,9 @@ after hours).
 pair: OMXS30 `Last` 3335.93765, `YesterdayClose` 3307.02408, `ChangePercent` 0.87431 = (3335.93765 /
 3307.02408 − 1) × 100; USDSEK 9.84472 / 9.837 → 0.07848.
 
-**Nikkei 225 (`6150:N225`) returned no `Last`**, while `ChangePercent` and `YesterdayClose` were present.
-Do not assume every index carries a level.
+**Nikkei 225 (`6150:N225`) returned no `Last` in the initial observations**, while `ChangePercent` and
+`YesterdayClose` were present. The [2026-09-24 production run](live-token-stage.md#data-observations)
+did receive a numeric Last. Handle a missing level per response rather than permanently excluding the symbol.
 
 ## Update rates (20 s window, 21:30 CEST — US session open, Stockholm closed)
 
