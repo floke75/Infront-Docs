@@ -12,13 +12,13 @@
   "https://docs.infrontfinance.com/examples/ (runnable examples)",
   "https://docs.infrontfinance.com/tests/ (per-widget snippets)"
  ],
- "file_count": 3571,
- "total_bytes": 17322180,
+ "file_count": 3572,
+ "total_bytes": 17330730,
  "by_page_type": {
   "corpus-readme": 1,
   "example": 273,
   "field-notes-index": 1,
-  "field-note": 11,
+  "field-note": 12,
   "guide": 8,
   "concept-index": 1,
   "symbol-index": 19,
@@ -29,7 +29,7 @@
  "by_kind": {
   "index": 34,
   "example": 166,
-  "field-note": 11,
+  "field-note": 12,
   "guide": 8,
   "legacy-page": 3,
   "legacy-widget": 176,
@@ -1622,7 +1622,7 @@
    "title": "Field notes — verified against the live service",
    "kind": "index",
    "page_type": "field-notes-index",
-   "bytes": 3655
+   "bytes": 3785
   },
   {
    "file": "field-notes/authentication.md",
@@ -1638,6 +1638,14 @@
    "kind": "field-note",
    "page_type": "field-note",
    "bytes": 3648,
+   "module": "SDK"
+  },
+  {
+   "file": "field-notes/daily-history.md",
+   "title": "Daily history, total return, gross indices and search — what EFN's production login returned",
+   "kind": "field-note",
+   "page_type": "field-note",
+   "bytes": 7825,
    "module": "SDK"
   },
   {
@@ -1677,7 +1685,7 @@
    "title": "Open questions for Infront",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 3265,
+   "bytes": 3860,
    "module": "SDK"
   },
   {
