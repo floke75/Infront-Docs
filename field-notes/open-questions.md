@@ -51,5 +51,5 @@ Infront settles them in one pass; move each answer into the note it belongs to, 
     the production user's first request ([production-user.md](production-user.md)).
 13. How `timeSeries`' `adjustDividends` adjusts. It reproduces `PreTotalReturnChangePct*` exactly
     ([daily-history.md](daily-history.md)), but the method (and whether rights issues are included) is undocumented.
-14. Whether `symbolSearch` is meant to stay silent on a query with no hits (no `onData` item, no `onError`
-    within 60 s), and whether SIX indices (SIXRX) are part of EFN's contract.
+14. Whether SIX indices (SIXRX, SIX Return) are part of EFN's contract: free-text search does not find them
+    on the production login ([daily-history.md](daily-history.md)).

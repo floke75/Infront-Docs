@@ -4,26 +4,46 @@ kind: field-note
 page_type: field-note
 module: SDK
 verified: "2026-09-30"
-source: "EFN production account, WTK 3.1.42 (pinned CDN bundle), headless Google Chrome and jsdom; efn-graf spike probes, run 2026-09-30 01:00–01:30 CEST"
+source: "EFN production account, WTK 3.1.42 (pinned CDN bundle), headless Google Chrome and jsdom; efn-graf spike probes, run 2026-09-30 01:00–02:00 CEST; raw results in efn-graf docs/evidence/2026-09-30-*.json"
 related: ["reference/SDK/SDK.InfrontSDK.TimeSeriesOptions.md", "reference/SDK/SDK.InfrontSDK.HistPerformanceField.md", "reference/SDK/SDK.InfrontSDK.HistoryOptions.md", "field-notes/time-series.md", "field-notes/instrument-ids.md", "field-notes/production-user.md"]
 ---
 
 # Daily history, total return, gross indices and search
 
-Probed on the production user for a chart tool: comparing shares and indices over YTD, 1, 3 and 5 years,
-by price and by total return. Numbers are from one run after midnight, when the latest close was
-**2026-09-29**. No token or credential was recorded.
+These probes ran on the production user, for a chart tool that compares shares and indices by price and by total
+return. Every run happened after midnight, when the latest close was **2026-09-29**. No token or credential was
+recorded. The raw results are in the local efn-graf repo under `docs/evidence/`.
 
 ## Rule of thumb
 
-To reproduce Infront's own performance figures exactly:
-- count N-year periods back from the **latest close date**, not the calendar day;
-- measure from the last close **on or before** that date;
-- measure YTD from the previous year's last close;
-- for total return, use `timeSeries` with `adjustDividends: true`.
+To reproduce Infront's own performance figures, all three of these must hold:
 
-All 36 figures (6 shares × 1Y/3Y/5Y × price/total return) then equalled `PreChangePercent*` and
-`PreTotalReturnChangePct*` to within 0.01 percentage points. YTD matched as well.
+1. **Anchor:** count periods back from the **latest close date**, not the calendar day.
+2. **Base:** measure from the last close **on or before** the start date. YTD is measured from the previous year's
+   last close.
+3. **Total return:** use `timeSeries` with `adjustDividends: true`.
+
+With all three, 48 figures equalled `PreChangePercent*` and `PreTotalReturnChangePct*` to within
+**0.003 percentage points**, for both price and total return. The 48 are 6 shares (SAAB B, VOLV B, INVE B, ERIC B,
+HM B, SEB A) × 1M, 3M, 6M, 1Y, 2Y, 3Y, 5Y and YTD.
+
+The base rule decides the result only when the start date is not a trading day. Here 1M started on a Saturday, and
+6M and 2Y on Sundays:
+
+| Share | Period | Start | Base on or before → % | First close after → % | Infront |
+|---|---|---|---|---|---|
+| VOLV B | 1M | Sat 2026-08-29 | 08-28 → −6.97 | 08-31 → −6.38 | −6.97 |
+| VOLV B | 2Y | Sun 2024-09-29 | 09-27 → 18.94 | 09-30 → 20.84 | 18.94 |
+| SAAB B | 6M | Sun 2026-03-29 | 03-27 → 3.79 | 03-30 → 1.57 | 3.79 |
+| SAAB B | 2Y (total return) | Sun 2024-09-29 | 09-27 → 185.38 | 09-30 → 187.16 | 185.38 |
+
+Across the 42 N-period figures, the first-close-after rule missed by up to 2.2 pp.
+
+**Getting the anchor wrong is easy.** An earlier run counted back from the calendar day (2026-09-30, just after
+midnight), and its 1Y and 5Y figures drifted from Infront's by up to 6 pp: HM B's 5Y total return came out 12.22
+against Infront's 8.37.
+
+**Not observed:** what the `Pre*` fields do during trading hours. The latest bar is then today's, still forming.
 
 ## Depth: decades of daily closes
 
@@ -37,103 +57,92 @@ sdk.get(InfrontSDK.timeSeries({
 }));
 ```
 
-| Instrument | Daily bars | First | Last | First request |
-|---|---|---|---|---|
-| `17921:SAAB B` | 7 110 | 1998-06-18 | 2026-09-29 | 11.2 s (cold) |
-| `17921:VOLV B` | 7 900 | 1995-04-21 | 2026-09-29 | 2.0 s |
-| `17921:OMXS30` | 9 313 | 1990-01-02 | 2026-09-29 | 1.7 s |
-| `17921:OMXSPI` | 7 727 | 1995-12-29 | 2026-09-29 | 1.7 s |
+The requests started at 1990-01-01, so OMXS30's history may reach further back than shown.
 
-- The ten-year period and more are safe.
+| Instrument | Daily bars | First bar returned | First data after the request |
+|---|---|---|---|
+| `17921:SAAB B` | 7 110 | 1998-06-18 | 9.1 s (first request of the session) |
+| `17921:VOLV B` | 7 900 | 1995-04-21 | 0.46 s |
+| `17921:OMXS30` | 9 313 | 1990-01-02 | 0.55 s |
+| `17921:OMXSPI` | 7 727 | 1995-12-29 | 0.39 s |
+
 - No bar had a null `last`.
-- A historical daily bar's `dateTime` is **midnight UTC** of its trading day (`1998-06-18T00:00:00.000Z`). The latest,
-  still-current bar is stamped at session open instead (09:00 local). Converting `dateTime` to a Stockholm date gives
-  the trading day in both cases.
-- **Use `last` as the close.** `officialClose` is null on the latest bar and on indices. It also differs from
-  `last` on 2 592 of SAAB B's bars (4 or fewer for the others). `last` is the field whose results matched Infront's
-  figures.
+- A historical daily bar's `dateTime` is **midnight UTC** of its trading day (`1998-06-18T00:00:00.000Z`). The latest
+  bar is stamped at session open instead (09:00 local). Converting to a Stockholm date gives the trading day in both
+  cases.
+- **Use `last` as the close.** `officialClose` is null on the latest bar and on nearly all index bars, and differs from
+  `last` on 2 592 of SAAB B's bars.
 
 ## Total return: use Infront's dividend-adjusted series
 
-For each share, over the same windows, three things were compared:
-- Infront's published figures (`symbolData`, `content: { HistoricalPerformance: true }`);
-- the `adjustDividends: true` series, rebased;
-- our own reinvestment: unadjusted closes plus `history()` dividends, reinvested at the ex-date close.
+With the anchor and base above, the `adjustDividends: true` series, rebased, is the total-return figure Infront
+publishes. The largest gap was 0.003 pp.
 
-| Share | Period | Infront `PreTotalReturnChangePct*` | `adjustDividends: true`, rebased | Own reinvestment |
-|---|---|---|---|---|
-| SAAB B | YTD | 14.44 | 14.44 | 14.44 |
-| SAAB B | 3Y | 346.98 | 346.98 | 351.62 |
-| VOLV B | YTD | 13.99 | 13.99 | 13.95 |
-| VOLV B | 3Y | 69.19 | 69.19 | 70.21 |
-| SEB A | YTD | 28.53 | 28.53 | 28.34 |
-| HM B | 3Y | 14.58 | 14.58 | 14.36 |
+A local alternative was also tried: unadjusted closes plus `history()` dividends, reinvested at each ex-date's close.
+It drifted, with a median gap of 0.28 pp in the calendar-anchored run. Across SAAB B's 4:1 split on 2024-05-07 it
+reached 1 005 % against 923 % over the same window, because `history()` amounts are as paid (see below).
 
-- The same held for INVE B and ERIC B, and for 1Y and 5Y once they were anchored on the latest close. The
-  median gap was **0.002 pp for the adjusted series** and 0.28 pp for own reinvestment.
-- Own reinvestment fails worst across a split. Over a window containing SAAB B's 4:1 split (2024-05-07), it gave
-  1 005 % against the adjusted series' 923 %.
-- The adjustment Infront applies is therefore a proper gross total return, reinvested (not merely
-  "dividends subtracted"). The docs never say so (`TimeSeriesOptions.adjustDividends`: "can only be applied on
-  historical trades").
+Matching Infront's total-return figures is consistent with dividends being reinvested. The method itself is still
+undocumented (open question 13 in [open-questions.md](open-questions.md)).
 
 ## `history()`: the options work, but amounts are as paid
 
-- `InfrontSDK.history({ id, from, to })` works on 3.1.42, even though [HistoryOptions](../reference/SDK/SDK.InfrontSDK.HistoryOptions.md) lists no `id`, `from` or `to`.
-- `trades` respected the window: 1 696 bars from 2020-01-01, the same count `timeSeries` returned.
-- `dividends` and `splits` came back for the instrument's **whole history** (VOLV B from 1985) regardless
-  of `from`.
-- A dividend is `{ amount, currency, date }`, and `date` is the **ex-date**. VOLV B `2026-04-09 13 SEK`
-  matches Volvo's published first trading day without the dividend (AGM 2026-04-08, record date 04-10).
-- **Amounts are not split-adjusted.** SAAB B paid 1.20 SEK on 2026-04-02 after a factor-0.25 split on 2024-05-07,
-  while earlier entries are in pre-split kronor. `splits` also carries rights-issue factors (SAAB B `2018-11-23 0.92441`).
-  Reinvesting these amounts against split-adjusted prices overstates total return.
-- `sdk.getAsync(InfrontSDK.history(...))` and `getAsync(loginData(...))` throw `e.toPromise is not a
-  function` on 3.1.42. Use `sdk.get` and take the first `onData`.
+- `InfrontSDK.history({ id, from, to })` works on 3.1.42, although [HistoryOptions](../reference/SDK/SDK.InfrontSDK.HistoryOptions.md) lists no `id`, `from` or `to`.
+- `trades` respected the window: 1 696 bars from 2020-01-01, the same number `timeSeries` returned.
+- `dividends` and `splits` came back for the instrument's **whole history** regardless of `from` (VOLV B from 1985).
+- A dividend is `{ amount, currency, date }`, and `date` is the **ex-date**. VOLV B `2026-04-09 13 SEK` matches
+  Volvo's published first trading day without the dividend (AGM 2026-04-08, record date 04-10).
+- **Amounts are not split-adjusted.** SAAB B paid 1.20 SEK on 2026-04-02, after a factor-0.25 split on 2024-05-07;
+  earlier entries are in pre-split kronor.
+- `splits` also carries rights-issue factors, e.g. SAAB B `2018-11-23 0.92441`.
+- On 3.1.42, `sdk.getAsync(InfrontSDK.history(...))` and `getAsync(loginData(...))` throw
+  `e.toPromise is not a function`. Use `sdk.get` and take the first `onData`.
 
 ## Gross indices exist on 17921
 
-Free-text search finds Nasdaq Stockholm's gross (dividends reinvested) indices on the same feed as the price
-indices. All of them read `Delayed`, like every OMX instrument on this login ([production-user.md](production-user.md)).
+Free-text search finds Nasdaq Stockholm's gross indices (dividends reinvested) on the same feed as the price indices.
+All read `Delayed`, like every OMX instrument on this login ([production-user.md](production-user.md)).
 
-| Price index | Gross twin | 5 years to 2026-09-29, price → gross |
+| Price index | Gross twin | 5 years from 2021-09-29 to 2026-09-29: price → gross |
 |---|---|---|
-| `17921:OMXSPI` (OMX Stockholm PI) | `17921:OMXSGI` (OMX Stockholm GI) | 21.72 % → 41.09 % |
-| `17921:OMXS30` | `17921:OMXS30GI` (OMX Stockholm 30 GI) | 45.46 % → 69.49 % |
+| `17921:OMXSPI` (OMX Stockholm PI) | `17921:OMXSGI` (OMX Stockholm GI) | 22.24 % → 41.74 % |
+| `17921:OMXS30` | `17921:OMXS30GI` (OMX Stockholm 30 GI) | 45.69 % → 69.86 % |
 
-- Also present: `17921:OMXSBGI` (Benchmark GI), `OMXS60` (named "OMX Stockholm 60_GI"), `OMXSBCAPGI`, and sector
-  GIs such as `SX3010GI`.
-- `2087:OMXSGI` duplicates `17921:OMXSGI` (compare the `2087` copies in [instrument-ids.md](instrument-ids.md)).
-- **SIXRX / "SIX Return" are not visible.** Those searches found nothing.
+- Other gross indices on 17921: `OMXSBGI` (Benchmark GI), `OMXSBCAPGI`, sector GIs such as `SX3010GI`, and `OMXS60`
+  (named "OMX Stockholm 60_GI").
+- `2087:OMXSGI` duplicates `17921:OMXSGI`, as the `2087` copies in [instrument-ids.md](instrument-ids.md) do.
+- **SIXRX / "SIX Return" are not visible on this login.**
 
 For a total-return comparison, benchmark against the GI twin. The price index leaves out a dividend yield of
 several percent a year.
 
 ## Search for a type-ahead picker
 
-`symbolSearch({ parameters: "<text>", fields: [...], limit: 30 })`, 12 queries:
+`symbolSearch({ parameters: "<text>", fields: [...], limit: 30 })`, 13 queries.
 
-- **Latency:** about 0.8 s per query once warm. The first search of a session took 11 s.
-- **What comes back:**
-  - The Stockholm share or index is present in every case.
-  - Keeping only feed `17921` and `SymbolType` `"Stock"` or `"Index"` (dropping indicator tickers ending `_XX`)
-    leaves exactly the Swedish shares and indices. For example, "volvo" gives VOLV B, VOLV A and VOLCAR B, and
-    "hennes" gives HM B.
-  - The rest: derivatives on `17923`, warrants on `17931`, certificates on `17944`/`17952`, and foreign listings
-    on `2358` (Tradegate), `5475` (Cboe Europe), `2343`/`2344` (US), `2163` (Toronto), `100`, `17665`, `18177`,
-    `18051` and `17938`.
+- **Latency:** the first items arrived **45–90 ms** after the request once warm. The first search of a session took
+  2.2 s, and "hm" once took 0.8 s. The list then stays quiet; nothing else arrives.
+- **Filtering:**
+  - Keeping only feed `17921` with `SymbolType` `"Stock"` or `"Index"`, and dropping indicator tickers ending `_XX`,
+    leaves exactly the Swedish shares and indices. "volvo" gives VOLV B, VOLV A and VOLCAR B; "hennes" gives HM B.
+  - Everything else is on other feeds: derivatives on `17923`, warrants on `17931`, certificates on `17944`/`17952`,
+    and foreign listings on `2358`, `5475`, `2343`/`2344`, `2163`, `100`, `17665`, `18177`, `18051` and `17938`.
   - `SymbolType` arrives as the strings `Stock`, `Index`, `Funds`, `Futures`, `Option`, `UsOption`, `Certificate`
     and `Bond`.
-- **A query with no hits never answers.** "SIXRX" produced no `onData` item and no `onError` for 60 s. A picker
-  needs its own short timeout to show "nothing found".
+- **A query with no hits answers with an empty list.** "SIXRX" fired `onData` once, the list stayed empty, and no
+  `onError` followed for 60 s. A picker can therefore treat "`onData` with an empty list" as "nothing found". There
+  is no later signal to wait for.
 
 ## Node.js: the pinned bundle runs under jsdom
 
-The 3.1.42 bundle was evaluated inside a jsdom window (`runScripts: "outside-only"`, the window's own WebSocket),
-with the SHA256 checked first. It logged in with the server-issued token and returned 437 daily OMXS30 bars,
-with no errors. **A server-side relay does not need a browser** (open question 8).
+The 3.1.42 bundle was checked against its SHA256, then evaluated inside a jsdom window (`runScripts:
+"outside-only"`, using jsdom's own WebSocket). It logged in with the server-issued token and returned 437 daily
+OMXS30 bars, with no errors.
+
+Only login and daily `timeSeries` were exercised. On that evidence, a server-side relay need not run a browser.
+Whether Infront supports this use is open question 8.
 
 ## Session start-up
 
-The first session of the night was ready 6.6 s after `new SDK(...)`. Sessions opened within a minute or two of
-the previous one took 9.6–27.6 s. Only one session was open at a time throughout.
+The first session of the night was ready 6.6 s after `new SDK(...)`. Sessions opened within a minute or two of the
+previous one took 9.6–27.6 s. Only one session was open at a time throughout.
