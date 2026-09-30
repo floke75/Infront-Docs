@@ -40,9 +40,9 @@ Infront settles them in one pass; move each answer into the note it belongs to, 
    CDN script `https://wtk.infrontservices.com/js/CommonFramework-<version>.min.js`; module format and size.
    The guides' `CommonFramework-4.3.1` is a 404 and `latest` is WTK 3.1.42 (2026-09-23): which build is
    current and supported, and how does it relate to the SDK 2.3.1 these docs describe?
-8. ~~Whether the SDK runs outside a browser (Node.js), for a server-side relay.~~ **Answered 2026-09-30:** the
-   pinned 3.1.42 bundle logs in and returns daily bars under jsdom ([daily-history.md](daily-history.md)).
-   Whether Infront *supports* that use is still theirs to say.
+8. Whether the SDK is supported outside a browser (Node.js), for a server-side relay. **Observed 2026-09-30:**
+   under jsdom it logs in, but every socket drops after ~5.5–6 s and it logs in again. Headless Chrome is stable
+   ([daily-history.md](daily-history.md)). Whether Infront supports either is theirs to say.
 9. `timeSeries` live behaviour: is inserting new bars at index 0 intended ([time-series.md](time-series.md)),
    and what is the per-bar `change` measured against?
 10. The meaning of the trading-hour fields in `feedList` (Nasdaq Stockholm reports 08:00–16:31 +02:00).

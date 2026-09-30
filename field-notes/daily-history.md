@@ -129,18 +129,32 @@ several percent a year.
     and foreign listings on `2358`, `5475`, `2343`/`2344`, `2163`, `100`, `17665`, `18177`, `18051` and `17938`.
   - `SymbolType` arrives as the strings `Stock`, `Index`, `Funds`, `Futures`, `Option`, `UsOption`, `Certificate`
     and `Bond`.
-- **A query with no hits answers with an empty list.** "SIXRX" fired `onData` once, the list stayed empty, and no
-  `onError` followed for 60 s. A picker can therefore treat "`onData` with an empty list" as "nothing found". There
-  is no later signal to wait for.
+- **A query with no hits: `onData` fires once, and the list never reports anything,** not even an empty
+  `reInit`. That was "SIXRX" for 60 s. A picker should treat `onData` followed by a short silence as "nothing found".
+- **The first search after a login is slow.** Its items arrived about 11 s later (2.2 s in another run), and
+  every later search answered in tens of ms. A warm-up search right after `onReady` keeps a short empty-timer
+  honest. efn-graf's gateway fires one and makes the first real search wait for it.
+- **`symbolData` adds the item before its fields arrive.** An instrument not yet seen in the session is in the
+  list with `FullName: null` for a moment, so read fields after they arrive, not when the list goes quiet. An
+  unknown ticker keeps `FullName: null` for good.
 
-## Node.js: the pinned bundle runs under jsdom
+## Node.js: jsdom logs in, but is not a usable host
 
-The 3.1.42 bundle was checked against its SHA256, then evaluated inside a jsdom window (`runScripts:
-"outside-only"`, using jsdom's own WebSocket). It logged in with the server-issued token and returned 437 daily
-OMXS30 bars, with no errors.
+The 3.1.42 bundle was checked against its SHA256, then evaluated in a jsdom window. It logged in with the
+server-issued token and returned 437 daily OMXS30 bars. Kept running, though, it fails: **every Infront socket
+closes with code 1006 about 5.5–6 s after opening.** That covers login, data and search.
 
-Only login and daily `timeSeries` were exercised. On that evidence, a server-side relay need not run a browser.
-Whether Infront supports this use is open question 8.
+- The SDK then logs in again, and a request issued during the gap comes back empty. In a run of five searches,
+  one returned nothing and two triggered a fresh login.
+- Swapping in Node's native (undici) WebSocket changed nothing.
+- The minified bundle uses no Worker or page-visibility API that would explain it.
+
+Headless Google Chrome, driven by Playwright and loaded from a `127.0.0.1` page, stays up. Its search sockets
+also close after ~5.5 s, which looks like normal server behaviour, but the SDK opens a new one per search.
+Warm searches answered in 18–25 ms over a 48-second run.
+
+**Host a long-running relay in a real browser engine, not jsdom.** efn-graf's gateway does this. Whether
+Infront supports server-side use at all is still open question 8.
 
 ## Session start-up
 
