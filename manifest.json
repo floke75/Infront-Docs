@@ -13,7 +13,7 @@
   "https://docs.infrontfinance.com/tests/ (per-widget snippets)"
  ],
  "file_count": 3572,
- "total_bytes": 17332706,
+ "total_bytes": 17333173,
  "by_page_type": {
   "corpus-readme": 1,
   "example": 273,
@@ -1622,7 +1622,7 @@
    "title": "Field notes — verified against the live service",
    "kind": "index",
    "page_type": "field-notes-index",
-   "bytes": 3785
+   "bytes": 4252
   },
   {
    "file": "field-notes/authentication.md",
