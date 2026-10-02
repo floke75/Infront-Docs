@@ -160,3 +160,13 @@ Infront supports server-side use at all is still open question 8.
 
 The first session of the night was ready 6.6 s after `new SDK(...)`. Sessions opened within a minute or two of the
 previous one took 9.6–27.6 s. Only one session was open at a time throughout.
+
+## A cloud host, and a session's ninth hour
+
+- **Logging in from a cloud host works.** On 2026-10-02 the efn-graf gateway ran as a container on DigitalOcean App
+  Platform (Amsterdam), with the pinned SDK in headless Google Chrome on Debian.
+  - The production user logged in 10 s after start, with no address restriction.
+  - Search then answered in 0.7 s, and a 3-year daily history for three instruments in 2 s.
+- **The gateway renews its session at 9 hours.** On 2026-10-01 a local gateway left running overnight logged "Infront
+  session is 9 h old; restarting with a fresh token" at 9 h, as designed. The token itself lives 10 h. This was the
+  first live sighting; what happens at natural token expiry is still unobserved.
