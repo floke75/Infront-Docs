@@ -12,8 +12,14 @@ related: ["reference/SDK/SDK.InfrontSDK.FeedListOptions.md", "reference/SDK/SDK.
 
 ```js
 sdk.get(InfrontSDK.feedList({ serviceTypes: { Realtime: true, Delayed: true }, feedInfo: true,
-  onData: (feeds) => { /* ObservableArray; read with length() / item(i) after a moment */ } }));
+  onData: (feeds) => { /* a plain array of plain objects (FeedInfo[]); it has no observe() */ } }));
 ```
+
+**Correction (2026-10-02, production login):** the answer has no `observe()`, so code that observes it as a list
+throws `list.observe is not a function`. The reference types `onData` as `FeedInfo[]`
+(`reference/SDK/SDK.InfrontSDK.FeedListOptions.md`); read it as an array. An earlier version of this note called it an
+ObservableArray. efn-graf's `/feeds` reads either form (efn-graf PR #13). The production login read **52 feeds**
+the same day, one fewer than the test user below.
 
 Each feed is a **plain object**; the `FeedInfo` fields are undocumented in `reference/`, and these came back: `feed`, `feedCode`,
 `description`, `service`, `access` ("Realtime" / "Delayed 15 minutes "), `accessType` (1 = real-time,
