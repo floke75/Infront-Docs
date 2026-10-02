@@ -3,7 +3,7 @@ title: "Open questions for Infront"
 kind: field-note
 page_type: field-note
 module: SDK
-verified: "2026-09-24"
+verified: "2026-09-30"
 source: "gaps left after the docs and the live sandbox"
 ---
 
@@ -40,10 +40,16 @@ Infront settles them in one pass; move each answer into the note it belongs to, 
    CDN script `https://wtk.infrontservices.com/js/CommonFramework-<version>.min.js`; module format and size.
    The guides' `CommonFramework-4.3.1` is a 404 and `latest` is WTK 3.1.42 (2026-09-23): which build is
    current and supported, and how does it relate to the SDK 2.3.1 these docs describe?
-8. Whether the SDK is supported outside a browser (Node.js), for a server-side relay.
+8. Whether the SDK is supported outside a browser (Node.js), for a server-side relay. **Observed 2026-09-30:**
+   under jsdom it logs in, but every socket drops after ~5.5–6 s and it logs in again. Headless Chrome is stable
+   ([daily-history.md](daily-history.md)). Whether Infront supports either is theirs to say.
 9. `timeSeries` live behaviour: is inserting new bars at index 0 intended ([time-series.md](time-series.md)),
    and what is the per-bar `change` measured against?
 10. The meaning of the trading-hour fields in `feedList` (Nasdaq Stockholm reports 08:00–16:31 +02:00).
 11. Values of `MarketPhase` and `SymbolStatus` during a session, and any rate or subscription limits.
 12. Is the item order of an array `symbolData` request guaranteed to match the request? It did not on
     the production user's first request ([production-user.md](production-user.md)).
+13. How `timeSeries`' `adjustDividends` adjusts. It reproduces `PreTotalReturnChangePct*` exactly
+    ([daily-history.md](daily-history.md)), but the method (and whether rights issues are included) is undocumented.
+14. Whether SIX indices (SIXRX, SIX Return) are part of EFN's contract: free-text search does not find them
+    on the production login ([daily-history.md](daily-history.md)).
