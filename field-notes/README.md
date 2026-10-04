@@ -25,6 +25,11 @@ otherwise.
 boundary, [production build differences](production-user.md#the-sdk-build-the-cdn-actually-serves) for
 the pinned runtime, and [production lifecycle](live-token-stage.md) before designing health, retries or
 multiple app sessions. That note distinguishes vendor observations from EFN-Loop's implementation choices.
+Hosting the SDK anywhere but a page someone has open (a server, a relay, a test harness)? Read
+[daily-history](daily-history.md#nodejs-jsdom-logs-in-but-is-not-a-usable-host) first: under jsdom every socket drops after
+~5.5 s, and headless Chrome is the verified host. EFN's first such relay is the efn-graf gateway
+(`github.com/floke75/efn-graf`, `apps/gateway`). It owns one session, so apps that go through it share that session
+instead of kicking each other out.
 
 **Trust order:** observed here > `reference/` > `examples/` > `legacy/`. A note that contradicts the docs
 says so, and names the page.
@@ -44,6 +49,7 @@ route to it; a regeneration that forgot the copy fails the link check rather tha
 | [feeds-test-user.md](feeds-test-user.md) | which markets a login can see, with their delay and trading hours |
 | [streaming.md](streaming.md) | subscribing to live fields, the shapes that come back, update rates, batching |
 | [time-series.md](time-series.md) | intraday bars — and the ordering trap in a live series |
+| [daily-history.md](daily-history.md) | historical daily closes, total return, gross indices or instrument search for a picker |
 | [errors-and-access.md](errors-and-access.md) | an id "fails", or you need real-time vs delayed per feed and per symbol |
 | [production-user.md](production-user.md) | what EFN's production user actually gets: access per instrument, the SDK build the CDN serves, and where it differs from the sandbox |
 | [open-questions.md](open-questions.md) | what only Infront can answer, collected for the next conversation with them |

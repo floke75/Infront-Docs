@@ -83,7 +83,8 @@ each item by `Feed` + `Ticker`. An id the SDK cannot resolve is never pushed: it
 Two more 3.1.42 behaviours from the same reading: `ObservableArray.observe(...)` calls `reInit` at once
 with whatever the list holds — **even when that is nothing**, so a handler that treats `reInit` as
 "replace everything" wipes its state on an empty list; and `SymbolData.observe(field, cb)` delivers the
-field's current value immediately when it has one. A refused login is reported through the SDK option
+field's current value immediately when it has one. (A search with no hits was seen to send no `reInit` at all:
+`daily-history.md`.) A refused login is reported through the SDK option
 `onLoginFailed`, not through `onDisconnect`; `DisconnectEventReason` keeps KickOut 0, Disconnect 1,
 InvalidSessionToken 2, Unknown 3.
 
