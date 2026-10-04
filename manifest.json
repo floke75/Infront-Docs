@@ -13,7 +13,7 @@
   "https://docs.infrontfinance.com/tests/ (per-widget snippets)"
  ],
  "file_count": 3572,
- "total_bytes": 17333173,
+ "total_bytes": 17334838,
  "by_page_type": {
   "corpus-readme": 1,
   "example": 273,
@@ -1645,7 +1645,7 @@
    "title": "Daily history, total return, gross indices and search — what EFN's production login returned",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 9772,
+   "bytes": 10870,
    "module": "SDK"
   },
   {
@@ -1661,7 +1661,7 @@
    "title": "Feeds visible to EFN's test user",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 6759,
+   "bytes": 7245,
    "module": "SDK"
   },
   {
@@ -1693,7 +1693,7 @@
    "title": "EFN's production user — first login",
    "kind": "field-note",
    "page_type": "field-note",
-   "bytes": 5685,
+   "bytes": 5766,
    "module": "SDK"
   },
   {

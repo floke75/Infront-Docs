@@ -124,13 +124,17 @@ several percent a year.
   2.2 s, and "hm" once took 0.8 s. The list then stays quiet; nothing else arrives.
 - **Filtering:**
   - Keeping only feed `17921` with `SymbolType` `"Stock"` or `"Index"`, and dropping indicator tickers ending `_XX`,
-    leaves exactly the Swedish shares and indices. "volvo" gives VOLV B, VOLV A and VOLCAR B; "hennes" gives HM B.
+    leaves exactly Nasdaq Stockholm's shares and indices. "volvo" gives VOLV B, VOLV A and VOLCAR B; "hennes" gives HM B.
   - Everything else is on other feeds: derivatives on `17923`, warrants on `17931`, certificates on `17944`/`17952`,
-    and foreign listings on `2358`, `5475`, `2343`/`2344`, `2163`, `100`, `17665`, `18177`, `18051` and `17938`.
+    foreign listings on `2358`, `5475`, `2343`/`2344`, `2163`, `100`, `17665` and `18177`, and Swedish shares on other
+    marketplaces: Spotlight on `18051` and NGM on `17938` (`feeds-test-user.md`).
   - `SymbolType` arrives as the strings `Stock`, `Index`, `Funds`, `Futures`, `Option`, `UsOption`, `Certificate`
     and `Bond`.
 - **A query with no hits: `onData` fires once, and the list never reports anything,** not even an empty
-  `reInit`. That was "SIXRX" for 60 s. A picker should treat `onData` followed by a short silence as "nothing found".
+  `reInit`. That was "SIXRX" for 60 s. `production-user.md` read in 3.1.42's source that `observe()` calls `reInit`
+  at once even on an empty list; this run's observer saw none. Either way, an empty `reInit` and silence look alike,
+  so a picker should treat `onData` followed by a short silence as "nothing found". efn-graf's gateway starts its
+  quiet timer at `onData` for this reason.
 - **The first search after a login is slow.** Its items arrived about 11 s later (2.2 s in another run), and
   every later search answered in tens of ms. A warm-up search right after `onReady` keeps a short empty-timer
   honest. efn-graf's gateway fires one and makes the first real search wait for it.
